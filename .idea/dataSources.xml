@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2559085099">
+    <data-source source="LOCAL" name="MySQL - vdomain@localhost" uuid="774d2660-e5cc-44b1-bf23-dd8ed0958f14">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/vdomain</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfccdfcfdfc4dfcddf9bdf93df93df98df9bdf98df98df9f</user-password>
+      <schema-pattern>vdomain.*</schema-pattern>
+      <driver-properties>
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="DBNAME" value="vdomain" />
+      </driver-properties>
+      <libraries>
+        <library>
+          <url>file://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.13/mysql-connector-java-5.1.13.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+
