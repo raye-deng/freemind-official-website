@@ -11,10 +11,6 @@
     <title>微领域</title>
   </head>
   <body>
-            <form action="login.do" method="post">
-                <input type="text" id="account" name="account"/>
-                <input type="password" id="password" name="password"/>
-                <input type="submit" value="Login"/>
-            </form>
+        <jsp:include page="WEB-INF/jsp/common/fixedHeader.jsp"/>
   </body>
 </html>

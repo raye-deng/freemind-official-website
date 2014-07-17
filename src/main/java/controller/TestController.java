@@ -29,7 +29,6 @@ public class TestController {
     TestService testService;
     @RequestMapping(value = "/login")
     public String login(HttpSession session,Model model,String account,String password){
-
         System.out.print("login:"+account+":"+password);
         TUserModel tm=testService.checkLogin(account,password);
         if(tm!=null){
