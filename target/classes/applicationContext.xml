@@ -53,6 +53,7 @@
         <property name="mappingResources">
             <list>
                 <value>model/TUserModel.hbm.xml</value>
+                <value>model/TNavbarModel.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -73,6 +74,7 @@
         <property name="annotatedClasses">
             <list>
                 <value>model.TUserModel</value>
+                <value>model.TNavbarModel</value>
             </list>
         </property>
 

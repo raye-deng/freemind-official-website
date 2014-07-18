@@ -4,6 +4,7 @@ package controller;
  */
 
 import com.sun.deploy.net.HttpResponse;
+import model.TNavbarModel;
 import model.TUserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -16,6 +17,7 @@ import service.TestService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * @ClassName: testController
@@ -38,5 +40,17 @@ public class TestController {
         }else{
             return "failed";
         }
+    }
+
+    @RequestMapping(value = "/home")
+    public void home(HttpSession session,Model model){
+        System.out.println("home page!");
+    }
+
+    @RequestMapping(value = "/common/fixedHeader")
+    public void fixedHeader(HttpSession session,Model model){
+        List<TNavbarModel> navList=testService.getNavList();
+        model.addAttribute("navList",navList);
+        System.out.println("header:"+navList.toString());
     }
 }

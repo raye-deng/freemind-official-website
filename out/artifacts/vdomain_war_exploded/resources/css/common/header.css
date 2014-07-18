@@ -3,56 +3,90 @@
 .top-line-div{
     vertical-align: middle;
     width: 100%;
-    height: 60px;
-    max-height: 60px;
+    height: 70px;
+    max-height: 70px;
     max-width: 100%;
-    background-color: #eeeeee;
+    background-color: #292f36;
     color: #ffffff;
     position: fixed;
     border-radius: 0;
     top: 0;
     left: 0;
 }
+.top-line-div .navgation{
+    min-width: 1024px;
+    height: 100%;
+    line-height: 70px;
+    display: block;
 
-a:hover{
-    color: #3B3F54;
 }
-.nav{
+.top-line-div .navgation li{
     list-style: none;
     display: inline;
-    height:100%;
-    width: 600px;
-    position: absolute;
-    left: 20%;
 }
-.nav li{
-    list-style: none;
-    /*position: relative;*/
-    /*border:1px solid black;*/
+.top-line-div .navgation li a{
+    font:bold;
+    font-size: 20px;
+    color:#eee;
+    padding: 2px;
+    font-family: '微软雅黑';
+    text-decoration:none;
+    height: 100%;
+    width: 100px;
+    display: inline-block;
 }
-.nav li a{
+.top-line-div .navgation li a:hover{
+    -webkit-transition: background 1s ;
+    -moz-transition: background 1s ;
+    -ms-transition: background 1s ;
+    -o-transition: background 1s ;
+    transition: background 1s ;
+    background: #eee;
     color: #000;
-    line-height: 100%;
-    /*border:1px solid black;*/
+}
+.navChild{
+    font-family: '微软雅黑';
+    text-decoration:none;
+    color:#eee;
+    background:#292f36;
+}
+.navChild:hover{
+    -webkit-transition: background 1s ;
+    -moz-transition: background 1s ;
+    -ms-transition: background 1s ;
+    -o-transition: background 1s ;
+    transition: background 1s ;
+    background: #eee;
+    color: #000;
+}
+.logo{
+    width: 180px;
+    height: 70px;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 8px;
+    position: relative;
+}
+.logo img{
+    width: 100px;
+    margin-top: 10px;
+    height: 50px;
+    max-height: 40px;
     float: left;
 }
-.nav_dropmenu_item{
-    display: block;
+.logo .title{
+    font-size: 20px;
+    font:bold;
+    color:#bce8f1;
     position: absolute;
-    top: 70%;
-    left: 18%;
-    width: 120px;
-    border:1px solid #eee;
-    border-radius: 0;
-    display: block;
-    background: #eee;
+    left: 70px;
+    bottom: 15px;
 }
-.nav_dropmenu_item a{
-    display: none;
-    width: 150px;
-    margin-top: 3px;
-    text-decoration: none;
-    color: #ffffff;
-    margin-top: 18px;
-    font-size: 24px;
+.logo .phone{
+    font-size:12px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #c0a16b;
+    width: 100%;
 }

@@ -1,5 +1,6 @@
-package model;/**
- * Created by 邓风森 on 2014/7/16.
+package model;
+/**
+ * Created by 邓风森 on 2014/7/17.
  */
 
 import javax.persistence.*;
@@ -8,7 +9,7 @@ import javax.persistence.*;
  * @ClassName: TUserModel
  * @Description:
  * @author:邓风森
- * @date: 2014/7/16 16:55
+ * @date: 2014/7/17 14:45
  */
 
 @Entity

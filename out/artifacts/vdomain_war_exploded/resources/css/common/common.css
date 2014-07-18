@@ -1,10 +1,4 @@
 body{
     margin:0;
     padding: 0;
-    vertical-align: middle;
-    background:#fff;
-}
-div,table{
-    width: 970px;
-    max-width: 970px;
 }
