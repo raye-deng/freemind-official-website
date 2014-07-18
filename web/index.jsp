@@ -15,7 +15,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/common/header.js"></script>
     <style>
-        .banner { position: relative; overflow: auto; margin-top:70px;}
+        .banner { position: relative; overflow: auto; margin-top:70px;z-index:-1;}
         .banner li { list-style: none; }
         .banner ul li {float: left;width: 103%;height:460px;}
     </style>
@@ -26,6 +26,21 @@
     <jsp:include page="common/fixedHeader.do"/>
 </div>
 <%--轮播图--%>
-
+<div class="banner">
+    <ul>
+        <li style="background: url(http://www.bootcss.com/p/unslider/img/wood.jpg);background-size:150%;" >This is a slide.</li>
+        <li style="background: url(http://www.bootcss.com/p/unslider/img/subway.jpg);background-size:150%;" >This is a slidea.</li>
+    </ul>
+</div>
+<script>
+    $('.banner').unslider({
+        speed: 800,               //  The speed to animate each slide (in milliseconds)
+        delay: 2000,              //  The delay between slide animations (in milliseconds)
+        complete: function() {},  //  A function that gets called after every slide animation
+        keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+        dots: true,               //  Display dot navigation
+        fluid: false              //  Support responsive design. May break non-responsive designs
+    });
+</script>
 </body>
 </html>
