@@ -53,4 +53,9 @@ public class TestController {
         model.addAttribute("navList",navList);
         System.out.println("header:"+navList.toString());
     }
+    @RequestMapping(value = "/common/footer")
+    public void footer(HttpSession session,Model model){
+
+        System.out.println("footer included");
+    }
 }

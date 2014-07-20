@@ -35,7 +35,7 @@
 				
 		loader				: 'pie',	//pie, bar, none (even if you choose "pie", old browsers like IE8- can't display it... they will display always a loading bar)
 		
-		loaderColor			: '#eeeeee', 
+		loaderColor			: '#024FBB',
 		
 		loaderBgColor		: '#222222', 
 		
@@ -53,9 +53,9 @@
 		
 		mobileNavHover		: true,	//same as above, but only for mobile devices
 		
-		opacityOnGrid		: false,	//true, false. Decide to apply a fade effect to blocks and slices: if your slideshow is fullscreen or simply big, I recommend to set it false to have a smoother effect 
+		opacityOnGrid		: true,	//true, false. Decide to apply a fade effect to blocks and slices: if your slideshow is fullscreen or simply big, I recommend to set it false to have a smoother effect
 		
-		overlayer			: true,	//a layer on the images to prevent the users grab them simply by clicking the right button of their mouse (.camera_overlayer)
+		overlayer			: false,	//a layer on the images to prevent the users grab them simply by clicking the right button of their mouse (.camera_overlayer)
 		
 		pagination			: true,
 		
@@ -77,9 +77,9 @@
 		
 		slideOn				: 'random',	//next, prev, random: decide if the transition effect will be applied to the current (prev) or the next slide
 		
-		thumbnails			: false,
+		thumbnails			: true,
 		
-		time				: 7000,	//milliseconds between the end of the sliding effect and the start of the nex one
+		time				: 1000,	//milliseconds between the end of the sliding effect and the start of the nex one
 		
 		transPeriod			: 1500,	//lenght of the sliding effect in milliseconds
 		

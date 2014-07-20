@@ -29,7 +29,7 @@
                         <ul class="dropdown-menu" role="menu" aria-labelledby="nav${item.id}" style="margin-top:18px;margin-left:-3px;">
                             <c:forEach  items="${navList}" var="childItem">
                             <c:if test="${childItem.parentId==item.id}">
-                            <li><a href="${childItem.navUrl}" class="navChild" id="nav${childItem.id}">${childItem.navName}</a></li>
+                            <li><a href="${childItem.navUrl}" class="navChild" id="nav${childItem.id}" >${childItem.navName}</a></li>
                             </c:if>
                             </c:forEach>
                         </ul>

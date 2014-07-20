@@ -345,6 +345,8 @@
 	border-bottom-left-radius: 4px;
 	overflow: hidden;
 	position: relative;
+    display: none;;
+
 }
 .camera_commands_emboss .camera_thumbs_cont {
 	-moz-box-shadow:
