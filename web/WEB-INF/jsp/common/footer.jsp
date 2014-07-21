@@ -14,7 +14,12 @@
 <body>
     <div class="footer">
         <center>
-                <img src="${pageContext.request.contextPath}/resources/images/footer/footer_tdcode.jpg">
+            <img src="${pageContext.request.contextPath}/resources/images/footer/footer_tdcode.jpg">
+            <div>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
         </center>
     </div>
 </body>

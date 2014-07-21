@@ -106,23 +106,23 @@
     min-width: 1024px;
     z-index:3;
     position: relative;
-    top:-70px;
+    top:-90px;
 }
  .pre {
     display: inline;
-    background: url("../../images/home/freemindsoft/left1.png")no-repeat 0 0;
-    width: 33px;
+    background: url("../../images/home/left_op.png")no-repeat 0 0;
+    width: 70px;
     position: absolute;
     left: 0;
     cursor: pointer;
-    height: 33px;
+    height: 70px;
     z-index:2;
 }
  .next {
-    background: url("../../images/home/freemindsoft/right1.png") no-repeat 0 0;
-    width: 33px;
+    background: url("../../images/home/right_op.png") no-repeat 0 0;
+    width: 70px;
     cursor: pointer;
-    height: 33px;
+    height: 70px;
     position: absolute;
     right: 0;
 

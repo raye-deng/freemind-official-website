@@ -6,7 +6,9 @@
     height: 70px;
     max-height: 70px;
     max-width: 100%;
-    background-color: #292f36;
+    /*background-color: #292f36;*/
+    background: url("../../images/header_bg.png") ;
+    background-size: 100% 100%;
     color: #ffffff;
     position: fixed;
     border-radius: 0;
@@ -68,11 +70,11 @@
     position: relative;
 }
 .logo img{
-    width: 100px;
-    margin-top: 10px;
-    height: 50px;
-    max-height: 40px;
+    width: 300px;
+    height: 80px;
+    max-height: 80px;
     float: left;
+    margin-top: -12px;
 }
 .logo .title{
     font-size: 20px;

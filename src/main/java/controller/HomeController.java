@@ -3,17 +3,12 @@ package controller;
  * Created by 邓风森 on 2014/7/16.
  */
 
-import com.sun.deploy.net.HttpResponse;
 import model.TNavbarModel;
 import model.TUserModel;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import service.TestService;
+import service.HomeService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -26,13 +21,13 @@ import java.util.List;
  * @date: 2014/7/16 15:43
  */
 @Controller
-public class TestController {
-   @Resource(name = "testService")
-    TestService testService;
+public class HomeController {
+    @Resource(name = "homeService")
+    HomeService homeService;
     @RequestMapping(value = "/login")
     public String login(HttpSession session,Model model,String account,String password){
         System.out.print("login:"+account+":"+password);
-        TUserModel tm=testService.checkLogin(account,password);
+        TUserModel tm=homeService.checkLogin(account,password);
         if(tm!=null){
             session.setAttribute("loginUser",tm);
             System.out.println("login user id="+tm.getId()+":name="+tm.getUserName());
@@ -49,7 +44,8 @@ public class TestController {
 
     @RequestMapping(value = "/common/fixedHeader")
     public void fixedHeader(HttpSession session,Model model){
-        List<TNavbarModel> navList=testService.getNavList();
+        System.out.println("header included");
+        List<TNavbarModel> navList=homeService.getNavList();
         model.addAttribute("navList",navList);
         System.out.println("header:"+navList.toString());
     }
