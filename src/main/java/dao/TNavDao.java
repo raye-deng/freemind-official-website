@@ -9,13 +9,13 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
- * @ClassName: TestUserDao
+ * @ClassName: TNavDao
  * @Description: test user dao
  * @author:邓风森
  * @date: 2014/7/16 16:57
  */
 @Component("testUserDao")
-public class TestUserDao  extends  BaseDao {
+public class TNavDao extends  BaseDao {
     /**
      *
      * @param account
