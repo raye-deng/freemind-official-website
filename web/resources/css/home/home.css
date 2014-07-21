@@ -59,12 +59,14 @@
     left: 0;
    /* border:1px solid red;*/
 }
-.product_list li div div p{
+.product_list li div div a p{
     font-size: 20px;
     line-height: 20px;
     font: bold;
     font-family: '微软雅黑';
     color: #024FBB;
+    text-decoration: none;
+    width: 150px;
 }
 .product_list li div div span{
     font-size: 14px;
@@ -170,68 +172,10 @@
     border-left:0;
 }
 
-/* ------------------底部通用-------------------------------  */
-.footer{
-    width:100%;
-    height:145px;
-    background:#0168B7;
-    padding-top:50px;
-}
-.footer .foot{
-    width:720px;
-    height:145px;
-    margin:0 auto;
-}
-.footer .left{
-    width:200px;
-    height:85px;
-    float:left;
-    padding-top:5px;
-    border-right:1px solid #fff;
-}
-.footer .right{
-    width:490px;
-    float:left;
-    height:92px;
-    padding-left:20px;
-}
-.footer .right .nav2{
-    width:480px;
-    height:20px;
-}
-.footer .right .nav2 a{
-    width:auto;
-    padding:0 15px;
-    height:20px;
-    line-height:20px;
-    float:left;
-    display:block;
-    color:#fff;
-    background:url("../../images/home/freemindsoft/li.jpg")/*tpa=http://www.kuaichao.com.cn/templets/default/images/li.jpg*/ no-repeat left center;
-}
-.footer .right .nav2 a:hover{
-    display:block;
-    color:#ff6600;
-}
-.footer .right .add{
-    width:460px;
-    height:72px;
-    line-height:24px;
-    color:#dedede;
-    text-align:left;
-    padding:10px 0 0 15px;
-}
-.footer .right .add a{
-    color:#ededed;
-}
-.footer .right .add a:hover{
-    color:#ff6600;
-}
 
 .product_slider_div{
     background: #0168B7;
     min-height: 500px;
-
 }
 .product_slider_div h2{
     margin-top:20px;

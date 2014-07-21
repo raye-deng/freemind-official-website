@@ -5,8 +5,6 @@ package controller;
 
 import model.TFuncintroductionModel;
 import model.TNavbarModel;
-import model.TUserModel;
-import model.dto.TFuncDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

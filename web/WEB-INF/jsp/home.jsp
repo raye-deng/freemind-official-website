@@ -1,10 +1,10 @@
-<%--
+<!--
   Created by IntelliJ IDEA.
   User: 邓风森
   Date: 2014/7/16
   Time: 15:47
   To change this template use File | Settings | File Templates.
---%>
+-->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -78,39 +78,18 @@
     </script>
 </head>
 <body style="background: #fff;position: relative;">
-<!--顶部导航-->
-<div id="header" style="z-index: 9999;position: fixed;top: 0;left: 0;">
-    <jsp:include page="/common/fixedHeader.do" flush="true"/>
-</div>
-<%--轮播图--%>
-<%--<div class="banner">
-    <ul>
-        <li style="background: url(http://www.bootcss.com/p/unslider/img/wood.jpg);background-size:150%;" >This is a slide.</li>
-        <li style="background: url(http://www.bootcss.com/p/unslider/img/subway.jpg);background-size:150%;" >This is a slidea.</li>
-    </ul>
-</div>
-<script>
-    $('.banner').unslider({
-        speed: 800,               //  The speed to animate each slide (in milliseconds)
-        delay: 2000,              //  The delay between slide animations (in milliseconds)
-        complete: function() {},  //  A function that gets called after every slide animation
-        keys: true,               //  Enable keyboard (left, right) arrow shortcuts
-        dots: true,               //  Display dot navigation
-        fluid: false              //  Support responsive design. May break non-responsive designs
-    });
-</script>--%>
 <div>
     <div class="fluid_container">
         <div class="camera_wrap camera_emboss pattern_1" id="camera_wrap_4">
             <div data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/bridge.jpg">
             </div>
-            <div <%--data-thumb="${pageContext.request.contextPath}/resources/images/home/slider/slides/leaf.jpg"--%> data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/leaf.jpg">
+            <div data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/leaf.jpg">
             </div>
-            <div <%--data-thumb="${pageContext.request.contextPath}/resources/images/home/slider/slides/road.jpg"--%> data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/road.jpg">
+            <div data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/road.jpg">
             </div>
-            <div <%--data-thumb="${pageContext.request.contextPath}/resources/images/home/slider/slides/sea.jpg"--%> data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/sea.jpg">
+            <div data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/sea.jpg">
             </div>
-            <div <%--data-thumb="${pageContext.request.contextPath}/resources/images/home/slider/slides/shelter.jpg"--%> data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/shelter.jpg">
+            <div data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/shelter.jpg">
             </div>
         </div><!-- #camera_wrap_3 -->
 
@@ -130,7 +109,7 @@
                         <div >
                             <img src="${pageContext.request.contextPath}${tFunc.funcIconUrl}">
                             <div>
-                                <p>${tFunc.funcName}</p>
+                                <a href="${tFunc.funcGuideUrl}"><p>${tFunc.funcName}</p></a>
                                 <span>${tFunc.funcTitle}</span>
                             </div>
                         </div>
@@ -150,16 +129,16 @@
             <div class="scroller">
                 <div class="content">
                     <div class="section" id="section1">
-                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/test.png"></a>
-                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
-                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
-                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                        <a href="#" target="_blank"><img alt="用例展示" src="${pageContext.request.contextPath}/resources/upload/1.png"></a>
+                        <a href="#" target="_blank"><img alt="用例展示" src="${pageContext.request.contextPath}/resources/upload/2.png"></a>
+                        <a href="#" target="_blank"><img alt="用例展示" src="${pageContext.request.contextPath}/resources/upload/3.png"></a>
+                        <a href="#" target="_blank"><img alt="用例展示" src="${pageContext.request.contextPath}/resources/upload/4.png"></a>
                     </div>
                     <div class="section" id="section2">
-                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/yidong.jpg"></a>
-                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
-                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
-                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                        <a href="#" target="_blank"><img alt="用例展示" src="${pageContext.request.contextPath}/resources/upload/5.png"></a>
+                        <a href="#" target="_blank"><img alt="用例展示" src="${pageContext.request.contextPath}/resources/upload/6.png"></a>
+                        <a href="#" target="_blank"><img alt="用例展示" src="${pageContext.request.contextPath}/resources/upload/7.png"></a>
+                        <a href="#" target="_blank"><img alt="用例展示" src="${pageContext.request.contextPath}/resources/upload/8.png"></a>
                     </div>
                 </div>
             </div>
@@ -192,10 +171,10 @@
                     <div class="cnt" id="cnt">
                         <ul >
                             <li><a href="javascript:;"><img
-                                    src="${pageContext.request.contextPath}/resources/images/partner/yinlian.jpg" title="合作7" alt="合作7">
+                                    src="${pageContext.request.contextPath}/resources/images/partner/yinlian.jpg" title="合作伙伴7" alt="合作伙伴7">
                             </a></li>
                             <li><a href="javascript:;"><img
-                                    src="${pageContext.request.contextPath}/resources/images/partner/weixin.jpg" title="合作6" alt="合作6">
+                                    src="${pageContext.request.contextPath}/resources/images/partner/weixin.jpg" title="合作伙伴6" alt="合作伙伴6">
                             </a></li>
                             <li><a href="javascript:;"><img
                                     src="${pageContext.request.contextPath}/resources/images/partner/yidong.jpg" title="合作伙伴5" alt="合作伙伴5">
@@ -226,7 +205,15 @@
 </div>
 
 <%--合作伙伴 结束--%>
+<!--顶部导航-->
+<div id="header" style="z-index: 9999;position: fixed;top: 0;left: 0;">
+    <jsp:include page="/common/fixedHeader.do"/>
+</div>
 <%--页脚--%>
-<jsp:include page="/common/footer.do" flush="true"/>
+<div style="min-width: 1024px;width: 100%; background: #292F36;min-height:300px;padding-top:30px;">
+    <center>
+    <jsp:include page="/common/footer.do"/>
+    </center>
+</div>
 </body>
 </html>
