@@ -1,10 +1,8 @@
 package dao;
 
-import model.dto.TFuncDto;
 import org.springframework.stereotype.Component;
 import model.TFuncintroductionModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,13 +10,15 @@ import java.util.List;
  */
 @Component("tFuncintroductionDao")
 public class TFuncintroductionDao extends BaseDao {
+    public static final String HQL_QUERYFUNCDTOLIST="select f.id,f.funcName,f.funcTitle , f.funcIconUrl from TFuncintroductionModel f";
      public List<TFuncintroductionModel> queryFuncList()
      {
-         List<TFuncintroductionModel> FuncList = (List<TFuncintroductionModel>)super.getAll(TFuncintroductionDao.class);
+         List<TFuncintroductionModel> FuncList = (List<TFuncintroductionModel>)super.getAll(TFuncintroductionModel.class);
          return FuncList;
      }
-    public List<TFuncDto> queryFuncDtoList(){
-        List<TFuncDto> funcList=(List<TFuncDto>)super.getAll(TFuncDto.class);
+
+    public List<TFuncintroductionModel> queryFuncDtoList(){
+        List<TFuncintroductionModel> funcList=(List<TFuncintroductionModel>)super.getAll(TFuncintroductionModel.class);
         return funcList;
     }
 

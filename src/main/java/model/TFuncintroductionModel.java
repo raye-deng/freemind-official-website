@@ -12,7 +12,7 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "t_funcintroduction", schema = "", catalog = "vdomain")
+@Table(name = "t_func_introduction", schema = "", catalog = "vdomain")
 public class TFuncintroductionModel {
 
     private int id;

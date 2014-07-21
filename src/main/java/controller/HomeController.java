@@ -3,6 +3,7 @@ package controller;
  * Created by 邓风森 on 2014/7/16.
  */
 
+import model.TFuncintroductionModel;
 import model.TNavbarModel;
 import model.TUserModel;
 import model.dto.TFuncDto;
@@ -26,26 +27,22 @@ public class HomeController {
     @Resource(name = "homeService")
     HomeService homeService;
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/home")
     public void home(HttpSession session,Model model){
         System.out.println("home page!");
-        List<TFuncDto> tFuncDtoList=homeService.getTFuncDtoList();
+        List<TFuncintroductionModel> tFuncDtoList=homeService.getTFuncDtoList();
         model.addAttribute("tFuncDtoList",tFuncDtoList);
-        System.out.println("tFuncDtoListSize:"+tFuncDtoList.size());
     }
+
     @RequestMapping(value = "/common/fixedHeader")
     public void fixedHeader(HttpSession session,Model model){
         System.out.println("header included");
         List<TNavbarModel> navList=homeService.getNavList();
         model.addAttribute("navList",navList);
-        System.out.println("header:"+navList.toString());
-        List<TFuncDto> tFuncDtoList=homeService.getTFuncDtoList();
-        model.addAttribute("tFuncDtoList",tFuncDtoList);
-        System.out.println("tFuncDtoListSize:"+tFuncDtoList.size());
     }
+
     @RequestMapping(value = "/common/footer")
     public void footer(HttpSession session,Model model){
-
         System.out.println("footer included");
     }
 

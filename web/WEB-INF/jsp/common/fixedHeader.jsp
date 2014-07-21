@@ -25,7 +25,7 @@
             <c:forEach  items="${navList}" var="item">
                 <c:if test="${item.parentId==0}">
                     <li class="dropdown" >
-                        <a href="${item.navUrl}"  id="nav${item.id}"  data-toggle="dropdown" class="dropdown-toggle">${item.navName}</a>
+                        <a href="${pageContext.request.contextPath}${item.navUrl}"  id="nav${item.id}"  data-toggle="dropdown" class="dropdown-toggle">${item.navName}</a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="nav${item.id}" style="margin-top:18px;margin-left:-3px;">
                             <c:forEach  items="${navList}" var="childItem">
                             <c:if test="${childItem.parentId==item.id}">
@@ -38,7 +38,6 @@
             </c:forEach>
         </ul>
     </center>
-
 </div>
 
 </body>

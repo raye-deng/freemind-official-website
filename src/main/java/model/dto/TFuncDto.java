@@ -12,7 +12,7 @@ import javax.persistence.*;
  * @date: 2014/7/21 15:49
  */
 @Entity
-@Table(name = "t_funcintroduction", schema = "", catalog = "vdomain")
+@Table(name = "t_func_introduction", schema = "", catalog = "vdomain")
 public class TFuncDto {
     private int id;
     private String funcName;
@@ -81,5 +81,6 @@ public class TFuncDto {
         result = 31 * result + (funcIconUrl != null ? funcIconUrl.hashCode() : 0);
         return result;
     }
+
 
 }

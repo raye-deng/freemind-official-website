@@ -1,10 +1,11 @@
 <%--
+&lt;%&ndash;
   Created by IntelliJ IDEA.
   User: 邓风森
   Date: 2014/7/16
   Time: 15:47
   To change this template use File | Settings | File Templates.
---%>
+&ndash;%&gt;
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -82,8 +83,8 @@
 <div id="header" style="z-index: 9999;position: fixed;top: 0;left: 0;">
     <jsp:include page="common/fixedHeader.do"/>
 </div>
-<%--轮播图--%>
-<%--<div class="banner">
+&lt;%&ndash;轮播图&ndash;%&gt;
+&lt;%&ndash;<div class="banner">
     <ul>
         <li style="background: url(http://www.bootcss.com/p/unslider/img/wood.jpg);background-size:150%;" >This is a slide.</li>
         <li style="background: url(http://www.bootcss.com/p/unslider/img/subway.jpg);background-size:150%;" >This is a slidea.</li>
@@ -98,257 +99,89 @@
         dots: true,               //  Display dot navigation
         fluid: false              //  Support responsive design. May break non-responsive designs
     });
-</script>--%>
+</script>&ndash;%&gt;
 <div>
     <div class="fluid_container">
         <div class="camera_wrap camera_emboss pattern_1" id="camera_wrap_4">
             <div data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/bridge.jpg">
             </div>
-            <div <%--data-thumb="${pageContext.request.contextPath}/resources/images/home/slider/slides/leaf.jpg"--%> data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/leaf.jpg">
+            <div &lt;%&ndash;data-thumb="${pageContext.request.contextPath}/resources/images/home/slider/slides/leaf.jpg"&ndash;%&gt; data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/leaf.jpg">
             </div>
-            <div <%--data-thumb="${pageContext.request.contextPath}/resources/images/home/slider/slides/road.jpg"--%> data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/road.jpg">
+            <div &lt;%&ndash;data-thumb="${pageContext.request.contextPath}/resources/images/home/slider/slides/road.jpg"&ndash;%&gt; data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/road.jpg">
             </div>
-            <div <%--data-thumb="${pageContext.request.contextPath}/resources/images/home/slider/slides/sea.jpg"--%> data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/sea.jpg">
+            <div &lt;%&ndash;data-thumb="${pageContext.request.contextPath}/resources/images/home/slider/slides/sea.jpg"&ndash;%&gt; data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/sea.jpg">
             </div>
-            <div <%--data-thumb="${pageContext.request.contextPath}/resources/images/home/slider/slides/shelter.jpg"--%> data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/shelter.jpg">
+            <div &lt;%&ndash;data-thumb="${pageContext.request.contextPath}/resources/images/home/slider/slides/shelter.jpg"&ndash;%&gt; data-src="${pageContext.request.contextPath}/resources/images/home/slider/slides/shelter.jpg">
             </div>
         </div><!-- #camera_wrap_3 -->
 
     </div>
 </div>
-<%--产品列表--%>
+&lt;%&ndash;产品列表&ndash;%&gt;
 <div id="contentdiv" name="congentdiv" class="home_content">
-        <div id="productListdiv" name="productListdiv" class="product_list_div">
-            <center>
-                <div>
-                    <img src="${pageContext.request.contextPath}/resources/images/home/productListTitleImg.jpg">
-                </div>
+    <div id="productListdiv" name="productListdiv" class="product_list_div">
+        <center>
+            <div>
+                <img src="${pageContext.request.contextPath}/resources/images/home/productListTitleImg.jpg">
+            </div>
             <ul id="productList" name="productList" class="product_list">
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/upload/KTV.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/upload/360.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/upload/yzdd.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
-                        <div>
-                            <p>产品标题</p>
-                            <span>产品描述</span>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            </center>
-        </div>
-</div>
-<%--产品列表结束--%>
 
-<%--用例展示--%>
+                <c:forEach  items="${tFuncDtoList}" var="tFunc">
+                    <li>
+                        <div >
+                            <img src="${pageContext.request.contextPath}${tFunc.funcIconUrl}">
+                            <div>
+                                <p>${tFunc.funcName}</p>
+                                <span>${tFunc.funcTitle}</span>
+                            </div>
+                        </div>
+                    </li>
+                </c:forEach>
+            </ul>
+        </center>
+    </div>
+</div>
+&lt;%&ndash;产品列表结束&ndash;%&gt;
+
+&lt;%&ndash;用例展示&ndash;%&gt;
 <div class="product_slider_div">
     <center>
-    <h2>他们正在使用微领域</h2>
-    <div class="feature" id="my-glider">
-        <div class="scroller">
-            <div class="content">
-                <div class="section" id="section1">
-                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/test.png"></a>
-                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
-                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
-                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
-                </div>
-                <div class="section" id="section2">
-                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/yidong.jpg"></a>
-                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
-                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
-                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+        <h2>他们正在使用微领域</h2>
+        <div class="feature" id="my-glider">
+            <div class="scroller">
+                <div class="content">
+                    <div class="section" id="section1">
+                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/test.png"></a>
+                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                    </div>
+                    <div class="section" id="section2">
+                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/yidong.jpg"></a>
+                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                        <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                    </div>
                 </div>
             </div>
+            <a id="prevLink" onclick="my_glider.previous();return false;" >Previous</a>
+            <a id="nextLink" onclick="my_glider.next();return false" >Next</a>
+            <script language="javascript" type="text/javascript">
+                var my_glider = new Glider('my-glider', {duration:0.5});
+                setInterval("my_glider.next();",5000);
+            </script>
         </div>
-        <a id="prevLink" onclick="my_glider.previous();return false;" >Previous</a>
-        <a id="nextLink" onclick="my_glider.next();return false" >Next</a>
-        <script language="javascript" type="text/javascript">
-            var my_glider = new Glider('my-glider', {duration:0.5});
-            setInterval("my_glider.next();",5000);
-        </script>
-    </div>
 
     </center>
 </div>
-<%--用例展示结束--%>
-<%--合作伙伴--%>
+&lt;%&ndash;用例展示结束&ndash;%&gt;
+&lt;%&ndash;合作伙伴&ndash;%&gt;
 
 <SCRIPT type=text/javascript>
     TencentArticl.onload();
 </SCRIPT>
-    <div class="links">
-        <center>
+<div class="links">
+    <center>
 
         <div class="mod-left bottom-Article-QQ sildPic-Article-QQ">
 
@@ -386,15 +219,16 @@
                 </div>
             </div>
         </div>
-            <div class="sildPicBar" id="sildPicBar">
-                <span class="pre">&nbsp;</span>
-                <span class="next">&nbsp;</span>
-            </div>
-        </center>
-    </div>
+        <div class="sildPicBar" id="sildPicBar">
+            <span class="pre">&nbsp;</span>
+            <span class="next">&nbsp;</span>
+        </div>
+    </center>
+</div>
 
-<%--合作伙伴 结束--%>
-<%--页脚--%>
+&lt;%&ndash;合作伙伴 结束&ndash;%&gt;
+&lt;%&ndash;页脚&ndash;%&gt;
 <jsp:include page="common/footer.do"/>
 </body>
 </html>
+--%>
