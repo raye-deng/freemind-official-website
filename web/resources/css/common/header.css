@@ -70,10 +70,11 @@
     position: relative;
 }
 .logo img{
-    width: 240px;
-    height: 60px;
-    max-height: 70px;
+    width: 300px;
+    height: 80px;
+    max-height: 80px;
     float: left;
+    margin-top: -12px;
 }
 .logo .title{
     font-size: 20px;

@@ -17,7 +17,7 @@
 
     <center>
         <div class="logo">
-            <img src="${pageContext.request.contextPath}/resources/images/logo_long.png" />
+            <img src="${pageContext.request.contextPath}/resources/images/logo_op.png" />
            <!-- <span class="title">微领域</span>
             <span class="phone">业务咨询:400-990-8382</span>-->
         </div>
