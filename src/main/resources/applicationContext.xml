@@ -54,6 +54,7 @@
             <list>
                 <value>model/TUserModel.hbm.xml</value>
                 <value>model/TNavbarModel.hbm.xml</value>
+                <value>classpath:model/TFuncintroductionMode.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -68,13 +69,14 @@
                 <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/vdomain</prop>
                 <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
                 <prop key="hibernate.connection.username">root</prop>
-                <prop key="hibernate.connection.password">feng19921225</prop>
+                <prop key="hibernate.connection.password"></prop>
             </props>
         </property>
         <property name="annotatedClasses">
             <list>
                 <value>model.TUserModel</value>
                 <value>model.TNavbarModel</value>
+                <value>model.TFuncintroductionMode</value>
             </list>
         </property>
 

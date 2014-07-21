@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source source="LOCAL" name="MySQL - vdomain@localhost" uuid="774d2660-e5cc-44b1-bf23-dd8ed0958f14">
-    <database-info product="MySQL" version="5.6.15" jdbc-version="3.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.13 ( Revision: ${bzr.revision-id} )">
+    <database-info product="MySQL" version="5.6.16" jdbc-version="3.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.13 ( Revision: ${bzr.revision-id} )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <schema name="" catalog="vdomain"/>
+    <table name="t_funcintroduction" schema="" catalog="vdomain" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="FUNC_NAME" sqlType="VARCHAR" precision="70" scale="0" nullable="true" jdbcType="12"/>
+      <column name="FUNC_TITLE" sqlType="VARCHAR" precision="70" scale="0" nullable="true" jdbcType="12"/>
+      <column name="FUNC_PIC_URL" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12"/>
+      <column name="FUNC_DESC" sqlType="VARCHAR" precision="1000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="FUNC_GUIDE_ENABLE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="FUNC_GUIDE_URL" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12"/>
+      <column name="FUNC_GUIDE_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="FUNC_TOPIC_ENABLE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="FUNC_TOPIC_URL" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12"/>
+      <column name="FUNC_TOPIC_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="FUNC_ICON_URL" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+    </table>
     <table name="t_navbar" schema="" catalog="vdomain" type="TABLE">
       <column name="Id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="navName" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12" remarks="6I+c5Y2V5YaF5a65Cg=="/>
