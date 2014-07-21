@@ -1,7 +1,7 @@
 package service;
 
 import dao.TFuncintroductionDao;
-import model.TFuncintroductionMode;
+import model.TFuncintroductionModel;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
@@ -11,9 +11,9 @@ import java.util.List;
  */
 @Service("tFuncintroductionService")
 public class TFuncintroductionService {
-    @Resource(name="tFuncintroductionDao");
+    @Resource(name="tFuncintroductionDao")
     TFuncintroductionDao tFuncintroductionDao;
-    public List<TFuncintroductionMode> getFuncList()
+    public List<TFuncintroductionModel> getFuncList()
     {
         return tFuncintroductionDao.queryFuncList();
     }

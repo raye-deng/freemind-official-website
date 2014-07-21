@@ -54,16 +54,14 @@
             <list>
                 <value>model/TUserModel.hbm.xml</value>
                 <value>model/TNavbarModel.hbm.xml</value>
-                <value>classpath:model/TFuncintroductionMode.hbm.xml</value>
+                <value>model/TFuncintroductionModel.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
-
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
-
                 <prop key="connection.characterEncoding">UTF-8</prop>
                 <prop key="connection.useUnicode">true</prop>
                 <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/vdomain</prop>
@@ -76,7 +74,7 @@
             <list>
                 <value>model.TUserModel</value>
                 <value>model.TNavbarModel</value>
-                <value>model.TFuncintroductionMode</value>
+                <value>model.TFuncintroductionModel</value>
             </list>
         </property>
 

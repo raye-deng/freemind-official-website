@@ -126,7 +126,7 @@
             <ul id="productList" name="productList" class="product_list">
                 <li>
                     <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
+                        <img src="${pageContext.request.contextPath}/resources/upload/KTV.png">
                         <div>
                             <p>产品标题</p>
                             <span>产品描述</span>
@@ -135,7 +135,7 @@
                 </li>
                 <li>
                     <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
+                        <img src="${pageContext.request.contextPath}/resources/upload/360.png">
                         <div>
                             <p>产品标题</p>
                             <span>产品描述</span>
@@ -144,7 +144,7 @@
                 </li>
                 <li>
                     <div >
-                        <img src="${pageContext.request.contextPath}/resources/images/home/productItem.png">
+                        <img src="${pageContext.request.contextPath}/resources/upload/yzdd.png">
                         <div>
                             <p>产品标题</p>
                             <span>产品描述</span>
@@ -311,19 +311,21 @@
 <%--产品列表结束--%>
 
 <%--用例展示--%>
-<div>
+<div class="product_slider_div">
+    <center>
+    <h2>他们正在使用微领域</h2>
     <div class="feature" id="my-glider">
         <div class="scroller">
             <div class="content">
                 <div class="section" id="section1">
+                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/test.png"></a>
                     <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
                     <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
-                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/liantong.jpg"></a>
                     <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
                 </div>
                 <div class="section" id="section2">
-                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
                     <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/yidong.jpg"></a>
+                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
                     <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
                     <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
                 </div>
@@ -333,8 +335,11 @@
         <a id="nextLink" onclick="my_glider.next();return false" >Next</a>
         <script language="javascript" type="text/javascript">
             var my_glider = new Glider('my-glider', {duration:0.5});
+            setInterval("my_glider.next();",5000);
         </script>
     </div>
+
+    </center>
 </div>
 <%--用例展示结束--%>
 <%--合作伙伴--%>
@@ -353,7 +358,7 @@
             <div class="bd">
                 <div class="cnt-wrap" id="cnt-wrap">
                     <div class="cnt" id="cnt">
-                        <ul>
+                        <ul >
                             <li><a href="javascript:;"><img
                                     src="${pageContext.request.contextPath}/resources/images/partner/yinlian.jpg" title="合作7" alt="合作7">
                             </a></li>
