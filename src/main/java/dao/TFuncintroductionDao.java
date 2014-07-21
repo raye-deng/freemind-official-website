@@ -1,5 +1,6 @@
 package dao;
 
+import model.dto.TFuncDto;
 import org.springframework.stereotype.Component;
 import model.TFuncintroductionModel;
 
@@ -16,5 +17,9 @@ public class TFuncintroductionDao extends BaseDao {
          List<TFuncintroductionModel> FuncList = (List<TFuncintroductionModel>)super.getAll(TFuncintroductionDao.class);
          return FuncList;
      }
+    public List<TFuncDto> queryFuncDtoList(){
+        List<TFuncDto> funcList=(List<TFuncDto>)super.getAll(TFuncDto.class);
+        return funcList;
+    }
 
 }

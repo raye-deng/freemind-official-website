@@ -16,26 +16,7 @@ import java.util.List;
  */
 @Component("testUserDao")
 public class TNavDao extends  BaseDao {
-    /**
-     *
-     * @param account
-     * @param password
-     * @return
-     */
-    public TUserModel queryUserByAccountAndPassword(String account, String password) {
-        TUserModel tm1=new TUserModel();
-        tm1.setAct(account);
-        tm1.setPwd(password);
-        TUserModel tm = null;
 
-        tm = (TUserModel) super.getUnique("from TUserModel where act=? and pwd=?", tm1.getAct(),tm1.getPwd());
-
-        if (tm == null) {
-            return tm;
-        } else {
-            return tm;
-        }
-    }
 
 
     public  List<TNavbarModel> queryNavList(){
