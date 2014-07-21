@@ -47,6 +47,8 @@
     height: 150px;
     max-width: 150px;
     max-height: 150px;
+    padding:30px;
+    padding-left: 28px;
     overflow: hidden;
 }
 .product_list li div div{
@@ -226,7 +228,16 @@
     color:#ff6600;
 }
 
+.product_slider_div{
+    background: #0168B7;
+    min-height: 500px;
 
+}
+.product_slider_div h2{
+    margin-top:20px;
+    color:#fff;
+    padding:15px;
+}
 
 
 

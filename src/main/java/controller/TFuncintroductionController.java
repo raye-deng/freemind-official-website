@@ -1,6 +1,6 @@
 package controller;
 
-import model.TFuncintroductionMode;
+import model.TFuncintroductionModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,13 +15,13 @@ import java.util.List;
  */
 @Controller
 public class TFuncintroductionController {
-    @Resource(name = "tFuncintroductionService");
+    @Resource(name = "tFuncintroductionService")
     TFuncintroductionService tFuncintroductionService;
 
     @RequestMapping(value = "/FuncIntroductionWeb")
     public void showFuncList(Model model)
     {
-        List<TFuncintroductionMode> FuncList = tFuncintroductionService.getFuncList();
+        List<TFuncintroductionModel> FuncList = tFuncintroductionService.getFuncList();
         model.addAttribute("FuncLsit",FuncList);
     }
 }

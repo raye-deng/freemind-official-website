@@ -1,13 +1,20 @@
-package model;
+package model;/**
+ * Created by 邓风森 on 2014/7/21.
+ */
 
 import javax.persistence.*;
 
 /**
- * Created by Administrator on 2014/7/21 0021.
+ * @ClassName: TFuncintroductionModel
+ * @Description:
+ * @author:邓风森
+ * @date: 2014/7/21 16:05
  */
+
 @Entity
-@Table(name = "t_funcintroduction", schema = "", catalog = "vdomain")
-public class TFuncintroductionMode {
+@Table(name = "t_func_introduction", schema = "", catalog = "vdomain")
+public class TFuncintroductionModel {
+
     private int id;
     private String funcName;
     private String funcTitle;
@@ -146,7 +153,7 @@ public class TFuncintroductionMode {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TFuncintroductionMode that = (TFuncintroductionMode) o;
+        TFuncintroductionModel that = (TFuncintroductionModel) o;
 
         if (id != that.id) return false;
         if (funcDesc != null ? !funcDesc.equals(that.funcDesc) : that.funcDesc != null) return false;

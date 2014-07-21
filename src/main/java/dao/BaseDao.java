@@ -55,6 +55,8 @@ public class BaseDao {
 
 	// 获取所有的记录
 	public List<?> getAll(Class<?> c) {
+        String hql="from"+c.getName();
+        System.out.println(this.getClass().toString()+"|hql:"+hql);
 		return hibernateTemplate.find("from " + c.getName());
 	}
 

@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="model.TFuncintroductionMode" table="t_funcintroduction" schema="" catalog="vdomain">
+    <class name="model.TFuncintroductionModel" table="t_func_introduction" schema="" catalog="vdomain">
         <id name="id">
             <column name="ID" sql-type="int" not-null="true"/>
         </id>
