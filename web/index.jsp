@@ -11,6 +11,8 @@
 <head>
     <title>微领域</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap/css/bootstrap.css">
+    <link href="${pageContext.request.contextPath}/resources/css/common/slider/caseSlide.css" rel="stylesheet" type="text/css" />
+
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/common/header.js"></script>
@@ -22,6 +24,10 @@
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/jquery.easing.1.3.js'></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/camera.js'></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/company_mates.js'></script>
+    <script language="JavaScript" type="text/javascript" src="${pageContext.request.contextPath}/resources/js/common/slider/case/prototype.js"></script>
+    <script language="JavaScript" type="text/javascript" src="${pageContext.request.contextPath}/resources/js/common/slider/case/effects.js"></script>
+    <script language="JavaScript" type="text/javascript" src="${pageContext.request.contextPath}/resources/js/common/slider/case/glider.js"></script>
+
     <style>
         html,body {
             height: 100%;
@@ -306,12 +312,32 @@
 
 <%--用例展示--%>
 <div>
-
+    <div class="feature" id="my-glider">
+        <div class="scroller">
+            <div class="content">
+                <div class="section" id="section1">
+                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/liantong.jpg"></a>
+                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                </div>
+                <div class="section" id="section2">
+                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/yidong.jpg"></a>
+                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                    <a href="#" target="_blank"><img alt="模板王" src="${pageContext.request.contextPath}/resources/images/partner/dianxin.jpg"></a>
+                </div>
+            </div>
+        </div>
+        <a id="prevLink" onclick="my_glider.previous();return false;" >Previous</a>
+        <a id="nextLink" onclick="my_glider.next();return false" >Next</a>
+        <script language="javascript" type="text/javascript">
+            var my_glider = new Glider('my-glider', {duration:0.5});
+        </script>
+    </div>
 </div>
 <%--用例展示结束--%>
 <%--合作伙伴--%>
-
-
 
 <SCRIPT type=text/javascript>
     TencentArticl.onload();
