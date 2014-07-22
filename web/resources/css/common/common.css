@@ -1,7 +1,12 @@
 body{
     margin:0;
     padding: 0;
+    min-width: 1024px;
 }
 *{
     font-family: '微软雅黑';
+}
+@font-face {
+    font-family: '微软雅黑';
+    src: url(../../font/华康圆体W5.TTF);
 }

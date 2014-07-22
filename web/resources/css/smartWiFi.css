@@ -1,0 +1,8 @@
+@import "common/common.css";
+.pageContent{
+    margin-top: 70px;
+    min-height: 600px;
+    width: 100%;
+    min-width: 1024px;
+    border:1px solid red;
+}

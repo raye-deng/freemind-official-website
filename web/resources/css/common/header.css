@@ -43,8 +43,7 @@
     -ms-transition: background 1s ;
     -o-transition: background 1s ;
     transition: background 1s ;
-    background: #eee;
-    color: #000;
+    background: #0168B7;
 }
 .navChild{
     font-family: '微软雅黑';
