@@ -6,21 +6,19 @@
     height: 70px;
     max-height: 70px;
     max-width: 100%;
-    /*background-color: #292f36;*/
     background: url("../../images/header_bg.png") ;
     background-size: 100% 100%;
     color: #ffffff;
     position: fixed;
     border-radius: 0;
     top: 0;
-    left: 0;
+    left: 0
 }
 .top-line-div .navgation{
     min-width: 1024px;
     height: 100%;
     line-height: 70px;
     display: block;
-
 }
 .top-line-div .navgation li{
     list-style: none;
@@ -28,10 +26,10 @@
 }
 .top-line-div .navgation li a{
     font:bold;
-    font-size: 20px;
+    font-size: 18px;
     color:#eee;
     padding: 2px;
-    font-family: '微软雅黑';
+    font-family: 'huaKanYuanTi';
     text-decoration:none;
     height: 100%;
     width: 100px;
@@ -43,11 +41,10 @@
     -ms-transition: background 1s ;
     -o-transition: background 1s ;
     transition: background 1s ;
-    background: #eee;
-    color: #000;
+    background: #0168B7;
 }
 .navChild{
-    font-family: '微软雅黑';
+    font-family: 'huaKanYuanTi';
     text-decoration:none;
     color:#eee;
     background:#292f36;
@@ -77,7 +74,7 @@
     margin-top: -12px;
 }
 .logo .title{
-    font-size: 20px;
+    font-size: 18px;
     font:bold;
     color:#bce8f1;
     position: absolute;

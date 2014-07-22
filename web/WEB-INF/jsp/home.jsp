@@ -77,7 +77,7 @@
         });
     </script>
 </head>
-<body style="background: #fff;position: relative;">
+<body style="background: #fff;position: relative;font-family: 'huaKanYuanTi'">
 <div>
     <div class="fluid_container">
         <div class="camera_wrap camera_emboss pattern_1" id="camera_wrap_4">

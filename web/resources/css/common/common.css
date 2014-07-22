@@ -1,7 +1,9 @@
+@font-face {
+    font-family: 'huaKanYuanTi';
+    src: url('../../font/huaKanYuanTi.TTF');
+}
 body{
     margin:0;
     padding: 0;
-}
-*{
-    font-family: '微软雅黑';
+    min-width: 1024px;
 }

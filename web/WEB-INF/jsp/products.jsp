@@ -1,16 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
   User: 邓风森
-  Date: 2014/7/16
-  Time: 18:16
+  Date: 2014/7/22
+  Time: 9:40
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>微领域-请求失败</title>
+    <title>微领域-产品中心</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common/common.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/products.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/common/header.js"></script>
