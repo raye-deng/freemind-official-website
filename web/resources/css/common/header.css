@@ -3,11 +3,11 @@
 .top-line-div{
     vertical-align: middle;
     width: 100%;
-    height: 80px;
-    max-height: 80px;
+    height: 70px;
+    max-height: 70px;
     max-width: 100%;
-    background: url(../../images/common/header.png);
-    background-size:100% 100%;
+    background: url("../../images/header_bg.png") ;
+    background-size: 100% 100%;
     color: #ffffff;
     position: fixed;
     border-radius: 0;
@@ -17,10 +17,8 @@
 .top-line-div .navgation{
     min-width: 1024px;
     height: 100%;
-    line-height: 80px;
+    line-height: 70px;
     display: block;
-    float:right;
-    display: inline;
 }
 .top-line-div .navgation li{
     list-style: none;
@@ -28,10 +26,10 @@
 }
 .top-line-div .navgation li a{
     font:bold;
-    font-size: 16px;
+    font-size: 20px;
     color:#eee;
     padding: 2px;
-    font-family: 'huaKanYuanTi';
+    font-family: '微软雅黑';
     text-decoration:none;
     height: 100%;
     width: 100px;
@@ -46,7 +44,7 @@
     background: #0168B7;
 }
 .navChild{
-    font-family: 'huaKanYuanTi';
+    font-family: '微软雅黑';
     text-decoration:none;
     color:#eee;
     background:#292f36;
@@ -69,11 +67,11 @@
     position: relative;
 }
 .logo img{
-    width: 330px;
-    margin-top: 0px;
+    width: 300px;
     height: 80px;
     max-height: 80px;
     float: left;
+    margin-top: -12px;
 }
 .logo .title{
     font-size: 20px;
