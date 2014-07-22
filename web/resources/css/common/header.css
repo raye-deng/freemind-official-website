@@ -6,7 +6,6 @@
     height: 70px;
     max-height: 70px;
     max-width: 100%;
-    /*background-color: #292f36;*/
     background: url("../../images/header_bg.png") ;
     background-size: 100% 100%;
     color: #ffffff;
@@ -20,7 +19,6 @@
     height: 100%;
     line-height: 70px;
     display: block;
-
 }
 .top-line-div .navgation li{
     list-style: none;

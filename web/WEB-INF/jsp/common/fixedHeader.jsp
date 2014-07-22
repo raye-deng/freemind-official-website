@@ -14,7 +14,6 @@
 </head>
 <body>
 <div class="top-line-div">
-
     <center>
         <div class="logo">
             <img src="${pageContext.request.contextPath}/resources/images/logo_op.png" />
