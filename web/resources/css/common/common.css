@@ -1,19 +1,9 @@
 @font-face {
-    font-family: '华康圆体';
-    src: url(../../font/华康圆体W5.TTF);
+    font-family: 'huaKanYuanTi';
+    src: url('../../font/huaKanYuanTi.TTF');
 }
 body{
     margin:0;
     padding: 0;
     min-width: 1024px;
-}
-*{
-    font-family: '华康圆体';
-}
-.pageContent{
-    margin-top: 70px;
-    min-height: 600px;
-    width: 100%;
-    min-width: 1024px;
-    border:1px solid red;
 }
