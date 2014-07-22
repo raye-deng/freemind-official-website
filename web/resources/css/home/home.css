@@ -1,3 +1,4 @@
+@import "../common/common.css";
 .home_content{
     width:100%;
     min-width: 1024px;
@@ -63,14 +64,14 @@
     font-size: 20px;
     line-height: 20px;
     font: bold;
-    font-family: '微软雅黑';
+    font-family: 'huaKanYuanTi';
     color: #024FBB;
     text-decoration: none;
     width: 150px;
 }
 .product_list li div div span{
-    font-size: 14px;
-    font-family: '微软雅黑';
+    font-size: 15px;
+    font-family: 'huaKanYuanTi';
     color: #9C9C9C;
 }
 

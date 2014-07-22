@@ -26,10 +26,10 @@
 }
 .top-line-div .navgation li a{
     font:bold;
-    font-size: 20px;
+    font-size: 18px;
     color:#eee;
     padding: 2px;
-    font-family: '微软雅黑';
+    font-family: 'huaKanYuanTi';
     text-decoration:none;
     height: 100%;
     width: 100px;
@@ -44,7 +44,7 @@
     background: #0168B7;
 }
 .navChild{
-    font-family: '微软雅黑';
+    font-family: 'huaKanYuanTi';
     text-decoration:none;
     color:#eee;
     background:#292f36;
@@ -74,7 +74,7 @@
     margin-top: -12px;
 }
 .logo .title{
-    font-size: 20px;
+    font-size: 18px;
     font:bold;
     color:#bce8f1;
     position: absolute;
