@@ -79,15 +79,12 @@
 <SCRIPT LANGUAGE="JavaScript">
     var lastTr=null;
     function trOnMouseDown(obj){
-
         if(lastTr!=null)
         {
-            lastTr.bgColor=lastTr.bgColor="#fff8dc";
+            lastTr.bgColor="#fff8dc";
         }
-        if(obj.bgColor=obj.bgColor=="#fff8dc")
-            obj.bgColor=obj.bgColor="#00ffff";
-        else
-            obj.bgColor=obj.bgColor="#fff8dc";
+        if(obj.bgColor=="#fff8dc")
+            obj.bgColor="#00ff7f";
         lastTr = obj;
 
     }

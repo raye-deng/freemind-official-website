@@ -16,7 +16,7 @@
         var doc = document, docEl = doc.documentElement;
         docEl.className = docEl.className.replace(/(^|\s)no-js(\s|$)/, " js ");
     </script>
-    <script src="${pageContext.request.contextPath}/resources/js/responsive-nav.js"></script>
+    <script src="   /resources/js/responsive-nav.js"></script>
     <title></title>
 </head>
 <body>
