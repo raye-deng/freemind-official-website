@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ConfigurationModule/ConfigurationModule.iml" filepath="$PROJECT_DIR$/ConfigurationModule/ConfigurationModule.iml" />
       <module fileurl="file://$PROJECT_DIR$/vdomain.iml" filepath="$PROJECT_DIR$/vdomain.iml" />
     </modules>
   </component>

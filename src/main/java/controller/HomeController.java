@@ -3,6 +3,7 @@ package controller;
  * Created by 邓风森 on 2014/7/16.
  */
 
+import model.TFuncintroductionDto;
 import model.TFuncintroductionModel;
 import model.TNavbarModel;
 import org.springframework.stereotype.Controller;
@@ -28,7 +29,7 @@ public class HomeController {
     @RequestMapping(value = "/home")
     public void home(HttpSession session,Model model){
         System.out.println("home page!");
-        List<TFuncintroductionModel> tFuncDtoList=homeService.getTFuncDtoList();
+        List<TFuncintroductionDto> tFuncDtoList=homeService.getTFuncDtoList();
         model.addAttribute("tFuncDtoList",tFuncDtoList);
     }
 

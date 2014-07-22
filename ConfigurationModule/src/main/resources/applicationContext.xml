@@ -52,10 +52,7 @@
         <property name="lobHandler" ref="lobHandler"/>
         <property name="mappingResources">
             <list>
-                <value>model/TUserModel.hbm.xml</value>
-                <value>model/TNavbarModel.hbm.xml</value>
-                <value>model/TFuncintroductionModel.hbm.xml</value>
-                <value>model/TFuncintroductionDto.hbm.xml</value>
+
             </list>
         </property>
         <property name="hibernateProperties">
@@ -73,10 +70,7 @@
         </property>
         <property name="annotatedClasses">
             <list>
-                <value>model.TUserModel</value>
-                <value>model.TNavbarModel</value>
-                <value>model.TFuncintroductionModel</value>
-                <value>model.TFuncintroductionDto</value>
+
             </list>
         </property>
 
