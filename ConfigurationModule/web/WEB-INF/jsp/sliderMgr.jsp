@@ -108,6 +108,6 @@
         }
         window.location.href="updateSlider.cfg?slider_Id="+lastTr.cells[0].innerHTML;
     }
-     
+
 </SCRIPT>
 </html>

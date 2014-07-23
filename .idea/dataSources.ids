@@ -7,6 +7,13 @@
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <schema name="" catalog="vdomain"/>
+    <table name="t_company_info" schema="" catalog="vdomain" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="INFO_TITLE" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="INFO_DESC" sqlType="VARCHAR" precision="2000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="INFO_IMAGE_URL" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+    </table>
     <table name="t_funcintroduction" schema="" catalog="vdomain" type="TABLE">
       <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="FUNC_NAME" sqlType="VARCHAR" precision="70" scale="0" nullable="true" jdbcType="12"/>
@@ -29,6 +36,14 @@
       <column name="parentId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="MDrmoLnnm67lvZUK"/>
       <column name="orderNo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="Id"/>
+    </table>
+    <table name="t_slider_img" schema="" catalog="vdomain" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="SLIDER_FLAG" sqlType="VARCHAR" precision="40" scale="0" nullable="true" jdbcType="12"/>
+      <column name="IMG_URL" sqlType="VARCHAR" precision="1000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="IMG_DESC" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TARGET_URL" sqlType="VARCHAR" precision="1000" scale="0" nullable="true" jdbcType="12" def="JyMn"/>
+      <primary-key name="PRIMARY" columns="ID"/>
     </table>
     <table name="t_user" schema="" catalog="vdomain" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
