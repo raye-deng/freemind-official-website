@@ -33,10 +33,17 @@
             transition: 0.25s;
             -webkit-backface-visibility: hidden;
         }
+        .titlelabel
+        {
+            font-weight:bold;
+            font-size: 18px;
+            color: rgba(0, 0, 0, 0.6);
+        }
     </style>
     <title></title>
 </head>
 <body>
+    <p><label class="titlelabel">修改功能介绍</label></p>
     <div style="margin-left:30px;">
     <p><label>功能名称</label><input type="text" style="width:250px;"></p>
     <p><label>介绍标题</label><input type="text" style="width:250px;"></p>

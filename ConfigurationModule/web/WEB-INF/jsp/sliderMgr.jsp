@@ -1,15 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2014/7/22 0022
-  Time: 10:53
+  Date: 2014/7/23 0023
+  Time: 14:04
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
-
     <style>
         .btn
         {
@@ -23,11 +23,12 @@
             -moz-box-shadow: none;
             box-shadow: none;
         }
-        .tableview  {
+        .tableview
+        {
             display: table-cell;
             vertical-align: bottom;
             padding-bottom: 5px;
-            padding-top: 10px;
+            padding-top: 20px;
             padding-left: 5px;
             border-bottom: 1px #ddd solid;
             border-right: 1px #ddd solid;
@@ -52,31 +53,31 @@
             color: rgba(0, 0, 0, 0.6);
         }
     </style>
-    <title>功能介绍管理</title>
+    <title>首页轮播图管理</title>
 </head>
 <body class="body">
-<p><label class="titlelabel">功能介绍管理</label></p>
-<div  style="text-align:left;margin:10px;margin-left:530px">
-    <button class="btn" onclick="newFuncOnMouseDown()">新增介绍</button>&nbsp;&nbsp;
-    <button class="btn" onclick="updateFuncOnMouseDown()">修改介绍</button>&nbsp;&nbsp;
+<p><label class="titlelabel">首页轮播图管理</label></p>
+<div  style="text-align:left;margin:10px;margin-left:495px; ">
+    <button class="btn" onclick="newFuncOnMouseDown()">新增轮播图</button>&nbsp;&nbsp;
+    <button class="btn" onclick="updateFuncOnMouseDown()">修改轮播图</button>&nbsp;&nbsp;
     <button class="btn">删除介绍</button>
 </div>
 <div>
     <table id="TableView" class="tableview" >
         <thead>
         <tr bgcolor="#34495e" style="color:#FFFFFF;">
-            <th width="50px">ID</th>  <th width="200px">功能名称</th> <th width="200px">功能标题</th>   <th width="500px">功能描述</th>
+            <th width="50px">ID</th>  <th width="150px">轮播图名称</th>   <th width="320px">轮播图片</th>   <th width="200px">功能描述</th>  <th width="200px">链接地址</th>
         </tr>
         </thead>
         <tbody id="tableBody">
         <tr bgcolor="#ffffff" onclick="trOnMouseDown(this)">
-            <td>292</td>  <td>特别的测试</td>  <td>3</td>  <td>4</td>
+            <td>292</td>  <td>特别的测试</td>  <td><img src="" style=" width:320px; height:180px;"/></td>  <td>4</td> <td>5</td>
         </tr>
-        <%for(int i=0;i<10;i++){%>
-            <tr bgcolor="#ffffff" onclick="trOnMouseDown(this)">
-            <td>1</td>  <td>测试测试呀</td>  <td>3</td>  <td>4</td>
-            </tr>
-        <% } %>
+
+        <tr bgcolor="#ffffff" onclick="trOnMouseDown(this)">
+            <td>1</td>  <td>测试测试呀</td>   <td><img src="" style="width:320px;height:180px;"/></td>  <td>4</td>  <td>5</td>
+        </tr>
+
         </tbody>
     </table>
 </div>
@@ -93,9 +94,10 @@
         lastTr = obj;
 
     }
+
     function newFuncOnMouseDown()
     {
-        window.location.href="newFunc.cfg";
+        window.location.href="newSlider.cfg";
     }
     function updateFuncOnMouseDown()
     {
@@ -104,8 +106,8 @@
             alert("请选择要修改的介绍内容");
             return;
         }
-        window.location.href="updateFunc.cfg?func_Id="+lastTr.cells[0].innerHTML;
+        window.location.href="updateSlider.cfg?slider_Id="+lastTr.cells[0].innerHTML;
     }
+     
 </SCRIPT>
-
 </html>

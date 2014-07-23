@@ -36,4 +36,22 @@ public class VdomainBackStageController {
     public void updateFunc(HttpSession session,Model model){
         System.out.println("updateFunc page!");
     }
+
+
+    //*****************************首页轮播图管理功能***************************
+    @RequestMapping(value = "/sliderMgr")
+    public void sliderMgr(HttpSession session,Model model){
+        System.out.println("sliderMgr page!");
+
+    }
+    @RequestMapping(value = "/newSlider")
+    public void newSlider(HttpSession session,Model model){
+        System.out.println("newSlider page!");
+
+    }
+    @RequestMapping(value = "/updateSlider")
+    public void updateSlider(HttpSession session,Model model){
+        System.out.println("updateSlider page!");
+
+    }
 }
