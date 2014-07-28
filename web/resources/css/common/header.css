@@ -44,10 +44,8 @@
     background: #0168B7;
 }
 .navChild{
-    font-family: 'huaKanYuanTi';
     text-decoration:none;
-    color:#eee;
-    background:#292f36;
+    background:#000011;
 }
 .navChild:hover{
     -webkit-transition: background 1s ;

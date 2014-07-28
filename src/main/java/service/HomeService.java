@@ -4,8 +4,8 @@ package service;/**
 
     import dao.TFuncintroductionDao;
     import dao.TNavDao;
+    import  dao.TSlideDao;
 import model.*;
-    import model.dto.TFuncDto;
     import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -24,6 +24,8 @@ public class HomeService {
     TNavDao tNavDao;
     @Resource(name="tFuncintroductionDao")
     TFuncintroductionDao tFuncintroductionDao;
+    @Resource(name="tSlideDao")
+    TSlideDao tSlideDao;
 
 
     public  List<TNavbarModel> getNavList(){
@@ -33,5 +35,9 @@ public class HomeService {
 
     public List<TFuncintroductionDto> getTFuncDtoList(){
         return tFuncintroductionDao.queryFuncDtoList();
+    }
+
+    public List<TSliderImgModel> getSliderImgList(String Flag){
+        return tSlideDao.querySliderImage(Flag);
     }
 }

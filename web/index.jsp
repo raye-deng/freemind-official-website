@@ -25,9 +25,7 @@
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/jquery.easing.1.3.js'></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/camera.js'></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/company_mates.js'></script>
-    <script language="JavaScript" type="text/javascript" src="${pageContext.request.contextPath}/resources/js/common/slider/case/prototype.js"></script>
-    <script language="JavaScript" type="text/javascript" src="${pageContext.request.contextPath}/resources/js/common/slider/case/effects.js"></script>
-    <script language="JavaScript" type="text/javascript" src="${pageContext.request.contextPath}/resources/js/common/slider/case/glider.js"></script>
+
 
     <style>
         html,body {
