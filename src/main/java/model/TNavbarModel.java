@@ -1,21 +1,13 @@
 package model;
-/**
- * Created by 邓风森 on 2014/7/17.
- */
 
 import javax.persistence.*;
 
 /**
- * @ClassName: TNavbarModel
- * @Description:
- * @author:邓风森
- * @date: 2014/7/17 14:45
+ * Created by Administrator on 2014/7/29.
  */
-
 @Entity
 @Table(name = "t_navbar", schema = "", catalog = "vdomain")
 public class TNavbarModel {
-
     private int id;
     private String navName;
     private String navUrl;

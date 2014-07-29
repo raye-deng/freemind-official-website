@@ -1,20 +1,13 @@
-package model;/**
- * Created by 邓风森 on 2014/7/22.
- */
+package model;
 
 import javax.persistence.*;
 
 /**
- * @ClassName: TFuncintroductionDto
- * @Description:
- * @author:邓风森
- * @date: 2014/7/22 8:28
+ * Created by Administrator on 2014/7/29.
  */
-
 @Entity
 @Table(name = "t_func_introduction", schema = "", catalog = "vdomain")
-public class TFuncintroductionDto {
-
+public class TFuncIntroductionDto {
     private int id;
     private String funcName;
     private String funcTitle;
@@ -76,7 +69,7 @@ public class TFuncintroductionDto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TFuncintroductionDto that = (TFuncintroductionDto) o;
+        TFuncIntroductionDto that = (TFuncIntroductionDto) o;
 
         if (id != that.id) return false;
         if (funcGuideUrl != null ? !funcGuideUrl.equals(that.funcGuideUrl) : that.funcGuideUrl != null) return false;

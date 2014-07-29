@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="model.TFuncintroductionModel" table="t_func_introduction" schema="" catalog="vdomain">
+    <class name="model.TFuncIntroductionModel" table="t_func_introduction" schema="" catalog="vdomain">
         <id name="id">
             <column name="ID" sql-type="int" not-null="true"/>
         </id>
@@ -40,6 +40,9 @@
         </property>
         <property name="funcIconUrl">
             <column name="FUNC_ICON_URL" sql-type="varchar" length="500"/>
+        </property>
+        <property name="funcParentId">
+            <column name="FUNC_PARENT_ID" sql-type="int"/>
         </property>
     </class>
 </hibernate-mapping>

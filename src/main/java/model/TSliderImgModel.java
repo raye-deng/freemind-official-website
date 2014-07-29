@@ -3,7 +3,7 @@ package model;
 import javax.persistence.*;
 
 /**
- * Created by Administrator on 2014/7/22.
+ * Created by Administrator on 2014/7/29.
  */
 @Entity
 @Table(name = "t_slider_img", schema = "", catalog = "vdomain")

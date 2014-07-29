@@ -33,7 +33,7 @@ public class HomeService {
     }
 
 
-    public List<TFuncintroductionDto> getTFuncDtoList(){
+    public List<TFuncIntroductionDto> getTFuncDtoList(){
         return tFuncintroductionDao.queryFuncDtoList();
     }
 

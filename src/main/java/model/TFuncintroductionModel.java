@@ -1,20 +1,13 @@
-package model;/**
- * Created by 邓风森 on 2014/7/21.
- */
+package model;
 
 import javax.persistence.*;
 
 /**
- * @ClassName: TFuncintroductionModel
- * @Description:
- * @author:邓风森
- * @date: 2014/7/21 16:05
+ * Created by Administrator on 2014/7/29.
  */
-
 @Entity
 @Table(name = "t_func_introduction", schema = "", catalog = "vdomain")
-public class TFuncintroductionModel {
-
+public class TFuncIntroductionModel {
     private int id;
     private String funcName;
     private String funcTitle;
@@ -27,6 +20,7 @@ public class TFuncintroductionModel {
     private String funcTopicUrl;
     private Integer funcTopicId;
     private String funcIconUrl;
+    private Integer funcParentId;
 
     @Id
     @Column(name = "ID", nullable = false, insertable = true, updatable = true)
@@ -148,12 +142,22 @@ public class TFuncintroductionModel {
         this.funcIconUrl = funcIconUrl;
     }
 
+    @Basic
+    @Column(name = "FUNC_PARENT_ID", nullable = true, insertable = true, updatable = true)
+    public Integer getFuncParentId() {
+        return funcParentId;
+    }
+
+    public void setFuncParentId(Integer funcParentId) {
+        this.funcParentId = funcParentId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TFuncintroductionModel that = (TFuncintroductionModel) o;
+        TFuncIntroductionModel that = (TFuncIntroductionModel) o;
 
         if (id != that.id) return false;
         if (funcDesc != null ? !funcDesc.equals(that.funcDesc) : that.funcDesc != null) return false;
@@ -163,6 +167,7 @@ public class TFuncintroductionModel {
         if (funcGuideUrl != null ? !funcGuideUrl.equals(that.funcGuideUrl) : that.funcGuideUrl != null) return false;
         if (funcIconUrl != null ? !funcIconUrl.equals(that.funcIconUrl) : that.funcIconUrl != null) return false;
         if (funcName != null ? !funcName.equals(that.funcName) : that.funcName != null) return false;
+        if (funcParentId != null ? !funcParentId.equals(that.funcParentId) : that.funcParentId != null) return false;
         if (funcPicUrl != null ? !funcPicUrl.equals(that.funcPicUrl) : that.funcPicUrl != null) return false;
         if (funcTitle != null ? !funcTitle.equals(that.funcTitle) : that.funcTitle != null) return false;
         if (funcTopicEnable != null ? !funcTopicEnable.equals(that.funcTopicEnable) : that.funcTopicEnable != null)
@@ -187,6 +192,7 @@ public class TFuncintroductionModel {
         result = 31 * result + (funcTopicUrl != null ? funcTopicUrl.hashCode() : 0);
         result = 31 * result + (funcTopicId != null ? funcTopicId.hashCode() : 0);
         result = 31 * result + (funcIconUrl != null ? funcIconUrl.hashCode() : 0);
+        result = 31 * result + (funcParentId != null ? funcParentId.hashCode() : 0);
         return result;
     }
 }
