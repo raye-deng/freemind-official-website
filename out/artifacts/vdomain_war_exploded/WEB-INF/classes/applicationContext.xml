@@ -53,9 +53,9 @@
         <property name="mappingResources">
             <list>
                 <value>model/TNavbarModel.hbm.xml</value>
-                <value>model/TFuncIntroductionModel.hbm.xml</value>
                 <value>model/TSliderImgModel.hbm.xml</value>
                 <value>model/TFuncIntroductionDto.hbm.xml</value>
+                <value>model/TFuncIntroductionModel.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
