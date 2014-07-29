@@ -56,6 +56,7 @@
                 <value>model/TNavbarModel.hbm.xml</value>
                 <value>model/TFuncintroductionModel.hbm.xml</value>
                 <value>model/TFuncintroductionDto.hbm.xml</value>
+                <value>model/TSliderImgModel.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -77,6 +78,7 @@
                 <value>model.TNavbarModel</value>
                 <value>model.TFuncintroductionModel</value>
                 <value>model.TFuncintroductionDto</value>
+                <value>model.TSliderImgModel</value>
             </list>
         </property>
 

@@ -1,1 +1,38 @@
 @import "common/common.css";
+/*reset*/
+html,body,p,h1,h2,h3,h4,h5,h6,form,input,textarea,select,button,fieldset,legend,img,ul,ol,li,dl,dt,dd,th,td,pre,blockquote{margin:0;padding:0}
+
+
+
+.goods a{text-decoration:none}
+
+.goods{width: 1180px;position:relatives;float: left;}
+.all-goods{box-shadow:-15px 1px 15px -2px #CCC;position: relative ;left: 0;width: 210px;min-height: 1000px;background: #EFEFEF;overflow: visible;}
+.all-goods .itemhead{width: 210px;height: 45px;background: #74BAFA;margin-bottom: 5px;}
+.all-goods .itemhead .product{ position: absolute;z-index: 999; width: 210px;text-align:center;}
+.all-goods .itemhead .product h3{width: 210px;height: 45px;border-width: 1px 0;font-weight: normal;line-height: 45px;}
+.all-goods .itemhead .product h3 a{ color: #ffffff; font-size:18px; font-family:"微软雅黑"; line-height:45px; width:210px;}
+
+.all-goods .itemheadchild{width: 210px;height: 40px;background: #EFEFEF;}
+.all-goods .itemheadchild .product{ position: absolute;z-index: 999; width: 210px;text-align:center;}
+.all-goods .itemheadchild .product h3{width: 210px;height: 40px;border-width: 1px 0;font-weight: normal;line-height: 40px;}
+.all-goods .itemheadchild .product h3 a{ color: #74BAFA; font-size:16px; font-family:"微软雅黑"; line-height:40px; display:block; width:210px;}
+
+.all-goods .item{width: 210px;height: 30px;background: #EFEFEF;}
+.all-goods .btnone{ border-top:none;}
+.all-goods .item .product{ position: absolute;z-index: 999; width: 210px;text-align:center;}
+.all-goods .item .product h3{width: 210px;height: 30px;border-width: 1px 0;font-weight: normal;line-height: 30px;}
+.all-goods .item .product h3 a{ color: #999; font-size:13px; font-family:"微软雅黑"; border-bottom: 1px #CCCCCC solid; line-height:30px; display:block; width:180px; margin-left:15px;}
+.all-goods .item .product h3 a:hover{ text-decoration:none;}
+.all-goods .active .product h3{line-height:30px;background-position:-12px -185px;background-color:#FFF;width: 199px; border-bottom: 1px #74BAFA solid; border-left: 1px #74BAFA solid;border-top: 1px #74BAFA solid;margin-left: 10px; height:30px; margin-top: -1px;}
+.all-goods .active .product h3 a{ color: #000; margin-left: 4px;border-bottom: 1px #74BAFA solid;}
+.all-goods .product-wrap{box-shadow:-4px 1px 4px -2px #CCC; position: absolute; width: 860px; height: 955px;z-index: 99; background: #FFF; display: none;}
+.all-goods .product-wrap p{ color:#999999;}
+.all-goods .posone{left: 210px; top: 45px;}
+
+.all-goods .product-wrap h2{ font-size: 16px;color: #333;font-weight: bold;}
+.all-goods .product-wrap h2 a{height: auto;line-height: 16px;color: #333;padding-left: 0;}
+.all-goods .product-wrap ul li{ float: left; display: inline; margin-right: 15px; margin-top: 15px; white-space:nowrap;}
+.all-goods .product-wrap ul li a{color: #666666;display: inline-block;line-height: 18px; text-decoration: none; font-weight:bold;}
+.all-goods .product-wrap ul li a:hover{ text-decoration: none; background-position: -8px -219px; color: #ff6600;}
+.all-goods .product-wrap div dd,.all-goods .product-wrap div dl a{ display:block; width:185px; height:120px; overflow:hidden;}

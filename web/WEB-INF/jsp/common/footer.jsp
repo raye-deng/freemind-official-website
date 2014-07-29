@@ -19,9 +19,9 @@
     <div class="web_info">
         <dl>
             <dd >
-                <strong><a href="#">首页</a></strong>
-                <strong><a href="#">新闻中心</a></strong>
-                <strong><a href="#">关于飞迈</a></strong>
+                <strong><a href="#" style="color:#4fade2;">首页</a></strong>
+                <strong><a href="#" style="color:#4fade2;">新闻中心</a></strong>
+                <strong><a href="#" style="color:#4fade2;">关于飞迈</a></strong>
             </dd>
             <dd>版权所有 福州飞迈软件科技有限公司 备案号：闽ICP备13013848号</dd>
             <dd>公司地址 福州市仓山区万达广场C区1419室</dd>
