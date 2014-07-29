@@ -12,7 +12,7 @@
     <style>
         .mainBody
         {
-            font: 100% 微软雅黑;
+            font: 100% '微软雅黑';
             margin: 20px auto;
         }
         .textComment
