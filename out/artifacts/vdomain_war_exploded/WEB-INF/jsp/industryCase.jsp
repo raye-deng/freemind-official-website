@@ -16,7 +16,7 @@
 <body>
 <!--顶部导航-->
 <div id="header" style="z-index: 9999;position: fixed;top: 0;left: 0;">
-    <jsp:include page="/common/newHead.do"/>
+    <jsp:include page="/common/header.do"/>
 </div>
 <div class="pageContent">
 

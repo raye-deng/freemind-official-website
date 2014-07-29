@@ -15,7 +15,7 @@
 <body>
 <!--顶部导航-->
 <div id="header" style="z-index: 9999;position: fixed;top: 0;left: 0;">
-    <jsp:include page="/common/newHead.do"/>
+    <jsp:include page="/common/header.do"/>
 </div>
 <div class="pageContent">
     <div style=" margin-top:70px;"><img width="100%" src="${pageContext.request.contextPath}/resources/images/microMarketing/join.png"></div>

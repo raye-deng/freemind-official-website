@@ -3,7 +3,6 @@ package dao;/**
  */
 
 import model.TNavbarModel;
-import model.TUserModel;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

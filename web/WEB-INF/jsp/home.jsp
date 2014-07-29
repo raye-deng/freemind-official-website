@@ -24,8 +24,6 @@ To change this template use File | Settings | File Templates.
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/company_mates.js'></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/useCase.js'></script>
 
-
-
     <style>
         html,body {
             height: 100%;
@@ -114,30 +112,6 @@ To change this template use File | Settings | File Templates.
 
 <%--用例展示--%>
 <div class="product_slider_div">
-        <%--<h2>他们正在使用微领域</h2>--%>
-        <%--<center>--%>
-            <%--<div id="swap_pic">--%>
-                <%--<div id="prev" class="scroll">PREV</div>--%>
-                <%--<div class="box">--%>
-                    <%--<ul style="LEFT: 0px" id="pics" class="pics">--%>
-                    <%--<c:forEach varStatus="status" begin="0" items="${tCaseSliderImgList}" var="tCaseSlide" step="1">--%>
-                        <%--<c:if test="${status.count%4==1}">--%>
-                        <%--<li>--%>
-                        <%--</c:if>--%>
-                            <%--<p><a href="${tCaseSlide.targetUrl}" target="_blank"><img alt="${tCaseSlide.imgDesc}" src="${pageContext.request.contextPath}${tCaseSlide.imgUrl}"></a></p>>--%>
-                        <%--<c:if test="${status.count%4==0}">--%>
-                        <%--</li>--%>
-                        <%--</c:if>--%>
-                        <%--<c:if test="${status.last==true}">--%>
-                        <%--</li>--%>
-                        <%--</c:if>--%>
-                    <%--</c:forEach>--%>
-                    <%--</ul>--%>
-                <%--</div>--%>
-                <%--<div id="next" class="scroll">NEXT</div>--%>
-            <%--</div>--%>
-    <%--</center>--%>
-<%--</div>--%>
             <center>
                 <h2>他们正在使用微领域</h2>
                 <div class="blk_18">
@@ -164,7 +138,6 @@ To change this template use File | Settings | File Templates.
                     //-->
                 </script>
             </center>
-
 </div>
 <%--用例展示结束--%>
 <%--合作伙伴--%>
@@ -176,7 +149,6 @@ To change this template use File | Settings | File Templates.
     <center>
 
         <div class="mod-left bottom-Article-QQ sildPic-Article-QQ">
-
             <div class="hd">
                 <H2>合作伙伴</H2>
             </div>
@@ -206,7 +178,7 @@ To change this template use File | Settings | File Templates.
 <%--合作伙伴 结束--%>
 <!--顶部导航-->
 <div id="header" style="z-index: 9999;position: fixed;top: 0;left: 0;">
-    <jsp:include page="/common/newHead.do"/>
+    <jsp:include page="/common/header.do"/>
 </div>
 <%--页脚--%>
 <div style="min-width: 1024px;width: 100%; background: #292F36;min-height:300px;padding-top:30px;">

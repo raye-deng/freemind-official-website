@@ -19,7 +19,7 @@
 </div>
 <!--顶部导航-->
 <div id="header" style="z-index: 9999;position: fixed;top: 0;left: 0;">
-    <jsp:include page="/common/newHead.do"/>
+    <jsp:include page="/common/header.do"/>
 </div>
 <%--页脚--%>
 <div style="min-width: 1024px;width: 100%; background: #292F36;min-height:300px;padding-top:30px;">
