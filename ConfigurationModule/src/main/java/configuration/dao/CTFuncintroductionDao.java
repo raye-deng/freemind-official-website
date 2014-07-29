@@ -7,8 +7,8 @@ import java.util.List;
 /**
  * Created by Administrator on 2014/7/21 0021.
  */
-@Component("tFuncintroductionDao")
-public class TFuncintroductionDao extends BaseDao {
+@Component("configTFuncIntroductionDao")
+public class CTFuncintroductionDao extends BaseDao {
 
 
     public List<TFuncIntroductionModel> queryFuncList(){

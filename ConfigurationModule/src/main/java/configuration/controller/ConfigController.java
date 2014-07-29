@@ -1,27 +1,24 @@
 package configuration.controller;
-import com.sun.deploy.net.HttpResponse;
-import configuration.service.TFuncintroductionService;
-import configuration.service.TSliderImgService;
+import configuration.service.CTFuncintroductionService;
+import configuration.service.CTSliderImgService;
 import model.TFuncIntroductionModel;
 import model.TSliderImgModel;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Administrator on 2014/7/24 0024.
  */
 @Controller
 public class ConfigController {
-    @Resource(name = "tfuncintroductionService")
-    TFuncintroductionService tfuncintroductionService;
+    @Resource(name = "configTfuncIntroductionService")
+    CTFuncintroductionService tfuncintroductionService;
     @Resource(name ="configSliderImgService")
-    TSliderImgService tsliderImgService;
+    CTSliderImgService tsliderImgService;
 
     @RequestMapping(value = "/index")
     public void home(HttpSession session,Model model){

@@ -1,6 +1,6 @@
 package configuration.service;
 
-import configuration.dao.TSliderImgDao;
+import configuration.dao.CTSliderImgDao;
 import model.TSliderImgModel;
 import org.springframework.stereotype.Service;
 
@@ -11,16 +11,16 @@ import java.util.List;
  * Created by Administrator on 2014/7/24 0024.
  */
 @Service("configSliderImgService")
-public class TSliderImgService {
+public class CTSliderImgService {
     @Resource(name = "configSliderImgDao")
-    TSliderImgDao tSliderImgDao;
+    CTSliderImgDao CTSliderImgDao;
 
     public List<TSliderImgModel> getSliderList() {
-        List<TSliderImgModel> sliderList = tSliderImgDao.querySliderList();
+        List<TSliderImgModel> sliderList = CTSliderImgDao.querySliderList();
         return sliderList;
     }
 
     public void saveSlider(TSliderImgModel slider){
-        tSliderImgDao.saveSlider(slider);
+        CTSliderImgDao.saveSlider(slider);
     }
 }
