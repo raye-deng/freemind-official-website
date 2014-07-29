@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="MySQL - vdomain@192.168.0.184" uuid="774d2660-e5cc-44b1-bf23-dd8ed0958f14">
+  <data-source source="LOCAL" name="MySQL - vdomain@192.168.0.58" uuid="774d2660-e5cc-44b1-bf23-dd8ed0958f14">
     <database-info product="MySQL" version="5.6.15" jdbc-version="3.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.13 ( Revision: ${bzr.revision-id} )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
