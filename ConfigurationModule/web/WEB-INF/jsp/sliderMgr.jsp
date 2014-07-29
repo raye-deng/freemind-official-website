@@ -9,6 +9,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .btn
@@ -45,6 +46,8 @@
             text-align: center;
             width:830px;
             font-weight:bold;
+            table-layout:fixed;
+            word-break:break-all;
         }
         .titlelabel
         {
@@ -52,12 +55,17 @@
             font-size: 18px;
             color: rgba(0, 0, 0, 0.6);
         }
+        .aCSS
+        {
+            color:rgba(0, 0, 0, 0.6);
+            text-decoration:none;
+        }
     </style>
     <title>首页轮播图管理</title>
 </head>
 <body class="body">
 <p><label class="titlelabel">首页轮播图管理</label></p>
-<div  style="text-align:left;margin:10px;margin-left:495px; ">
+<div  style="text-align:left;margin:10px;margin-left:595px; ">
     <button class="btn" onclick="newFuncOnMouseDown()">新增轮播图</button>&nbsp;&nbsp;
     <button class="btn" onclick="updateFuncOnMouseDown()">修改轮播图</button>&nbsp;&nbsp;
     <button class="btn">删除介绍</button>
@@ -74,9 +82,11 @@
             <td>292</td>  <td>特别的测试</td>  <td><img src="" style=" width:320px; height:180px;"/></td>  <td>4</td> <td>5</td>
         </tr>
 
-        <tr bgcolor="#ffffff" onclick="trOnMouseDown(this)">
-            <td>1</td>  <td>测试测试呀</td>   <td><img src="" style="width:320px;height:180px;"/></td>  <td>4</td>  <td>5</td>
-        </tr>
+        <c:forEach  items="${tSliderList}" var="tSlider">
+            <tr bgcolor="#ffffff" onclick="trOnMouseDown(this)">
+                <td>${tSlider.id}</td>  <td>${tSlider.sliderFlag}</td>  <td><img src="${tSlider.imgUrl}" style=" width:320px; height:180px;"/></td>  <td>${tSlider.imgDesc}</td> <td><a class="aCSS" href="${tSlider.targetUrl}">链接地址</a></td>
+            </tr>
+        </c:forEach>
 
         </tbody>
     </table>

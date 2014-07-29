@@ -54,10 +54,10 @@
     <p><label>轮播图类型</label></p>
     <p>
     <div style="font-size:12px;">
-        <input name="sliderType" type="radio" value="头部轮播图"/>头部轮播图 &nbsp;&nbsp;
-        <input name="sliderType" type="radio" value="案例轮播图"/>案例轮播图 &nbsp;&nbsp;
-        <input name="sliderType" type="radio" value="合作伙伴轮播图"/>合作伙伴轮播 &nbsp;&nbsp;
-    </div>
+    <input name="sliderType" type="radio" value="头部轮播图"/>头部轮播图 &nbsp;&nbsp;
+    <input name="sliderType" type="radio" value="案例轮播图"/>案例轮播图 &nbsp;&nbsp;
+    <input name="sliderType" type="radio" value="合作伙伴轮播图"/>合作伙伴轮播 &nbsp;&nbsp;
+</div>
     </p>
 
     <p><label>轮播图指向链接</label><input type="text" style="width:250px;"></p>

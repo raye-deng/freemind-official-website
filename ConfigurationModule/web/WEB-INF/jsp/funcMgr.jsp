@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
@@ -72,11 +73,13 @@
         <tr bgcolor="#ffffff" onclick="trOnMouseDown(this)">
             <td>292</td>  <td>特别的测试</td>  <td>3</td>  <td>4</td>
         </tr>
-        <%for(int i=0;i<10;i++){%>
+        <c:forEach  items="${tFuncList}" var="tFunc">
             <tr bgcolor="#ffffff" onclick="trOnMouseDown(this)">
-            <td>1</td>  <td>测试测试呀</td>  <td>3</td>  <td>4</td>
+                <td>${tFunc.id}</td>  <td>${tFunc.funcName}</td>  <td>${tFunc.funcTitle}</td>  <td>${tFunc.funcDesc}</td>
             </tr>
-        <% } %>
+        </c:forEach>
+
+
         </tbody>
     </table>
 </div>
@@ -91,7 +94,6 @@
         if(obj.bgColor=="#ffffff")
             obj.bgColor="#4682b4";
         lastTr = obj;
-
     }
     function newFuncOnMouseDown()
     {
@@ -107,5 +109,4 @@
         window.location.href="updateFunc.cfg?func_Id="+lastTr.cells[0].innerHTML;
     }
 </SCRIPT>
-
 </html>

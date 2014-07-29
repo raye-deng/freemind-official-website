@@ -52,13 +52,10 @@
         <property name="lobHandler" ref="lobHandler"/>
         <property name="mappingResources">
             <list>
-
-                <value>model/TFuncintroductionDto.hbm.xml</value>
-                <value>model/TFuncintroductionModel.hbm.xml</value>
                 <value>model/TNavbarModel.hbm.xml</value>
+                <value>model/TFuncIntroductionModel.hbm.xml</value>
                 <value>model/TSliderImgModel.hbm.xml</value>
-                <value>model/TUserModel.hbm.xml</value>
-                <value>classpath:model/TSliderImgMode.hbm.xml</value>
+                <value>model/TFuncIntroductionDto.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -68,21 +65,18 @@
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
                 <prop key="connection.characterEncoding">UTF-8</prop>
                 <prop key="connection.useUnicode">true</prop>
-                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/vdomain</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://192.168.0.58:3306/vdomain</prop>
                 <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
-                <prop key="hibernate.connection.username">root</prop>
-                <prop key="hibernate.connection.password"></prop>
+                <prop key="hibernate.connection.username">vdomain</prop>
+                <prop key="hibernate.connection.password">vdomain</prop>
             </props>
         </property>
         <property name="annotatedClasses">
             <list>
-
-                <value>configuration.model.TCompanyInfoMode</value>
-                <value>configuration.model.TFuncintroductionMode</value>
-                <value>configuration.model.TNavbarMode</value>
-                <value>configuration.model.TSliderImgMode</value>
-                <value>configuration.model.TUserMode</value>
-                <value>model.TSliderImgMode</value>
+                <value>model.TNavbarModel</value>
+                <value>model.TSliderImgModel</value>
+                <value>model.TFuncIntroductionModel</value>
+                <value>model.TFuncIntroductionDto</value>
             </list>
         </property>
 
