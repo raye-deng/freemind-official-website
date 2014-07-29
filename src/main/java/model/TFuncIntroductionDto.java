@@ -1,13 +1,20 @@
-package model;
+package model;/**
+ * Created by 邓风森 on 2014/7/29.
+ */
 
 import javax.persistence.*;
 
 /**
- * Created by Administrator on 2014/7/29.
+ * @ClassName: TFuncIntroductionDto
+ * @Description:
+ * @author:邓风森
+ * @date: 2014/7/29 16:05
  */
+
 @Entity
 @Table(name = "t_func_introduction", schema = "", catalog = "vdomain")
 public class TFuncIntroductionDto {
+
     private int id;
     private String funcName;
     private String funcTitle;
