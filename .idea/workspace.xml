@@ -4,22 +4,11 @@
     <bookmark url="file://$PROJECT_DIR$/web/resources/js/common/productShowSlider.js" line="15" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02c8078f-7369-46ce-9c55-4a4104ad7abe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/model/TFuncIntroductionDto.hbm.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/model/TFuncIntroductionModel.hbm.xml" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\GitHub\vdomain\ConfigurationModule\src\main\java\configuration\dao\TFuncintroductionDao.java" afterPath="$PROJECT_DIR$/ConfigurationModule/src/main/java/configuration/dao/CTFuncintroductionDao.java" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\GitHub\vdomain\ConfigurationModule\src\main\java\configuration\dao\TSliderImgDao.java" afterPath="$PROJECT_DIR$/ConfigurationModule/src/main/java/configuration/dao/CTSliderImgDao.java" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\GitHub\vdomain\ConfigurationModule\src\main\java\configuration\service\TFuncintroductionService.java" afterPath="$PROJECT_DIR$/ConfigurationModule/src/main/java/configuration/service/CTFuncintroductionService.java" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\GitHub\vdomain\ConfigurationModule\src\main\java\configuration\service\TSliderImgService.java" afterPath="$PROJECT_DIR$/ConfigurationModule/src/main/java/configuration/service/CTSliderImgService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/service/HomeService.class" afterPath="$PROJECT_DIR$/target/classes/service/HomeService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/TFuncintroductionDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/TFuncintroductionDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConfigurationModule/src/main/java/configuration/controller/ConfigController.java" afterPath="$PROJECT_DIR$/ConfigurationModule/src/main/java/configuration/controller/ConfigController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/HomeService.java" afterPath="$PROJECT_DIR$/src/main/java/service/HomeService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/TFuncintroductionDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/TFuncintroductionDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConfigurationModule/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/ConfigurationModule/web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="02c8078f-7369-46ce-9c55-4a4104ad7abe" name="Default" comment="项目维护|修正model类文件名错误、修正Configuration模块bean命名规范问题">
+      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\GitHub\vdomain\ConfigurationModule\src\main\java\configuration\dao\TFuncintroductionDao.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\GitHub\vdomain\ConfigurationModule\src\main\java\configuration\dao\TSliderImgDao.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\GitHub\vdomain\ConfigurationModule\src\main\java\configuration\service\TFuncintroductionService.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\GitHub\vdomain\ConfigurationModule\src\main\java\configuration\service\TSliderImgService.java" afterPath="" />
     </list>
     <list id="9e130f5f-a8cd-463d-9eef-43fb91ffd4a5" name="Rejected commit: Default" comment="更新测试" />
     <list id="dc92e8b7-36cb-4d2d-9e51-8fc32d44e240" name="Failed commit: Default" comment="项目校正v1.0" />
@@ -52,6 +41,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -712,7 +702,7 @@
       <workItem from="1406599470186" duration="141000" />
       <workItem from="1406599689140" duration="3708000" />
       <workItem from="1406605346498" duration="594000" />
-      <workItem from="1406615703858" duration="1244000" />
+      <workItem from="1406615703858" duration="1336000" />
     </task>
     <task id="LOCAL-00001" summary="更新测试">
       <created>1405645898965</created>
@@ -742,7 +732,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117578000" />
+    <option name="totallyTimeSpent" value="117670000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
