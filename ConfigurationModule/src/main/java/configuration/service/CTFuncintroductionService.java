@@ -1,6 +1,6 @@
 package configuration.service;
 
-import configuration.dao.TFuncintroductionDao;
+import configuration.dao.CTFuncintroductionDao;
 import model.TFuncIntroductionModel;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
@@ -9,10 +9,10 @@ import java.util.List;
 /**
  * Created by Administrator on 2014/7/24 0024.
  */
-@Service("tfuncintroductionService")
-public class TFuncintroductionService {
-    @Resource(name="tFuncintroductionDao")
-    TFuncintroductionDao tFuncintroductionDao;
+@Service("configTfuncIntroductionService")
+public class CTFuncintroductionService {
+    @Resource(name="configTFuncIntroductionDao")
+    CTFuncintroductionDao tFuncintroductionDao;
     public List<TFuncIntroductionModel> getTFuncList(){
         return tFuncintroductionDao.queryFuncList();
     }

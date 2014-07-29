@@ -22,7 +22,7 @@ import java.util.List;
 public class HomeService {
     @Resource(name="testUserDao")
     TNavDao tNavDao;
-    @Resource(name="tFuncintroductionDao")
+    @Resource(name="tFuncIntroductionDao")
     TFuncintroductionDao tFuncintroductionDao;
     @Resource(name="tSlideDao")
     TSlideDao tSlideDao;
