@@ -1,0 +1,196 @@
+@import "../common/common.css";
+.home_content{
+    width:100%;
+    min-width: 1024px;
+   /* border:1px solid #0099ff;*/
+    min-height: 600px;
+    background: #ffffff;
+    z-index: 1;
+    margin-top: 70px;
+    position: relative;
+}
+.product_list_div{
+   min-width: 1024px;
+   /* border:1px solid #000000;*/
+    min-height: 150px;
+    text-align: center;
+    text-decoration: none;;
+
+}
+.product_list{
+    width: 1024px;
+    min-height: 100px;
+    min-width: 1024px;
+    overflow: hidden;
+  /*  border: 1px solid grey;*/
+    list-style: none;
+    display: inline-block;
+}
+.product_list li{
+    display: inline;
+    height: 90px;
+    width: 400%;
+    margin:10px;
+   /* border:1px solid #000000;*/
+}
+.product_list li div{
+    width: 150px;
+    height: 200px;
+    max-height: 200px;
+    max-width: 150px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+.product_list li div img{
+    width: 90px;
+    height: 90px;
+    max-width: 90px;
+    max-height: 90px;
+    padding:30px;
+    padding-left: 28px;
+    overflow: hidden;
+}
+.product_list li div div{
+    width: 100%;
+    height:50px ;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+   /* border:1px solid red;*/
+}
+.product_list li div div a p{
+    font-size: 20px;
+    line-height: 20px;
+    font: bold;
+    font-family: 'huaKanYuanTi';
+    color: #024FBB;
+    text-decoration: none;
+    width: 150px;
+}
+.product_list li div div span{
+    font-size: 15px;
+    font-family: 'huaKanYuanTi';
+    color: #9C9C9C;
+}
+
+
+/***********************************************global.css*****************************/
+/*------全局定义-------------------- */
+
+.links{
+    width: 100%;
+    min-width:1024px;
+    height:200px;
+    background: #292F36;
+    position: relative;
+    padding-top: 10px;
+}
+.sildPic-Article-QQ{
+    width: 1024px;
+    min-width: 1024px;
+    margin:0;
+    padding: 0;
+    position: relative;
+}
+.bottom-Article-QQ .hd {
+    width: 100%;
+    height:33px;
+    line-height:33px;
+    text-align: center;
+}
+.bottom-Article-QQ .hd h2{
+    font-size:24px;
+    font-weight:bold;
+    color:#eeeeee;
+}
+.sildPicBar {
+    width: 1024px;
+    height: 33px;
+    min-width: 1024px;
+    z-index:3;
+    position: relative;
+    top:-90px;
+}
+.sildPicBarCase {
+    width: 1024px;
+    height: 33px;
+    min-width: 1024px;
+    z-index:3;
+    position: relative;
+    top:-250px;
+}
+ .pre {
+    display: inline;
+    background: url("../../images/home/left_op.png")no-repeat 0 0;
+    width: 70px;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    height: 70px;
+    z-index:2;
+}
+ .next {
+    background: url("../../images/home/right_op.png") no-repeat 0 0;
+    width: 70px;
+    cursor: pointer;
+    height: 70px;
+    position: absolute;
+    right: 0;
+
+   /* border:1px solid red;*/
+    z-index:2;
+}
+.sildPic-Article-QQ .bd {
+    width: 1024px;
+}
+.sildPic-Article-QQ .cnt-wrap {
+    overflow: hidden;
+    width: 1024px;
+    zoom: 1;
+    height: 110px;
+    background: #292F36;
+    margin-top: 20px;
+    /*border-left:1px solid #ccc;*/
+}
+/*.sildPic-Article-QQ .cnt {
+    width: 1872px;
+}*/
+.sildPic-Article-QQ li {
+    float: left;
+    width: 165px;
+    margin-left: 20px;
+}
+.sildPic-Article-QQ li a{
+    display:block;
+    width: 165px;
+    height:110px;
+}
+.sildPic-Article-QQ li a:hover{
+    display:block;
+    -moz-opacity:0.8;
+    filter:alpha(opacity=80);
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+}
+.sildPic-Article-QQ .cnt IMG {
+    width:165px;
+    height:110px;
+    border:1px solid #ccc;
+    border-left:0;
+}
+
+
+.product_slider_div{
+    background: #4fade2;
+    min-height: 500px;
+}
+.product_slider_div h2{
+    margin-top:20px;
+    color:#fff;
+    padding:15px;
+}
+
+
+

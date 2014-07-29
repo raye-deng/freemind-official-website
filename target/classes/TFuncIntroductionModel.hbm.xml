@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.TFuncIntroductionModel" table="t_func_introduction" schema="" catalog="vdomain">
+        <id name="id">
+            <column name="ID" sql-type="int" not-null="true"/>
+        </id>
+        <property name="funcName">
+            <column name="FUNC_NAME" sql-type="varchar" length="70"/>
+        </property>
+        <property name="funcTitle">
+            <column name="FUNC_TITLE" sql-type="varchar" length="70"/>
+        </property>
+        <property name="funcPicUrl">
+            <column name="FUNC_PIC_URL" sql-type="varchar" length="500"/>
+        </property>
+        <property name="funcDesc">
+            <column name="FUNC_DESC" sql-type="varchar" length="1000"/>
+        </property>
+        <property name="funcGuideEnable">
+            <column name="FUNC_GUIDE_ENABLE" sql-type="int"/>
+        </property>
+        <property name="funcGuideUrl">
+            <column name="FUNC_GUIDE_URL" sql-type="varchar" length="500"/>
+        </property>
+        <property name="funcGuideId">
+            <column name="FUNC_GUIDE_ID" sql-type="int"/>
+        </property>
+        <property name="funcTopicEnable">
+            <column name="FUNC_TOPIC_ENABLE" sql-type="int"/>
+        </property>
+        <property name="funcTopicUrl">
+            <column name="FUNC_TOPIC_URL" sql-type="varchar" length="500"/>
+        </property>
+        <property name="funcTopicId">
+            <column name="FUNC_TOPIC_ID" sql-type="int"/>
+        </property>
+        <property name="funcIconUrl">
+            <column name="FUNC_ICON_URL" sql-type="varchar" length="500"/>
+        </property>
+        <property name="funcParentId">
+            <column name="FUNC_PARENT_ID" sql-type="int"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.TNavbarModel" table="t_navbar" schema="" catalog="vdomain">
+        <id name="id">
+            <column name="Id" sql-type="int" not-null="true"/>
+        </id>
+        <property name="navName">
+            <column name="navName" sql-type="varchar" length="45"/>
+        </property>
+        <property name="navUrl">
+            <column name="navUrl" sql-type="varchar" length="400"/>
+        </property>
+        <property name="parentId">
+            <column name="parentId" sql-type="int"/>
+        </property>
+        <property name="orderNo">
+            <column name="orderNo" sql-type="int"/>
+        </property>
+    </class>
+</hibernate-mapping>

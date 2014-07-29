@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.TSliderImgModel" table="t_slider_img" schema="" catalog="vdomain">
+        <id name="id">
+            <column name="ID" sql-type="int" not-null="true"/>
+        </id>
+        <property name="sliderFlag">
+            <column name="SLIDER_FLAG" sql-type="varchar" length="40"/>
+        </property>
+        <property name="imgUrl">
+            <column name="IMG_URL" sql-type="varchar" length="1000"/>
+        </property>
+        <property name="imgDesc">
+            <column name="IMG_DESC" sql-type="varchar" length="200"/>
+        </property>
+        <property name="targetUrl">
+            <column name="TARGET_URL" sql-type="varchar" length="1000"/>
+        </property>
+    </class>
+</hibernate-mapping>
