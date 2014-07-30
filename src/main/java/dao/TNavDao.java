@@ -16,8 +16,6 @@ import java.util.List;
 @Component("testUserDao")
 public class TNavDao extends  BaseDao {
 
-
-
     public  List<TNavbarModel> queryNavList(){
         List<TNavbarModel> navList=(List<TNavbarModel>)super.getAll(TNavbarModel.class);
         return navList;

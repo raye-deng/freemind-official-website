@@ -13,6 +13,7 @@ public class TFuncIntroductionDto {
     private String funcTitle;
     private String funcGuideUrl;
     private String funcIconUrl;
+    private Integer funcParentId;
 
     @Id
     @Column(name = "ID", nullable = false, insertable = true, updatable = true)
@@ -64,6 +65,16 @@ public class TFuncIntroductionDto {
         this.funcIconUrl = funcIconUrl;
     }
 
+    @Basic
+    @Column(name = "FUNC_PARENT_ID", nullable = true, insertable = true, updatable = true)
+    public Integer getFuncParentId() {
+        return funcParentId;
+    }
+
+    public void setFuncParentId(Integer funcParentId) {
+        this.funcParentId = funcParentId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -75,6 +86,7 @@ public class TFuncIntroductionDto {
         if (funcGuideUrl != null ? !funcGuideUrl.equals(that.funcGuideUrl) : that.funcGuideUrl != null) return false;
         if (funcIconUrl != null ? !funcIconUrl.equals(that.funcIconUrl) : that.funcIconUrl != null) return false;
         if (funcName != null ? !funcName.equals(that.funcName) : that.funcName != null) return false;
+        if (funcParentId != null ? !funcParentId.equals(that.funcParentId) : that.funcParentId != null) return false;
         if (funcTitle != null ? !funcTitle.equals(that.funcTitle) : that.funcTitle != null) return false;
 
         return true;
@@ -87,6 +99,7 @@ public class TFuncIntroductionDto {
         result = 31 * result + (funcTitle != null ? funcTitle.hashCode() : 0);
         result = 31 * result + (funcGuideUrl != null ? funcGuideUrl.hashCode() : 0);
         result = 31 * result + (funcIconUrl != null ? funcIconUrl.hashCode() : 0);
+        result = 31 * result + (funcParentId != null ? funcParentId.hashCode() : 0);
         return result;
     }
 }

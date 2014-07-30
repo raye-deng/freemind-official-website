@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 邓风森
@@ -8,12 +9,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>微领域-产品与功能</title>
+    <title>微领域-产品与功能${funcId}</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/products.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/zzsc.js"></script>
 </head>
-<body>
+<body onload="setActive(${funcId})">
 <!--顶部导航-->
 <div id="header" style="z-index: 9999;position: fixed;top: 0;left: 0;">
     <jsp:include page="/common/header.do"/>
@@ -34,74 +35,112 @@
                         </h3>
                     </div>
                 </div>
+                <c:forEach  items="${tFuncList}" var="func">
+                    <c:if test="${func.funcParentId==-1}">
+                        <div class="itemheadchild" id="${func.id}">
+                            <div class="product">
+                                <h3><a><strong>${func.funcName}</strong></a></h3>
+                            </div>
+                        </div>
+                        <c:forEach  items="${tFuncList}" var="childfunc">
+                            <c:if test="${childfunc.funcParentId==func.id}">
+                                <div class="item" id="${childfunc.id}">
+                                    <div class="product">
+                                        <h3> <a>${childfunc.funcName}</a> </h3>
+                                    </div>
+                                    <div class="product-wrap posone">
+                                        <div>
+                                            <div>
+                                                <p style="margin-left: 80px;">${childfunc.funcTitle}</p>
+                                                <img style="max-height: 900px;max-width: 750px;margin-left: 50px;" src="${pageContext.request.contextPath}${childfunc.funcPicUrl}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <%--<c:if test="${childfunc.id==funcId}" >--%>
+                                <%--setActive(${funcId});--%>
+                                <%--</c:if>--%>
+                            </c:if>
 
-                <div class="itemheadchild">
-                    <div class="product">
-                        <h3><a><strong>行业功能</strong></a></h3>
-                    </div>
-                </div>
+                        </c:forEach>
+                    </c:if>
 
-                <div class="item" id="item0">
-                    <div class="product">
-                        <h3><a>微餐饮</a> </h3>
-                    </div>
-                    <div class="product-wrap posone">
-                        <div>
-                            <div>
-                               qweqweqwe
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item" id="item1">
-                    <div class="product">
-                        <h3> <a>微房产</a> </h3>
-                    </div>
-                    <div class="product-wrap posone">
-                        <div>
-                            <div>
-                                2231234
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item" id="item2">
-                    <div class="product">
-                        <h3> <a>微汽车</a> </h3>
-                    </div>
-                    <div class="product-wrap posone">
-                        <div>
-                            <div>
-                                <img style="max-height: 900px;max-width: 750px;margin-left: 50px;" src="${pageContext.request.contextPath}/resources/images/prodoucts/wfood.png">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="itemheadchild">
-                    <div class="product">
-                        <h3><a><strong>业务功能</strong></a></h3>
-                    </div>
-                </div>
+                </c:forEach>
                 <div class="itemhead">
                     <div class="product">
                         <h3>
-                            <a><strong>硬件产品</strong></a>
+                            <a><strong>硬件产品   </strong></a>
                             <a style="font-size: 13px; !important">hardware product</a>
                         </h3>
                     </div>
                 </div>
-                <div class="item" id="item3">
-                    <div class="product">
-                        <h3> <a>WIFI平台</a> </h3>
-                    </div>
-                    <div class="product-wrap posone">
-                        <div>
-                            <div>
-                                智能WIFI
+
+                <c:forEach  items="${tFuncList}" var="funchard">
+                    <c:if test="${funchard.funcParentId==-2}">
+                        <div class="itemheadchild" id="${funchard.id}">
+                            <div class="product">
+                                <h3><a><strong>${funchard.funcName}</strong></a></h3>
                             </div>
                         </div>
+                        <c:forEach  items="${tFuncList}" var="childfunchard">
+                            <c:if test="${childfunchard.funcParentId==funchard.id}">
+                                <div class="item" id="${childfunchard.id}">
+                                    <div class="product">
+                                        <h3> <a>${childfunchard.funcName}</a> </h3>
+                                    </div>
+                                    <div class="product-wrap posone">
+                                        <div>
+                                            <div>
+                                                <p style="margin-left: 80px;">${childfunchard.funcTitle}</p>
+                                                <img style="max-height: 900px;max-width: 750px;margin-left: 50px;" src="${pageContext.request.contextPath}${childfunchard.funcPicUrl}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:if>
+                        </c:forEach>
+                    </c:if>
+                    <c:if test="${funchard.funcParentId==-4}">
+                        <div class="item" id="${funchard.id}">
+                            <div class="product">
+                                <h3> <a>${funchard.funcName}</a> </h3>
+                            </div>
+                            <div class="product-wrap posone">
+                                <div>
+                                    <div>
+                                        <p style="margin-left: 80px;">${funchard.funcTitle}</p>
+                                        <img style="max-height: 900px;max-width: 750px;margin-left: 50px;" src="${pageContext.request.contextPath}${funchard.funcPicUrl}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </c:if>
+                </c:forEach>
+                <div class="itemhead">
+                    <div class="product">
+                        <h3>
+                            <a><strong>其他</strong></a>
+                            <a style="font-size: 13px; !important">&nbsp;&nbsp;Else</a>
+                        </h3>
                     </div>
                 </div>
+                <c:forEach  items="${tFuncList}" var="funcelse">
+                    <c:if test="${funcelse.funcParentId==0}">
+                        <div class="item" id="${funcelse.id}">
+                            <div class="product">
+                                <h3> <a>${funcelse.funcName} </a> </h3>
+                            </div>
+                            <div class="product-wrap posone">
+                                <div>
+                                    <div>
+                                        <p style="margin-left: 80px;">${funcelse.funcTitle}</p>
+                                        <img style="max-height: 900px;max-width: 750px;margin-left: 50px;" src="${pageContext.request.contextPath}${funcelse.funcPicUrl}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </c:if>
+                </c:forEach>
             </div>
 
             <div style="margin-top:20px;float: left;height: 1000px;position: relative;width: 840px; box-shadow:-4px 1px 4px -2px #CCC;">

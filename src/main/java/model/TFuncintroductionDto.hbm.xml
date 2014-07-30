@@ -20,5 +20,8 @@
         <property name="funcIconUrl">
             <column name="FUNC_ICON_URL" sql-type="varchar" length="500"/>
         </property>
+        <property name="funcParentId">
+            <column name="FUNC_PARENT_ID" sql-type="int"/>
+        </property>
     </class>
 </hibernate-mapping>

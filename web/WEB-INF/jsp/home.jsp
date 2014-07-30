@@ -94,15 +94,17 @@ To change this template use File | Settings | File Templates.
             <ul id="productList" name="productList" class="product_list">
 
                 <c:forEach  items="${tFuncDtoList}" var="tFunc">
+                    <c:if test="${tFunc.funcParentId>0}">
                     <li>
                         <div >
                             <img src="${pageContext.request.contextPath}${tFunc.funcIconUrl}">
                             <div>
-                                <a href="${tFunc.funcGuideUrl}"><p>${tFunc.funcName}</p></a>
+                                <a href="javascript:toFuncPage(${tFunc.id})"><p>${tFunc.funcName}</p></a>
                                 <span>${tFunc.funcTitle}</span>
                             </div>
                         </div>
                     </li>
+                    </c:if>
                 </c:forEach>
             </ul>
         </center>
@@ -187,4 +189,10 @@ To change this template use File | Settings | File Templates.
     </center>
 </div>
 </body>
+
+<script type="text/javascript">
+    function toFuncPage(funcId){
+        location.href="${pageContext.request.contextPath}/products.do?funcId="+funcId;
+    }
+</script>
 </html>

@@ -26,7 +26,9 @@
                             </c:if>
                             <ul>
                                 <c:forEach  items="${navList}" var="childItem">
-                                    <c:if test="${childItem.parentId==item.id}"><li><a href="${childItem.navUrl}" id="nav${childItem.id}" >${childItem.navName}</a></li></c:if>
+                                    <c:if test="${childItem.parentId==item.id}">
+                                        <li><a href="${childItem.navUrl}" id="nav${childItem.id}" >${childItem.navName}</a></li>
+                                    </c:if>
                                 </c:forEach>
                             </ul>
                         </li>

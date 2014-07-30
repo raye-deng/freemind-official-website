@@ -56,6 +56,7 @@
                 <value>model/TSliderImgModel.hbm.xml</value>
                 <value>model/TFuncIntroductionDto.hbm.xml</value>
                 <value>model/TFuncIntroductionModel.hbm.xml</value>
+                <value>classpath:model/TFuncIntroductionDto.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">

@@ -2,7 +2,7 @@ package service;/**
  * Created by 邓风森 on 2014/7/16.
  */
 
-    import dao.TFuncintroductionDao;
+    import dao.TFuncIntroductionDao;
     import dao.TNavDao;
     import  dao.TSlideDao;
 import model.*;
@@ -22,8 +22,8 @@ import java.util.List;
 public class HomeService {
     @Resource(name="testUserDao")
     TNavDao tNavDao;
-    @Resource(name="tFuncintroductionDao")
-    TFuncintroductionDao tFuncintroductionDao;
+    @Resource(name="tFuncIntroductionDao")
+    TFuncIntroductionDao tFuncIntroductionDao;
     @Resource(name="tSlideDao")
     TSlideDao tSlideDao;
 
@@ -34,7 +34,7 @@ public class HomeService {
 
 
     public List<TFuncIntroductionDto> getTFuncDtoList(){
-        return tFuncintroductionDao.queryFuncDtoList();
+        return tFuncIntroductionDao.queryFuncDtoList();
     }
 
     public List<TSliderImgModel> getSliderImgList(String Flag){
