@@ -71,7 +71,7 @@
 <script language="JavaScript">
     function back()
     {
-        window.location.href="sliderMgr.cfg";
+        window.location.href="${pageContext.request.contextPath}/slider/sliderMgr.cfg";
     }
 </script>
 </html>

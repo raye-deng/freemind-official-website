@@ -49,13 +49,13 @@
 
         if(id==1)
         {
-            document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/sliderMgr.cfg';
+            document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/slider/sliderMgr.cfg';
             document.getElementById("TopTittle").innerHTML="首页展示管理";
             return;
         }
         if(id==2)
         {
-            document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/funcMgr.cfg ';
+            document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/function/funcMgr.cfg ';
             document.getElementById("TopTittle").innerHTML="功能介绍管理";
             return;
         }
