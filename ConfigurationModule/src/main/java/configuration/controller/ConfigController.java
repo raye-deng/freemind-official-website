@@ -3,6 +3,7 @@ import configuration.service.CTFuncintroductionService;
 import configuration.service.CTSliderImgService;
 import model.TFuncIntroductionModel;
 import model.TSliderImgModel;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +36,7 @@ public class ConfigController {
         }catch (Exception ex)
         {
             model.addAttribute("ERROR",ex);
+            ex.printStackTrace();
         }
         model.addAttribute("tFuncList",tFuncList);
     }
@@ -45,30 +47,88 @@ public class ConfigController {
     }
 
     @RequestMapping(value = "/function/newFuncDo")
-    public String newFuncDo(String funcName,
+    public String newFuncDo(
+                            String funcName,
                             String funcTitle,
+                            String funcParentId,
                             String funcDesc,
                             String funcPicUrl,
+                            String funcIconUrl,
                             HttpSession session,Model model ){
         System.out.println("newFuncDo"+funcName);
         TFuncIntroductionModel func = new TFuncIntroductionModel();
         func.setFuncName(funcName);
+        func.setFuncParentId(Integer.parseInt(funcParentId));
         func.setFuncTitle(funcTitle);
         func.setFuncDesc(funcDesc);
         func.setFuncPicUrl(funcPicUrl);
+        func.setFuncIconUrl(funcIconUrl);
         try {
             tfuncintroductionService.saveFunc(func);
         }catch (Exception ex)
         {
             model.addAttribute("ERROR",ex);
+            ex.printStackTrace();
             return "/function/funcFailure";
         }
         return "/function/funcSuccess";
     }
 
     @RequestMapping(value = "/function/updateFunc")
-    public void updateFuncpage(HttpSession session,Model model){
-        System.out.println("updateFunc page!");
+    public void updateFuncpage(String func_Id,HttpSession session,Model model){
+        TFuncIntroductionModel func = tfuncintroductionService.getFunc(func_Id);
+        model.addAttribute("tFunc",func);
+    }
+
+    @RequestMapping(value = "/function/updateFuncDo")
+    public String updateFuncDo(
+                                 String id,
+                                 String funcName,
+                                 String funcTitle,
+                                 String funcParentId,
+                                 String funcDesc,
+                                 String funcPicUrl,
+                                 String funcIconUrl,
+                                 HttpSession session,Model model)
+    {
+        TFuncIntroductionModel func = new TFuncIntroductionModel();
+        func.setId(Integer.parseInt(id));
+        func.setFuncName(funcName);
+        func.setFuncTitle(funcTitle);
+        func.setFuncParentId(Integer.parseInt(funcParentId));
+        func.setFuncDesc(funcDesc);
+        func.setFuncPicUrl(funcPicUrl);
+        func.setFuncIconUrl(funcIconUrl);
+        try {
+            System.out.println("updateFuncDoController:");
+            tfuncintroductionService.updateFunc(func);
+        }catch (Exception ex)
+        {
+            model.addAttribute("ERROR",ex);
+            ex.printStackTrace();
+            return "/function/funcFailure";
+        }
+        return "/function/funcSuccess";
+    }
+    @RequestMapping(value = "/function/funcSuccess")
+    public void funcSuccess(HttpSession session,Model model){}
+
+    @RequestMapping(value = "/function/funcFailure")
+    public void funcFailure(HttpSession session,Model model){}
+
+    @RequestMapping(value ="/function/delFunc")
+    public String delFunc(String id,HttpSession session,Model model)
+    {
+        try {
+            TFuncIntroductionModel func = tfuncintroductionService.getFunc(id);
+            tfuncintroductionService.delFunc(func);
+        }catch(Exception ex)
+        {
+            ex.printStackTrace();
+            return "/function/funcFailure";
+        }
+        return "/function/funcSuccess";
+
     }
 
     //---------------------------------------slider--------------------------------------------
@@ -96,7 +156,7 @@ public class ConfigController {
                                 String imgUrl,
                                 String imgDesc,
                                 HttpSession session,Model model){
-        System.out.println("/slider/newSliderPageDo !");
+        System.out.println("/slider/newSliderPageDo !"+sliderType);
         TSliderImgModel slider = new TSliderImgModel();
         slider.setSliderFlag(sliderType);
         slider.setTargetUrl(targetUrl);
@@ -107,14 +167,61 @@ public class ConfigController {
         }catch(Exception ex)
         {
             model.addAttribute("ERROR",ex);
-            return "/slider/sliderSuccess";//操作失败页面
+            ex.printStackTrace();
+            return "/slider/sliderFailure";//操作失败页面
         }
-        return "/slider/sliderFailure";//操作成功
+        return "/slider/sliderSuccess";//操作成功
     }
 
     @RequestMapping(value = "/slider/updateSlider")
-    public void updateSlider(HttpSession session,Model model){
-        System.out.println("updateSlider page!");
+    public void updateSlider(String sliderId,HttpSession session,Model model){
+        System.out.println("updateSlider page:SliderID="+sliderId);
+        TSliderImgModel tSlider = tsliderImgService.getOneSlider(sliderId);
+        model.addAttribute("tSlider",tSlider);
+    }
+
+    @RequestMapping(value = "/slider/updateSliderDo")
+    public String updateSliderDo(  String id,
+                                   String sliderType,
+                                   String targetUrl,
+                                   String imgUrl,
+                                   String imgDesc,
+                                   HttpSession session,Model model){
+        System.out.println("/slider/newSliderPageDo !"+sliderType);
+        TSliderImgModel slider = new TSliderImgModel();
+        slider.setId(Integer.parseInt(id));
+        slider.setSliderFlag(sliderType);
+        slider.setTargetUrl(targetUrl);
+        slider.setImgUrl(imgUrl);
+        slider.setImgDesc(imgDesc);
+        try {
+            tsliderImgService.updateSlider(slider);
+        }catch(Exception ex)
+        {
+            model.addAttribute("ERROR",ex);
+            ex.printStackTrace();
+            return "/slider/sliderFailure";//操作失败页面
+        }
+        return "/slider/sliderSuccess";//操作成功
+    }
+    @RequestMapping(value = "/slider/sliderSuccess")
+    public void sliderSuccess(HttpSession session,Model model){}
+
+    @RequestMapping(value = "/slider/sliderFailure")
+    public void sliderFailure(HttpSession session,Model model){}
+
+    @RequestMapping(value ="/slider/delSlider")
+    public String  delSlider(String id,HttpSession session,Model model){
+        try {
+            TSliderImgModel slider = tsliderImgService.getOneSlider(id);
+            tsliderImgService.delSlider(slider);
+        }catch (Exception ex)
+        {
+            ex.printStackTrace();
+            return "/slider/sliderFailure";//操作失败页面
+        }
+        return "/slider/sliderSuccess";//操作成功
+
     }
 
 }

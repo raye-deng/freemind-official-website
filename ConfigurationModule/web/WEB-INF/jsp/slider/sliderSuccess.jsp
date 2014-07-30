@@ -45,7 +45,7 @@
 </head>
 <body>
 <div style="margin-top:80px;">
-    <p><img class="imguse" src="${pageContext.request.contextPath}/resources/images/failure.jpg"/></p>
+    <p><img class="imguse" src="${pageContext.request.contextPath}/resources/images/success.jpg"/></p>
     <p><button class="btn" onclick="doBack()">返回</button></p>
 </div>
 </body>
