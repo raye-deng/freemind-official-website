@@ -9,6 +9,7 @@
 <html>
 <head>
     <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/jQuery.js"></script>
     <style>
         .textComment
         {
@@ -45,21 +46,44 @@
 <body>
 <p><label class="titlelabel">修改功能介绍</label></p>
 <div style="margin-left:30px;">
-    <p><label>功能名称</label><input type="text" style="width:250px;"></p>
-    <p><label>介绍标题</label><input type="text" style="width:250px;"></p>
-    <p><label>介绍图片</label><img style="width:350px;height:200px;" /></p>
-    <p><label>介绍描述</label><textarea  class="textComment"></textarea></p>
-    <p style="margin-left:65px;"><button onclick="getFUNC_ID()" class="btn">提交</button> <button class="btn" onclick="back()">返回</button></p>
+    <form id="funcForm" name="funcForm" action="${pageContext.request.contextPath}/function/updateFuncDo.cfg?id=${param.func_Id}" method="post" >
+        <p><label id="id" name="id" value="${param.func_Id}">ID:${param.func_Id}</label></p>
+        <p><label>功能名称</label><input id="funcName" name="funcName" type="text" style="width:250px;" value="${tFunc.funcName}"></p>
+        <p><label>介绍标题</label><input id="funcTitle" name="funcTitle" type="text" style="width:250px;" value="${tFunc.funcTitle}"></p>
+        <p><label>父级ID</label><input  id="funcParentId" name="funcParentId" type="text" style="width:250px;" value="${tFunc.funcParentId}"/></p>
+        <p>
+            <label>介绍图片</label>
+            <input type="hidden" id="funcPicUrl" name="funcPicUrl" value="${tFunc.funcPicUrl}" >
+            <img   style="width:350px;height:200px;" src="${tFunc.funcPicUrl}" />
+        </p>
+        <p>
+            <label>图标图片</label>
+            <input type="hidden" id="funcIconUrl" name="funcIconUrl" value="${tFunc.funcIconUrl}" >
+            <img   style="width:150px;height:150px;" src="${tFunc.funcIconUrl}" />
+        </p>
+        <p><label>介绍描述</label><textarea id="funcDesc" name="funcDesc" class="textComment">${tFunc.funcDesc}</textarea></p>
+        <p style="margin-left:65px;">
+            <input class="btn" type="button" onclick="doUpdate()" value="提交"/>
+            <button class="btn" type="button" onclick="back()">返回</button>
+        </p>
+    </form>
 </div>
 </body>
 <SCRIPT LANGUAGE="JavaScript">
+    function doUpdate()
+    {
+        var form=$("#funcForm");
+        if($("#funcName").val()==""||$("#funcName").val()==null) {
+            alert("功能名称不能为空");
+            return;
+        }
+        form.submit();
+        return ;
+    }
     function back()
     {
         window.location.href="${pageContext.request.contextPath}/function/funcMgr.cfg";
-    }
-    function getFUNC_ID()
-    {
-        alert(${param.func_Id});
+        return;
     }
 </SCRIPT>
 </html>

@@ -20,7 +20,16 @@ public class CTSliderImgService {
         return sliderList;
     }
 
+    public TSliderImgModel getOneSlider(String id)
+    {
+        return CTSliderImgDao.queryOneSlider(id);
+    }
+
     public void saveSlider(TSliderImgModel slider){
         CTSliderImgDao.saveSlider(slider);
     }
+
+    public void updateSlider(TSliderImgModel slider){CTSliderImgDao.updateSlider(slider);}
+
+    public void delSlider(TSliderImgModel slider){CTSliderImgDao.delSlider(slider);}
 }

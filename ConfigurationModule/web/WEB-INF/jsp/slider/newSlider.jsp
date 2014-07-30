@@ -9,6 +9,7 @@
 <html>
 <head>
     <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/jQuery.js"></script>
     <style>
         .mainBody
         {
@@ -61,10 +62,14 @@
     </div>
         </p>
 
-        <p><label>轮播图指向链接</label><input name="targetUrl" type="text" style="width:250px;"></p>
-        <p><label>选择图片</label><img name="imgUrl" style="width:350px;height:200px;" /></p>
+        <p><label>轮播图指向链接</label><input id="targetUrl" name="targetUrl" type="text" style="width:250px;"></p>
+        <p>
+            <label>选择图片</label>
+            <input id="imgUrl" name="imgUrl" type="hidden">
+            <img style="width:350px;height:200px;"/>
+        </p>
         <p><button style="margin-left:260px;" class="btn">选择图片</button></p>
-        <p><label>轮播图介绍</label><textarea  name="imgDesc" class="textComment"></textarea></p>
+        <p><label>轮播图介绍</label><textarea id="imgDesc"  name="imgDesc" class="textComment"></textarea></p>
         <p style="margin-left:65px;"><button class="btn" onclick="doSave()">提交</button> <button class="btn" onclick="back()">返回</button></p>
     </div>
 </form>
@@ -72,7 +77,7 @@
 <script language="JavaScript">
     function doSave()
     {
-        var form=$("sliderForm");
+        var form=$("#sliderForm");
         form.submit();
     }
     function back()

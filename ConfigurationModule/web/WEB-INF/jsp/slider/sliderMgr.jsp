@@ -68,7 +68,7 @@
 <div  style="text-align:left;margin:10px;margin-left:595px; ">
     <button class="btn" onclick="newFuncOnMouseDown()">新增轮播图</button>&nbsp;&nbsp;
     <button class="btn" onclick="updateFuncOnMouseDown()">修改轮播图</button>&nbsp;&nbsp;
-    <button class="btn">删除介绍</button>
+    <button class="btn" onclick="delSliderOnMouseDown()">删除介绍</button>
 </div>
 <div>
     <table id="TableView" class="tableview" >
@@ -116,8 +116,19 @@
             alert("请选择要修改的介绍内容");
             return;
         }
-        window.location.href="${pageContext.request.contextPath}/slider/updateSlider.cfg?slider_Id="+lastTr.cells[0].innerHTML;
+        window.location.href="${pageContext.request.contextPath}/slider/updateSlider.cfg?sliderId="+lastTr.cells[0].innerHTML;
     }
+    function delSliderOnMouseDown()
+    {
+        if(lastTr==null)
+        {
+            alert("请选择要删除的内容");
+            return;
+        }
+        window.location.href="${pageContext.request.contextPath}/slider/delSlider.cfg?id="+lastTr.cells[0].innerHTML;
+
+    }
+
 
 </SCRIPT>
 </html>
