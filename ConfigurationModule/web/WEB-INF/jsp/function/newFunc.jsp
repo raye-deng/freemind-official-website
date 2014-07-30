@@ -13,7 +13,7 @@
     <style>
         .mainBody
         {
-            font: 100% 微软雅黑;
+            font: 100% '微软雅黑';
             margin: 20px auto;
         }
         .textComment
@@ -52,7 +52,7 @@
 
 <p><label class="titlelabel">新增功能介绍</label></p>
 <div style="margin-left:30px;">
-        <form id="funForm" action="${pageContext.request.contextPath}/newFuncDo.cfg" method="post" >
+        <form id="funForm" action="${pageContext.request.contextPath}/function/newFuncDo.cfg" method="post" >
             <p><label>功能名称</label><input  id="funcName" name="funcName" type="text" style="width:250px;"/></p>
             <p><label>介绍标题</label><input  id="funcTitle" name="funcTitle" type="text" style="width:250px;"/></p>
             <p><label>父级ID</label><input  id="funcPanterId" name="funcPanterId" type="text" style="width:250px;"/></p>
@@ -73,7 +73,7 @@
     }
     function back()
     {
-        window.location.href="funcMgr.cfg";
+        window.location.href="${pageContext.request.contextPath}/function/funcMgr.cfg";
     }
 </script>
 </body>

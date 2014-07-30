@@ -55,7 +55,7 @@
 <SCRIPT LANGUAGE="JavaScript">
     function back()
     {
-        window.location.href="funcMgr.cfg";
+        window.location.href="${pageContext.request.contextPath}/function/funcMgr.cfg";
     }
     function getFUNC_ID()
     {

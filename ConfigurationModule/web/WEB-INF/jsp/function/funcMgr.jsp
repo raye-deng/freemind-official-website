@@ -97,7 +97,7 @@
     }
     function newFuncOnMouseDown()
     {
-        window.location.href="newFunc.cfg";
+        window.location.href="${pageContext.request.contextPath}/function/newFunc.cfg";
     }
     function updateFuncOnMouseDown()
     {
@@ -106,7 +106,7 @@
             alert("请选择要修改的介绍内容");
             return;
         }
-        window.location.href="updateFunc.cfg?func_Id="+lastTr.cells[0].innerHTML;
+        window.location.href="${pageContext.request.contextPath}/function/updateFunc.cfg?func_Id="+lastTr.cells[0].innerHTML;
     }
 </SCRIPT>
 </html>

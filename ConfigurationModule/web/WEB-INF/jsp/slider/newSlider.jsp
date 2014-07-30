@@ -12,7 +12,7 @@
     <style>
         .mainBody
         {
-            font: 100% 微软雅黑;
+            font: 100% '微软雅黑';
             margin: 20px auto;
         }
         .textComment
@@ -49,7 +49,7 @@
 </head>
 
 <body>
-<form id="sliderForm"  action="${pageContext.request.contextPath}/newSliderDo.cfg" method="post" >
+<form id="sliderForm"  action="${pageContext.request.contextPath}/slider/newSliderDo.cfg" method="post" >
     <p><label class="titlelabel">新增轮播图</label></p>
     <div style="margin:20px auto;margin-left:30px;">
         <p><label>轮播图类型</label></p>
@@ -77,7 +77,7 @@
     }
     function back()
     {
-        window.location.href="sliderMgr.cfg";
+        window.location.href="${pageContext.request.contextPath}/slider/sliderMgr.cfg";
     }
 </script>
 </html>

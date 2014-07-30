@@ -107,7 +107,7 @@
 
     function newFuncOnMouseDown()
     {
-        window.location.href="newSlider.cfg";
+        window.location.href="${pageContext.request.contextPath}/slider/newSlider.cfg";
     }
     function updateFuncOnMouseDown()
     {
@@ -116,7 +116,7 @@
             alert("请选择要修改的介绍内容");
             return;
         }
-        window.location.href="updateSlider.cfg?slider_Id="+lastTr.cells[0].innerHTML;
+        window.location.href="${pageContext.request.contextPath}/slider/updateSlider.cfg?slider_Id="+lastTr.cells[0].innerHTML;
     }
 
 </SCRIPT>
