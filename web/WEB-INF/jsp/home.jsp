@@ -94,15 +94,17 @@ To change this template use File | Settings | File Templates.
             <ul id="productList" name="productList" class="product_list">
 
                 <c:forEach  items="${tFuncDtoList}" var="tFunc">
-                    <li>
-                        <div >
-                            <img src="${pageContext.request.contextPath}${tFunc.funcIconUrl}">
-                            <div>
-                                <a href="${tFunc.funcGuideUrl}"><p>${tFunc.funcName}</p></a>
-                                <span>${tFunc.funcTitle}</span>
+                    <c:if test="${tFunc.funcParentId>0}">
+                        <li>
+                            <div >
+                                <img src="${pageContext.request.contextPath}${tFunc.funcIconUrl}">
+                                <div>
+                                    <a href="javascript:toFuncPage(${tFunc.id})"><p>${tFunc.funcName}</p></a>
+                                    <span>${tFunc.funcTitle}</span>
+                                </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
+                    </c:if>
                 </c:forEach>
             </ul>
         </center>
@@ -112,32 +114,32 @@ To change this template use File | Settings | File Templates.
 
 <%--用例展示--%>
 <div class="product_slider_div">
-            <center>
-                <h2>他们正在使用微领域</h2>
-                <div class="blk_18">
-                    <a class="LeftBotton" onmousedown="ISL_GoUp_1()" onmouseup="ISL_StopUp_1()" onmouseout="ISL_StopUp_1()" href="javascript:void(0);" target="_self"></a>
-                    <div class="pcont" id="ISL_Cont_1" style="margin-left: 8px;">
-                        <div class="ScrCont">
-                            <div id="List1_1">
-                             <c:forEach varStatus="status" begin="0" items="${tCaseSliderImgList}" var="tCaseSlide" step="1">
-                             <a class="pl" href="${tCaseSlide.targetUrl}" ><img src="${pageContext.request.contextPath}${tCaseSlide.imgUrl}" alt="${tCaseSlide.imgDesc}"/></a>
-                            </c:forEach>
-                            </div>
-                            <div id="List2_1"></div>
-                        </div>
+    <center>
+        <h2>他们正在使用微领域</h2>
+        <div class="blk_18">
+            <a class="LeftBotton" onmousedown="ISL_GoUp_1()" onmouseup="ISL_StopUp_1()" onmouseout="ISL_StopUp_1()" href="javascript:void(0);" target="_self"></a>
+            <div class="pcont" id="ISL_Cont_1" style="margin-left: 8px;">
+                <div class="ScrCont">
+                    <div id="List1_1">
+                        <c:forEach varStatus="status" begin="0" items="${tCaseSliderImgList}" var="tCaseSlide" step="1">
+                            <a class="pl" href="${tCaseSlide.targetUrl}" ><img src="${pageContext.request.contextPath}${tCaseSlide.imgUrl}" alt="${tCaseSlide.imgDesc}"/></a>
+                        </c:forEach>
                     </div>
-                    <a class="RightBotton" onmousedown="ISL_GoDown_1()" onmouseup="ISL_StopDown_1()" onmouseout="ISL_StopDown_1()" href="javascript:void(0);" target="_self"></a> </div>
-                    <div class="sildPicBarCase">
-                        <a onmousedown="ISL_GoUp_1()" onmouseup="ISL_StopUp_1()" onmouseout="ISL_StopUp_1()" href="javascript:void(0);" target="_self"><span class="pre">&nbsp;</span></a>
-                        <a onmousedown="ISL_GoDown_1()" onmouseup="ISL_StopDown_1()" onmouseout="ISL_StopDown_1()" href="javascript:void(0);" target="_self"><span class="next">&nbsp;</span></a>
-                    </div>
-                <div class="c"></div>
-                <script type="text/javascript">
-                    <!--
-                    picrun_ini()
-                    //-->
-                </script>
-            </center>
+                    <div id="List2_1"></div>
+                </div>
+            </div>
+            <a class="RightBotton" onmousedown="ISL_GoDown_1()" onmouseup="ISL_StopDown_1()" onmouseout="ISL_StopDown_1()" href="javascript:void(0);" target="_self"></a> </div>
+        <div class="sildPicBarCase">
+            <a onmousedown="ISL_GoUp_1()" onmouseup="ISL_StopUp_1()" onmouseout="ISL_StopUp_1()" href="javascript:void(0);" target="_self"><span class="pre">&nbsp;</span></a>
+            <a onmousedown="ISL_GoDown_1()" onmouseup="ISL_StopDown_1()" onmouseout="ISL_StopDown_1()" href="javascript:void(0);" target="_self"><span class="next">&nbsp;</span></a>
+        </div>
+        <div class="c"></div>
+        <script type="text/javascript">
+            <!--
+            picrun_ini()
+            //-->
+        </script>
+    </center>
 </div>
 <%--用例展示结束--%>
 <%--合作伙伴--%>
@@ -187,4 +189,10 @@ To change this template use File | Settings | File Templates.
     </center>
 </div>
 </body>
+
+<script type="text/javascript">
+    function toFuncPage(funcId){
+        location.href="${pageContext.request.contextPath}/products.do?funcId="+funcId;
+    }
+</script>
 </html>

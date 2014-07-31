@@ -1,15 +1,15 @@
 /*
-*author:Null
-*DATE:2013.5.24
-*/
+ *author:Null
+ *DATE:2013.5.24
+ */
 
 $(function(){
-	//头页登录
-	$("#navul > li").not(".navhome").hover(function(){
-		$(this).addClass("navmoon")
-	},function(){
-		$(this).removeClass("navmoon")
-	});
+    //头页登录
+    $("#navul > li").not(".navhome").hover(function(){
+        $(this).addClass("navmoon")
+    },function(){
+        $(this).removeClass("navmoon")
+    });
 });
 
 (function($){
@@ -51,7 +51,7 @@ $(function(){
         });
     };
     $.fn.capacityFixed.deflunt={
-		right : 0,//相对于页面宽度的右边定位
+        right : 0,//相对于页面宽度的右边定位
         top:0
-	};
+    };
 })(jQuery);

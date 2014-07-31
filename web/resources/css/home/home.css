@@ -2,7 +2,7 @@
 .home_content{
     width:100%;
     min-width: 1024px;
-   /* border:1px solid #0099ff;*/
+    /* border:1px solid #0099ff;*/
     min-height: 600px;
     background: #ffffff;
     z-index: 1;
@@ -10,8 +10,8 @@
     position: relative;
 }
 .product_list_div{
-   min-width: 1024px;
-   /* border:1px solid #000000;*/
+    min-width: 1024px;
+    /* border:1px solid #000000;*/
     min-height: 150px;
     text-align: center;
     text-decoration: none;;
@@ -22,7 +22,7 @@
     min-height: 100px;
     min-width: 1024px;
     overflow: hidden;
-  /*  border: 1px solid grey;*/
+    /*  border: 1px solid grey;*/
     list-style: none;
     display: inline-block;
 }
@@ -31,7 +31,7 @@
     height: 90px;
     width: 400%;
     margin:10px;
-   /* border:1px solid #000000;*/
+    /* border:1px solid #000000;*/
 }
 .product_list li div{
     width: 150px;
@@ -58,7 +58,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-   /* border:1px solid red;*/
+    /* border:1px solid red;*/
 }
 .product_list li div div a p{
     font-size: 20px;
@@ -121,7 +121,7 @@
     position: relative;
     top:-250px;
 }
- .pre {
+.pre {
     display: inline;
     background: url("../../images/home/left_op.png")no-repeat 0 0;
     width: 70px;
@@ -131,7 +131,7 @@
     height: 70px;
     z-index:2;
 }
- .next {
+.next {
     background: url("../../images/home/right_op.png") no-repeat 0 0;
     width: 70px;
     cursor: pointer;
@@ -139,7 +139,7 @@
     position: absolute;
     right: 0;
 
-   /* border:1px solid red;*/
+    /* border:1px solid red;*/
     z-index:2;
 }
 .sildPic-Article-QQ .bd {
