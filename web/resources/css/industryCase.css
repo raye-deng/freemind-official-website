@@ -26,8 +26,8 @@ html,body,p,h1,h2,h3,h4,h5,h6,form,input,textarea,select,button,fieldset,legend,
 .all-goods .item .product h3 a:hover{ text-decoration:none;}
 .all-goods .active .product h3{line-height:30px;background-position:-12px -185px;background-color:#FFF;width: 199px; border-bottom: 1px #74BAFA solid; border-left: 1px #74BAFA solid;border-top: 1px #74BAFA solid;margin-left: 10px; height:30px; margin-top: -1px;}
 .all-goods .active .product h3 a{ color: #000; margin-left: 4px;border-bottom: 1px #74BAFA solid;}
-.all-goods .product-wrap{box-shadow:-4px 1px 4px -2px #CCC; position: absolute; width: 760px; height: 955px;z-index: 99; background: #FFF; display: none;}
-.all-goods .product-wrap p{ color:#999999;}
+.all-goods .product-wrap{box-shadow:-4px 1px 4px -2px #CCC; position: absolute; width: 760px; min-height: 955px;background: #FFF; display: none;}
+.all-goods .product-wrap p{ color:#999999;text-align: left;margin-left: 40px;word-break: break-all;}
 .all-goods .posone{left: 210px; top: 45px;}
 
 
@@ -40,9 +40,10 @@ html,body,p,h1,h2,h3,h4,h5,h6,form,input,textarea,select,button,fieldset,legend,
 
 .productimg
 {
-    margin-left: 35px;
+    margin-left: 40px;
     max-height: 900px;
     max-width: 750px;
+    float: left;
 }
 .child-page
 {

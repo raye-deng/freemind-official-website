@@ -34,7 +34,10 @@ public class ProductsController {
         List<TFuncIntroductionModel> tFuncList = this.productsService.getFuncIntroductionList();
         if(funcId ==null || funcId =="")
         {
-            funcId = ""+tFuncList.get(0).getId();
+            if (tFuncList.size() > 0)
+                funcId = ""+tFuncList.get(0).getId();
+            else
+                funcId = "0";
         }
         model.addAttribute("tFuncList",tFuncList);
         model.addAttribute("funcId",funcId);

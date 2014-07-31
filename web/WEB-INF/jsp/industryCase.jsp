@@ -43,7 +43,9 @@
                                 <div>
                                     <div>
                                         <p>${industryCase.caseTitle}</p>
-                                        <img class="productimg" src="${pageContext.request.contextPath}${industryCase.caseImgUrl}">
+                                        <c:if test="${industryCase.caseImgUrl != null && industryCase.caseImgUrl!=''}">
+                                            <img class="productimg" src="${pageContext.request.contextPath}${industryCase.caseImgUrl}">
+                                        </c:if>
                                     </div>
                                 </div>
                             </div>
