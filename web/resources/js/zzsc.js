@@ -13,3 +13,10 @@ $(function(){
 
     });
 });
+
+function setActive(itemid)
+{
+    item = itemid;
+    $("#"+item).addClass('active');
+    $("#"+item).find('.product-wrap').show();
+}
