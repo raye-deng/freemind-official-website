@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 邓风森
@@ -20,63 +21,41 @@
 </div>
 <div class="pageContent">
 
-    <div style=" margin-top:70px;"><img width="100%" src="${pageContext.request.contextPath}/resources/images/industryCase/successfulcase.jpg"></div>
-
-    <div style=" margin-left:100px;position: relative;margin-bottom: 50px;">
-        <div class="goods">
-            <div class="all-goods" style=" margin-left:30px; margin-top:20px;float: left;">
-                <div class="itemhead">
-                    <div class="product">
-                        <h3>
-                            <a><strong>成功案例</strong></a>
-                            <a style="font-size: 13px; !important">Successful case</a>
-                        </h3>
-                    </div>
-                </div>
-                <div class="item" id="item0">
-                    <div class="product">
-                        <h3><a>微餐饮</a> </h3>
-                    </div>
-                    <div class="product-wrap posone">
-                        <div>
-                            <div>
-                                qweqweqwe
-                            </div>
+    <div style=" margin-top:70px;"><img width="100%" height="150px" src="${pageContext.request.contextPath}/resources/images/industryCase/successfulcase.jpg"></div>
+    <center>
+        <div style="min-width: 1024px;">
+            <div class="goods">
+                <div class="all-goods">
+                    <div class="itemhead">
+                        <div class="product">
+                            <h3>
+                                <a><strong>成功案例</strong></a>
+                                <a style="font-size: 13px; !important">Successful case</a>
+                            </h3>
                         </div>
                     </div>
-                </div>
-                <div class="item" id="item1">
-                    <div class="product">
-                        <h3> <a>微房产</a> </h3>
-                    </div>
-                    <div class="product-wrap posone">
-                        <div>
-                            <div>
-                                2231234
+                    <c:forEach items="${caseList}" var="industryCase">
+                        <div class="item" id="${industryCase.id}">
+                            <div class="product">
+                                <h3> <a>${industryCase.caseName}</a> </h3>
+                            </div>
+                            <div class="product-wrap posone">
+                                <div>
+                                    <div>
+                                        <p>${industryCase.caseTitle}</p>
+                                        <img class="productimg" src="${pageContext.request.contextPath}${industryCase.caseImgUrl}">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </c:forEach>
                 </div>
-                <div class="item" id="item2">
-                    <div class="product">
-                        <h3> <a>微汽车</a> </h3>
-                    </div>
-                    <div class="product-wrap posone">
-                        <div>
-                            <div>
-                                <img style="max-height: 900px;max-width: 750px;margin-left: 50px;" src="${pageContext.request.contextPath}/resources/images/prodoucts/wfood.png">
-                            </div>
-                        </div>
-                    </div>
+                <div class="child-page">
+                    <p class="child-page-title">当前位置：网站首页&gt;<strong>产品与功能</strong></p>
                 </div>
-
-            </div>
-
-            <div style="margin-top:20px;float: left;height: 1000px;position: relative;width: 840px; box-shadow:-4px 1px 4px -2px #CCC;">
-                <p style="width:100%;margin-top:5px;margin-left:40px;font-size: 14px; border-bottom: 1px #CCCCCC solid; !important">当前位置：网站首页&gt;<strong>成功案例</strong></p>
             </div>
         </div>
-    </div>
+    </center>
 </div>
 <div style="width: 1024px">&nbsp;</div>
 
