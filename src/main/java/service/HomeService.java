@@ -2,11 +2,11 @@ package service;/**
  * Created by 邓风森 on 2014/7/16.
  */
 
-    import dao.TFuncintroductionDao;
-    import dao.TNavDao;
-    import  dao.TSlideDao;
+import dao.TFuncIntroductionDao;
+import dao.TNavDao;
+import  dao.TSlideDao;
 import model.*;
-    import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -23,7 +23,7 @@ public class HomeService {
     @Resource(name="testUserDao")
     TNavDao tNavDao;
     @Resource(name="tFuncIntroductionDao")
-    TFuncintroductionDao tFuncintroductionDao;
+    TFuncIntroductionDao tFuncIntroductionDao;
     @Resource(name="tSlideDao")
     TSlideDao tSlideDao;
 
@@ -34,7 +34,7 @@ public class HomeService {
 
 
     public List<TFuncIntroductionDto> getTFuncDtoList(){
-        return tFuncintroductionDao.queryFuncDtoList();
+        return tFuncIntroductionDao.queryFuncDtoList();
     }
 
     public List<TSliderImgModel> getSliderImgList(String Flag){

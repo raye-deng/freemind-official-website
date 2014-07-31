@@ -3,6 +3,11 @@ package service;/**
  */
 
 import org.springframework.stereotype.Service;
+import dao.TSuccessfulCaseDao;
+import model.TSuccessfulCaseModel;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @ClassName: IndustryCaseService
@@ -12,5 +17,10 @@ import org.springframework.stereotype.Service;
  */
 @Service("industryCaseService")
 public class IndustryCaseService {
+    @Resource(name="tSuccessfulCaseDao")
+    TSuccessfulCaseDao tSuccessfulCaseDao;
 
+    public List<TSuccessfulCaseModel> getCaseList(){
+        return tSuccessfulCaseDao.queryCaseList();
+    }
 }

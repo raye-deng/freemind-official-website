@@ -9,6 +9,8 @@ import service.IndustryCaseService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import model.TSuccessfulCaseModel;
+import java.util.List;
 
 /**
  * @ClassName: IndustryCaseController
@@ -23,6 +25,8 @@ public class IndustryCaseController {
 
     @RequestMapping(value = "/industryCase")
     public void index(HttpSession session,Model model){
+        List<TSuccessfulCaseModel> caseList = industryCaseService.getCaseList();
+        model.addAttribute("caseList",caseList);
         System.out.println("行业案例界面");
     }
 }
