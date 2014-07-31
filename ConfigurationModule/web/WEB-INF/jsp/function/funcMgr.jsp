@@ -25,6 +25,7 @@
             box-shadow: none;
         }
         .tableview  {
+
             display: table-cell;
             vertical-align: bottom;
             padding-bottom: 5px;
@@ -51,21 +52,22 @@
             font-weight:bold;
             font-size: 18px;
             color: rgba(0, 0, 0, 0.6);
+
         }
     </style>
     <title>功能介绍管理</title>
 </head>
-<body class="body">
+<body class="body" >
 <p><label class="titlelabel">功能介绍管理</label></p>
-<div  style="text-align:left;margin:10px;margin-left:530px">
+<div  style="display:block;position: fixed; text-align:right;margin-top: 10px;">
     <button class="btn" onclick="newFuncOnMouseDown()">新增介绍</button>&nbsp;&nbsp;
     <button class="btn" onclick="updateFuncOnMouseDown()">修改介绍</button>&nbsp;&nbsp;
-    <button class="btn">删除介绍</button>
+    <button class="btn" onclick="delFuncOnMouseDown()">删除介绍</button>
 </div>
 <div>
-    <table id="TableView" class="tableview" >
+    <table id="TableView" class="tableview"  style=" margin-top: 60px;  ">
         <thead>
-        <tr bgcolor="#34495e" style="color:#FFFFFF;">
+        <tr bgcolor="#34495e" style="color:#FFFFFF;display:block;position: fixed;">
             <th width="50px">ID</th>  <th width="200px">功能名称</th> <th width="200px">功能标题</th>   <th width="500px">功能描述</th>
         </tr>
         </thead>
@@ -95,18 +97,25 @@
             obj.bgColor="#4682b4";
         lastTr = obj;
     }
-    function newFuncOnMouseDown()
-    {
+    function newFuncOnMouseDown(){
         window.location.href="${pageContext.request.contextPath}/function/newFunc.cfg";
     }
-    function updateFuncOnMouseDown()
-    {
+    function updateFuncOnMouseDown(){
         if(lastTr==null)
         {
             alert("请选择要修改的介绍内容");
             return;
         }
         window.location.href="${pageContext.request.contextPath}/function/updateFunc.cfg?func_Id="+lastTr.cells[0].innerHTML;
+    }
+    function delFuncOnMouseDown(){
+        if(lastTr==null)
+        {
+            alert("请选择要删除的内容");
+            return;
+        }
+        window.location.href="${pageContext.request.contextPath}/function/delFunc.cfg?id="+lastTr.cells[0].innerHTML;
+
     }
 </SCRIPT>
 </html>

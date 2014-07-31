@@ -19,7 +19,7 @@ public class CTFuncintroductionDao extends BaseDao {
 
     public TFuncIntroductionModel queryOneFunc(String funcId )
     {
-      return (TFuncIntroductionModel)super.getById(TFuncIntroductionModel.class,funcId);
+      return (TFuncIntroductionModel)super.getById(TFuncIntroductionModel.class,Integer.parseInt(funcId));
     }
 
     public List<TFuncIntroductionDto> queryFuncDtoList(){
@@ -29,9 +29,14 @@ public class CTFuncintroductionDao extends BaseDao {
     public void saveFunc(TFuncIntroductionModel func)
     {
         super.save(func);
-        System.out.println("Save the Func");
     }
 
+    public void updateFunc(TFuncIntroductionModel func)
+    {
+        super.update(func);
+    }
+
+    public void delFunc(TFuncIntroductionModel func){super.delete(func);}
 
 
 }

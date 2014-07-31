@@ -52,24 +52,39 @@
 
 <p><label class="titlelabel">新增功能介绍</label></p>
 <div style="margin-left:30px;">
-        <form id="funForm" action="${pageContext.request.contextPath}/function/newFuncDo.cfg" method="post" >
+        <form id="funcForm" action="${pageContext.request.contextPath}/function/newFuncDo.cfg" method="post" >
             <p><label>功能名称</label><input  id="funcName" name="funcName" type="text" style="width:250px;"/></p>
             <p><label>介绍标题</label><input  id="funcTitle" name="funcTitle" type="text" style="width:250px;"/></p>
-            <p><label>父级ID</label><input  id="funcPanterId" name="funcPanterId" type="text" style="width:250px;"/></p>
-            <p><label>介绍图片</label><img name="funcPicUrl" style="width:350px;height:200px;" /><input class="btn" type="button" value="选择图片"/></p>
-            <p><label>介绍描述</label><textarea id="funcDesc" name="funcDesc" class="textComment"></textarea></p>
-            <p style="margin-left:65px;"><button onclick="doSave()" class="btn">提交</button> <button class="btn" onclick="back()">返回</button></p>
+            <p><label>父级ID</label><input  id="funcPanterId" name="funcParentId" type="text" style="width:250px;"/></p>
+            <p>
+                <label>介绍图片</label>
+                <input type="hidden" id="funcPicUrl" name="funcPicUrl"  >
+                <img   style="width:350px;height:200px;"  />
+            </p>
+            <p>
+                <label>图标图片</label>
+                <input type="hidden" id="funcIconUrl" name="funcIconUrl"  >
+                <img   style="width:150px;height:150px;"  />
+            </p>
+            <p>
+                <label>介绍描述</label>
+                <textarea id="funcDesc" name="funcDesc" class="textComment"></textarea>
+            </p>
+            <p style="margin-left:65px;">
+                <button onclick="doSave()" class="btn">提交</button>
+                <button onclick="back()" type="button"  class="btn">返回</button>
+            </p>
         </form>
+
 </div>
 
 <script LANGUAGE="JavaScript">
     function doSave()
     {
-
         var form=$("#funcForm");
         if($("#funcName").val()==""||$("#funcName").val()==null)
         alert("功能名称不能为空");
-       form.submit();
+        form.submit();
     }
     function back()
     {

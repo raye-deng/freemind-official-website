@@ -29,7 +29,7 @@
     </ul>
 </div>
 <div class="main">
-    <iframe  id="ifream_URL" src=" " style=" margin-left:40px;"  frameborder=no width="95%" height="800"  ></iframe>
+    <iframe  id="ifream_URL" src=" " style=" margin-left:40px;"  frameborder=no width="95%" height="680"  ></iframe>
 </div>
 <script>
     var navigation = responsiveNav("#nav", {customToggle: "#toggle"});
