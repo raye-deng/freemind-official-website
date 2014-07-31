@@ -24,34 +24,13 @@
             -moz-box-shadow: none;
             box-shadow: none;
         }
-        .tableview  {
 
-            display: table-cell;
-            vertical-align: bottom;
-            padding-bottom: 5px;
-            padding-top: 10px;
-            padding-left: 5px;
-            border-bottom: 1px #ddd solid;
-            border-right: 1px #ddd solid;
-            border-left: 2px transparent solid;
-            border-top: 3px transparent solid;
-            border:1px;
-            font-family: 'Segoe UI', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
-            font-weight:400 ;
-            font-size: 11pt;
-            letter-spacing: 0.01em;
-            line-height: 22pt;
-            font-smooth: always;
-            color: rgba(0, 0, 0, 0.6);
-            text-align: center;
-            width:830px;
-            font-weight:bold;
-        }
-        .titlelabel
-        {
-            font-weight:bold;
-            font-size: 18px;
-            color: rgba(0, 0, 0, 0.6);
+        .scrollTable {
+            max-height: 550px;;
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-width: 860px;
+            word-wrap:break-word;
 
         }
     </style>
@@ -65,24 +44,25 @@
     <button class="btn" onclick="delFuncOnMouseDown()">删除介绍</button>
 </div>
 <div>
-    <table id="TableView" class="tableview"  style=" margin-top: 60px;  ">
-        <thead>
-        <tr bgcolor="#34495e" style="color:#FFFFFF;display:block;position: fixed;">
-            <th width="50px">ID</th>  <th width="200px">功能名称</th> <th width="200px">功能标题</th>   <th width="500px">功能描述</th>
-        </tr>
-        </thead>
-        <tbody id="tableBody">
-        <tr bgcolor="#ffffff" onclick="trOnMouseDown(this)">
-            <td>292</td>  <td>特别的测试</td>  <td>3</td>  <td>4</td>
-        </tr>
-        <c:forEach  items="${tFuncList}" var="tFunc">
-            <tr bgcolor="#ffffff" onclick="trOnMouseDown(this)">
-                <td>${tFunc.id}</td>  <td>${tFunc.funcName}</td>  <td>${tFunc.funcTitle}</td>  <td>${tFunc.funcDesc}</td>
-            </tr>
-        </c:forEach>
+    <table style=" margin-top: 60px;  ">
 
-
-        </tbody>
+        <tr bgcolor="#34495e" style="color:#FFFFFF;">
+            <th width="40px">ID</th>  <th width="100px">功能名称</th> <th width="340px">功能标题</th>   <th width="310px">功能描述</th>
+        </tr>
+        <td colspan="4">
+            <div class="scrollTable">
+                <table border="1px" style="border-color:#dcdcdc;">
+                    <c:forEach  items="${tFuncList}" var="tFunc">
+                        <tr  style="height:30px; font-size: 15px;color:rgba(0, 0, 0, 0.6) ;font-weight:bold;" bgcolor="#ffffff" onclick="trOnMouseDown(this)">
+                            <td style="text-align: center; width:50px;" >${tFunc.id}</td>
+                            <td width="100px">${tFunc.funcName}</td>
+                            <td width="340px">${tFunc.funcTitle}</td>
+                            <td width="310px">${tFunc.funcDesc}</td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </div>
+        </td>
     </table>
 </div>
 </body>
