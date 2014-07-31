@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
     <class name="model.TFuncIntroductionDto" table="t_func_introduction" schema="" catalog="vdomain">
@@ -19,6 +19,9 @@
         </property>
         <property name="funcIconUrl">
             <column name="FUNC_ICON_URL" sql-type="varchar" length="500"/>
+        </property>
+        <property name="funcParentId">
+            <column name="FUNC_PARENT_ID" sql-type="int"/>
         </property>
     </class>
 </hibernate-mapping>

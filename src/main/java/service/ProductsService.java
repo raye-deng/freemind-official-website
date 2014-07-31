@@ -3,6 +3,11 @@ package service;/**
  */
 
 import org.springframework.stereotype.Service;
+import dao.TFuncIntroductionDao;
+import model.TFuncIntroductionModel;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @ClassName: ProductsService
@@ -12,5 +17,10 @@ import org.springframework.stereotype.Service;
  */
 @Service("productsService")
 public class ProductsService {
+    @Resource(name="tFuncIntroductionDao")
+    TFuncIntroductionDao tFuncIntroductionDao;
 
+    public List<TFuncIntroductionModel> getFuncIntroductionList(){
+        return tFuncIntroductionDao.queryFuncList();
+    }
 }

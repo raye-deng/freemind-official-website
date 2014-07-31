@@ -47,7 +47,7 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/common/header")
-    public void newHead(HttpSession session,Model model){
+    public void header(HttpSession session,Model model){
         System.out.println("header included");
         List<TNavbarModel> navList=homeService.getNavList();
         model.addAttribute("navList",navList);
