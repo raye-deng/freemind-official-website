@@ -24,71 +24,68 @@
             -moz-box-shadow: none;
             box-shadow: none;
         }
-        .tableview
+
+        .trStyle
         {
-            display: table-cell;
-            vertical-align: bottom;
-            padding-bottom: 5px;
-            padding-top: 20px;
-            padding-left: 5px;
-            border-bottom: 1px #ddd solid;
-            border-right: 1px #ddd solid;
-            border-left: 2px transparent solid;
-            border-top: 3px transparent solid;
-            border:1px;
-            font-family: 'Segoe UI', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
-            font-weight:400 ;
-            font-size: 11pt;
-            letter-spacing: 0.01em;
-            line-height: 22pt;
-            font-smooth: always;
-            color: rgba(0, 0, 0, 0.6);
-            text-align: center;
-            width:830px;
-            font-weight:bold;
-            table-layout:fixed;
-            word-break:break-all;
-        }
-        .titlelabel
-        {
+            display: table-row-group;
             font-weight:bold;
             font-size: 18px;
+            letter-spacing: 0.01em;
             color: rgba(0, 0, 0, 0.6);
+            padding-left: 5px;
+
+        }
+        .scrollTable {
+            max-height: 550px;;
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-width: 860px;
+            word-wrap:break-word;
+
         }
         .aCSS
         {
             color:rgba(0, 0, 0, 0.6);
-            text-decoration:none;
+            text-align:center;
+
         }
     </style>
     <title>首页轮播图管理</title>
 </head>
 <body class="body">
 <p><label class="titlelabel">首页轮播图管理</label></p>
-<div  style="text-align:left;margin:10px;margin-left:595px; ">
+<div style="position: fixed; text-align:right;margin-top: 10px;">
     <button class="btn" onclick="newFuncOnMouseDown()">新增轮播图</button>&nbsp;&nbsp;
     <button class="btn" onclick="updateFuncOnMouseDown()">修改轮播图</button>&nbsp;&nbsp;
     <button class="btn" onclick="delSliderOnMouseDown()">删除介绍</button>
 </div>
-<div>
-    <table id="TableView" class="tableview" >
-        <thead>
-        <tr bgcolor="#34495e" style="color:#FFFFFF;">
-            <th width="50px">ID</th>  <th width="150px">轮播图名称</th>   <th width="320px">轮播图片</th>   <th width="200px">功能描述</th>  <th width="200px">链接地址</th>
-        </tr>
-        </thead>
-        <tbody id="tableBody">
-        <tr bgcolor="#ffffff" onclick="trOnMouseDown(this)">
-            <td>292</td>  <td>特别的测试</td>  <td><img src="" style=" width:320px; height:180px;"/></td>  <td>4</td> <td>5</td>
+<div style="height:400px;">
+    <table style=" margin-top: 60px;  " >
+        <tr bgcolor="#34495e" style="color:#FFFFFF; ">
+            <th width="30px">ID</th>  <th width="100px">轮播图名称</th>   <th width="320px">轮播图片</th>   <th width="200px">功能描述</th>  <th width="160px">链接地址</th>
         </tr>
 
-        <c:forEach  items="${tSliderList}" var="tSlider">
-            <tr bgcolor="#ffffff" onclick="trOnMouseDown(this)">
-                <td>${tSlider.id}</td>  <td>${tSlider.sliderFlag}</td>  <td><img src="${tSlider.imgUrl}" style=" width:320px; height:180px;"/></td>  <td>${tSlider.imgDesc}</td> <td><a class="aCSS" href="${tSlider.targetUrl}">链接地址</a></td>
-            </tr>
-        </c:forEach>
+                <td colspan="5">
+                    <div class="scrollTable">
+                        <table border="1px" style="border-color:#dcdcdc;">
+                            <c:forEach  items="${tSliderList}" var="tSlider">
+                                <tr class="trStyle" bgcolor="#ffffff" onclick="trOnMouseDown(this)">
+                                    <td style="text-align: center;">${tSlider.id}</td>
+                                    <td style="text-align: center;">${tSlider.sliderFlag}</td>
+                                    <td width="320px"><img src="${tSlider.imgUrl}" style=" min-width:320px;height:180px;"/></td>
+                                    <td width="250px" valign="middle"><label style="min-width:220px;padding-left:10px;">${tSlider.imgDesc}</label> </td>
+                                    <td style="text-align:center;width: 100px;" >
+                                        <div style="width:120px;">
+                                            <a class="aCSS"  href="${tSlider.targetUrl}">链接地址:${tSlider.targetUrl}</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </div>
+                </td>
 
-        </tbody>
+
     </table>
 </div>
 </body>
