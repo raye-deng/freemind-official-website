@@ -26,6 +26,8 @@ public class IndustryCaseController {
     @RequestMapping(value = "/industryCase")
     public void index(HttpSession session,Model model){
         List<TSuccessfulCaseModel> caseList = industryCaseService.getCaseList();
+        String firstId = caseList.get(0).getId() + "";
+        model.addAttribute("firstId",firstId);
         model.addAttribute("caseList",caseList);
         System.out.println("行业案例界面");
     }

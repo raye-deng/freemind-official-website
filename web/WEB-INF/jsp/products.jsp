@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>微领域-产品与功能${funcId}${firstId}</title>
+    <title>微领域-产品与功能</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/products.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/zzsc.js"></script>
