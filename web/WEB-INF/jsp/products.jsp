@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>微领域-产品与功能${funcId}${firstId}</title>
+    <title>微领域-产品与功能</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/products.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/zzsc.js"></script>
@@ -26,7 +26,7 @@
     <center>
         <div style="min-width: 1024px;">
             <div class="goods">
-                <div class="all-goods">
+                <div class="all-goods" id="box">
                     <div class="itemhead">
                         <div class="product">
                             <h3>
@@ -51,8 +51,10 @@
                                         <div class="product-wrap posone">
                                             <div>
                                                 <div>
-                                                    <p>${childfunc.funcTitle}</p>
-                                                    <img class="productimg" src="${pageContext.request.contextPath}${childfunc.funcPicUrl}">
+                                                    <p>${childfunc.funcDesc}</p>
+                                                    <c:if test="${childfunc.funcPicUrl != null && childfunc.funcPicUrl!=''}">
+                                                        <img class="productimg" src="${pageContext.request.contextPath}${childfunc.funcPicUrl}">
+                                                    </c:if>
                                                 </div>
                                             </div>
                                         </div>
@@ -87,8 +89,10 @@
                                         <div class="product-wrap posone">
                                             <div>
                                                 <div>
-                                                    <p>${childfunchard.funcTitle}</p>
-                                                    <img class="productimg" src="${pageContext.request.contextPath}${childfunchard.funcPicUrl}">
+                                                    <p>${childfunchard.funcDesc}</p>
+                                                    <c:if test="${childfunc.funcPicUrl != null && childfunc.funcPicUrl!=''}">
+                                                        <img class="productimg" src="${pageContext.request.contextPath}${childfunchard.funcPicUrl}">
+                                                    </c:if>
                                                 </div>
                                             </div>
                                         </div>
@@ -104,8 +108,10 @@
                                 <div class="product-wrap posone">
                                     <div>
                                         <div>
-                                            <p>${funchard.funcTitle}</p>
-                                            <img class="productimg" src="${pageContext.request.contextPath}${funchard.funcPicUrl}">
+                                            <p>${funchard.funcDesc}</p>
+                                            <c:if test="${childfunc.funcPicUrl != null && childfunc.funcPicUrl!=''}">
+                                                <img class="productimg" src="${pageContext.request.contextPath}${funchard.funcPicUrl}">
+                                            </c:if>
                                         </div>
                                     </div>
                                 </div>
@@ -129,8 +135,10 @@
                                 <div class="product-wrap posone">
                                     <div>
                                         <div>
-                                            <p>${funcelse.funcTitle}</p>
-                                            <img class="productimg" src="${pageContext.request.contextPath}${funcelse.funcPicUrl}">
+                                            <p>${funcelse.funcDesc}</p>
+                                            <c:if test="${childfunc.funcPicUrl != null && childfunc.funcPicUrl!=''}">
+                                                <img class="productimg" src="${pageContext.request.contextPath}${funcelse.funcPicUrl}">
+                                            </c:if>
                                         </div>
                                     </div>
                                 </div>

@@ -9,6 +9,9 @@ import service.MicroMarketingSerivce;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.util.List;
+import model.TMerchantsFuncModel;
+import model.TRequestCooperationModel;
 
 /**
  * @ClassName: MicroMarketingController
@@ -23,6 +26,26 @@ public class MicroMarketingController {
 
     @RequestMapping(value = "/microMarketing")
     public void index(HttpSession session,Model model){
+        List<TMerchantsFuncModel> merchantList = microMarketingSerivce.getmerchantList();
+        model.addAttribute("merchantList",merchantList);
         System.out.println("微营销界面");
+    }
+
+    @RequestMapping(value = "/applyRequest")
+    public void applyRequest(HttpSession session,Model model,
+                             String companyName,
+                             String companyAddress,
+                             String contacter,
+                             String email,
+                             String phone){
+        TRequestCooperationModel newModel = new TRequestCooperationModel();
+        newModel.setAddress(companyAddress);
+        newModel.setCompanyName(companyName);
+        newModel.setContacter(contacter);
+        newModel.setEmail(email);
+        newModel.setPhone(phone);
+        microMarketingSerivce.saveRequest(newModel);
+        model.addAttribute("msg","提交成功，感谢您的支持，请耐心等候回复");
+        System.out.println("申请代理");
     }
 }

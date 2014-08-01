@@ -6,7 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import service.AboutService;
-
+import java.util.List;
+import model.TAboutUsModel;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
@@ -23,6 +24,15 @@ public class AboutController {
 
     @RequestMapping(value = "/about")
     public void index(HttpSession session,Model model){
+        String firstId;
+        List<TAboutUsModel> aboutList = aboutService.getAboutList();
+        if(aboutList.size() > 0) {
+            firstId = aboutList.get(0).getId() + "";
+        }
+        else
+            firstId = "0";
+        model.addAttribute("firstId",firstId);
+        model.addAttribute("aboutList",aboutList);
         System.out.println("关于界面");
     }
 }

@@ -14,7 +14,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/zzsc.js"></script>
 </head>
-<body>
+<body onload="setActive(${firstId})">
 <!--顶部导航-->
 <div id="header" style="z-index: 9999;position: fixed;top: 0;left: 0;">
     <jsp:include page="/common/header.do"/>
@@ -43,7 +43,9 @@
                                 <div>
                                     <div>
                                         <p>${industryCase.caseTitle}</p>
-                                        <img class="productimg" src="${pageContext.request.contextPath}${industryCase.caseImgUrl}">
+                                        <c:if test="${industryCase.caseImgUrl != null && industryCase.caseImgUrl!=''}">
+                                            <img class="productimg" src="${pageContext.request.contextPath}${industryCase.caseImgUrl}">
+                                        </c:if>
                                     </div>
                                 </div>
                             </div>

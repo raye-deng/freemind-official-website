@@ -14,7 +14,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/zzsc.js"></script>
 </head>
-<body>
+<body onload="setActive(${firstId})">
 
 <!--顶部导航-->
 <div id="header" style="z-index: 9999;position: fixed;top: 0;left: 0;">
@@ -38,16 +38,18 @@
                             </h3>
                         </div>
                     </div>
-                    <c:forEach items="${aboutUs}" var="aboutUsList">
+                    <c:forEach items="${aboutList}" var="aboutUs">
                         <div class="item" id="${aboutUs.id}">
                             <div class="product">
-                                <h3> <a>${aboutUs.caseName}</a> </h3>
+                                <h3> <a>${aboutUs.title}</a> </h3>
                             </div>
                             <div class="product-wrap posone">
                                 <div>
                                     <div>
-                                        <p>${aboutUs.caseTitile}</p>
-                                        <img  class="productimg"  src="${pageContext.request.contextPath}${aboutUs.casePicUrl}">
+                                        <p>${aboutUs.desc}</p>
+                                        <c:if test="${aboutUs.imgUrl != null && aboutUs.imgUrl!=''}">
+                                            <img  class="productimg"  src="${pageContext.request.contextPath}${aboutUs.imgUrl}">
+                                        </c:if>
                                     </div>
                                 </div>
                             </div>
