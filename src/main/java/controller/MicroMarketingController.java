@@ -45,6 +45,7 @@ public class MicroMarketingController {
         newModel.setEmail(email);
         newModel.setPhone(phone);
         microMarketingSerivce.saveRequest(newModel);
+        model.addAttribute("msg","提交成功，感谢您的支持，请耐心等候回复");
         System.out.println("申请代理");
     }
 }
