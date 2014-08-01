@@ -1,8 +1,10 @@
 package configuration.controller;
 import configuration.service.CTFuncintroductionService;
 import configuration.service.CTSliderImgService;
+import configuration.service.CTSuccessfulCaseService;
 import model.TFuncIntroductionModel;
 import model.TSliderImgModel;
+import model.TSuccessfulCaseModel;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +22,8 @@ public class ConfigController {
     CTFuncintroductionService tfuncintroductionService;
     @Resource(name ="configSliderImgService")
     CTSliderImgService tsliderImgService;
+    @Resource(name="configSuccessfulCaseService")
+    CTSuccessfulCaseService tsuccessfulCaseService;
 
     @RequestMapping(value = "/index")
     public void home(HttpSession session,Model model){
@@ -75,8 +79,14 @@ public class ConfigController {
     }
 
     @RequestMapping(value = "/function/updateFunc")
-    public void updateFuncpage(String func_Id,HttpSession session,Model model){
-        TFuncIntroductionModel func = tfuncintroductionService.getFunc(func_Id);
+    public void updateFuncpage(String func_Id,HttpSession session,Model model) {
+        TFuncIntroductionModel func = null;
+        try {
+             func = tfuncintroductionService.getFunc(func_Id);
+        } catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
         model.addAttribute("tFunc",func);
     }
 
@@ -92,7 +102,7 @@ public class ConfigController {
                                  HttpSession session,Model model)
     {
         TFuncIntroductionModel func = new TFuncIntroductionModel();
-        func.setId(Integer.parseInt(id));
+        func.setId(Integer.parseInt(id.trim()));
         func.setFuncName(funcName);
         func.setFuncTitle(funcTitle);
         func.setFuncParentId(Integer.parseInt(funcParentId));
@@ -223,5 +233,99 @@ public class ConfigController {
         return "/slider/sliderSuccess";//操作成功
 
     }
+    //----------------------------------successfulCase-----------------------------------------
+    @RequestMapping(value="/successfulCase/successfulCaseMgr")
+    public void successfulCaseMgr(HttpSession session,Model model){
+        System.out.println("successfulCase page!");
+        List<TSuccessfulCaseModel> tSuccessfulCaseList = null;
+        try {
+            tSuccessfulCaseList =  tsuccessfulCaseService.getTSuccessfulCassList();
+        }catch (Exception ex)
+        {
+            model.addAttribute("ERROR",ex);
+        }
+        model.addAttribute("tSuccessfulCaseList",tSuccessfulCaseList);
+    }
 
+    @RequestMapping(value="/successfulCase/newSuccessfulCase")
+    public void newSuccessfulCase(){System.out.println("newSuccessfulCase page.");}
+
+    @RequestMapping(value="/successfulCase/newSuccessfulCaseDo")
+    public String newSuccessfulCaseDo(  String caseName,
+                                        String caseTitle,
+                                        String caseImgUrl,
+                                        String caseDesc,
+                                        String caseGuideUrl,HttpSession session,Model model    ){
+        TSuccessfulCaseModel successfulCase = new TSuccessfulCaseModel();
+        successfulCase.setCaseName(caseName);
+        successfulCase.setCaseTitle(caseTitle);
+        successfulCase.setCaseImgUrl(caseImgUrl);
+        successfulCase.setCaseDesc(caseDesc);
+        successfulCase.setCaseGuideUrl(caseGuideUrl);
+        System.out.println("newSuccessfulCaseDo Page." + caseName);
+        try{
+            tsuccessfulCaseService.saveSuccessfulCase(successfulCase);
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return "/successfulCase/caseFailure";
+        }
+        return "/successfulCase/caseSuccess";
+    }
+
+    @RequestMapping(value="/successfulCase/updateSuccessfulCase")
+    public void updateSuccessfulCase(String id,HttpSession session,Model model){
+        TSuccessfulCaseModel successfulCase = null;
+        try{
+            successfulCase = tsuccessfulCaseService.getOneSuccessfulCase(id.trim());
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        System.out.println("Update SuccessfulCase Page.");
+        model.addAttribute("tCase",successfulCase);
+    }
+
+    @RequestMapping(value="/successfulCase/updateSuccessfulCaseDo")
+    public String updateSuccessfulCaseDo(  String id,
+                                           String caseName,
+                                           String caseTitle,
+                                           String caseImgUrl,
+                                           String caseDesc,
+                                           String caseGuideUrl,
+                                           HttpSession session,
+                                           Model model  ){
+        TSuccessfulCaseModel successfulCase = new TSuccessfulCaseModel();
+        successfulCase.setId(Integer.parseInt(id));
+        successfulCase.setCaseName(caseName);
+        successfulCase.setCaseTitle(caseTitle);
+        successfulCase.setCaseImgUrl(caseImgUrl);
+        successfulCase.setCaseDesc(caseDesc);
+        successfulCase.setCaseGuideUrl(caseGuideUrl);
+        System.out.println("newSuccessfulCaseDo Page.ID:" + id);
+        try{
+            tsuccessfulCaseService.updateSuccessfulCase(successfulCase);
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return "/successfulCase/caseFailure";
+        }
+        return "/successfulCase/caseSuccess";
+    }
+
+    @RequestMapping(value="/successfulCase/delSuccessfulCase")
+    public String delSuccessfulCase(String id){
+        TSuccessfulCaseModel successfulCase = null;
+        try {
+            successfulCase =tsuccessfulCaseService.getOneSuccessfulCase(id.trim());
+            tsuccessfulCaseService.delSuccessfulCase(successfulCase);
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return "/successfulCase/caseFailure";
+        }
+        return "/successfulCase/caseSuccess";
+    }
+
+    @RequestMapping(value="/successfulCase/caseSuccess")
+    public void caseSucccessPage(){}
+
+    @RequestMapping(value="/successfulCase/caseFailure")
+    public void caseFailurePage(){}
 }

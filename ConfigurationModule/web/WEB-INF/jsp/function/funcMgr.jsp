@@ -12,6 +12,10 @@
     <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        .titlelabel{
+            font-size:20px;
+            font-weight: bold;
+        }
         .btn
         {
             border: none;
@@ -26,7 +30,7 @@
         }
 
         .scrollTable {
-            max-height: 550px;;
+            max-height: 550px;
             overflow-x: hidden;
             overflow-y: auto;
             max-width: 860px;
@@ -45,19 +49,31 @@
 </div>
 <div>
     <table style=" margin-top: 60px;  ">
-
         <tr bgcolor="#34495e" style="color:#FFFFFF;">
-            <th width="40px">ID</th>  <th width="100px">功能名称</th> <th width="340px">功能标题</th>   <th width="310px">功能描述</th>
+            <th width="40px">ID</th>
+            <th width="100px">功能名称</th>
+            <th width="340px">功能标题</th>
+            <th width="310px">功能描述</th>
         </tr>
         <td colspan="4">
             <div class="scrollTable">
                 <table border="1px" style="border-color:#dcdcdc;">
                     <c:forEach  items="${tFuncList}" var="tFunc">
-                        <tr  style="height:30px; font-size: 15px;color:rgba(0, 0, 0, 0.6) ;font-weight:bold;" bgcolor="#ffffff" onclick="trOnMouseDown(this)">
-                            <td style="text-align: center; width:50px;" >${tFunc.id}</td>
-                            <td width="100px">${tFunc.funcName}</td>
+                        <tr  style=" height:30px; font-size: 15px;color:rgba(0, 0, 0, 0.6) ;font-weight:bold;" bgcolor="#ffffff" onclick="trOnMouseDown(this)">
+                            <td style="text-align: center; width:50px;" >
+                                ${tFunc.id}
+                            </td>
+                            <td width="200px">
+                                <div style="width:200px; word-wrap:break-word;">
+                                    ${tFunc.funcName}
+                                </div>
+                            </td>
                             <td width="340px">${tFunc.funcTitle}</td>
-                            <td width="310px">${tFunc.funcDesc}</td>
+                            <td  >
+                                <div style="width:310px; word-wrap:break-word;">
+                                    ${tFunc.funcDesc}
+                                </div>
+                            </td>
                         </tr>
                     </c:forEach>
                 </table>
@@ -86,7 +102,7 @@
             alert("请选择要修改的介绍内容");
             return;
         }
-        window.location.href="${pageContext.request.contextPath}/function/updateFunc.cfg?func_Id="+lastTr.cells[0].innerHTML;
+        window.location.href="${pageContext.request.contextPath}/function/updateFunc.cfg?func_Id="+lastTr.cells[0].innerText;
     }
     function delFuncOnMouseDown(){
         if(lastTr==null)
@@ -94,7 +110,7 @@
             alert("请选择要删除的内容");
             return;
         }
-        window.location.href="${pageContext.request.contextPath}/function/delFunc.cfg?id="+lastTr.cells[0].innerHTML;
+        window.location.href="${pageContext.request.contextPath}/function/delFunc.cfg?id="+lastTr.cells[0].innerText;
 
     }
 </SCRIPT>

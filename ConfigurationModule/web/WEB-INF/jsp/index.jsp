@@ -10,13 +10,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
     <script>
         var doc = document, docEl = doc.documentElement;
         docEl.className = docEl.className.replace(/(^|\s)no-js(\s|$)/, " js ");
     </script>
-    <script src="   /resources/js/responsive-nav.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/responsive-nav.js"></script>
     <title></title>
 </head>
 <body>
@@ -25,7 +24,7 @@
         <li><a style="text-decoration: none;">飞迈官网管理页面</a></li>
         <li><a href="#" onClick="changeRightContent('1')">首页展示管理</a></li>
         <li><a href="#" onClick="changeRightContent('2')">功能介绍管理</a></li>
-        <li><a href="#" onClick="changeRightContent('3')">其他</a></li>
+        <li><a href="#" onClick="changeRightContent('3')">成功案例管理</a></li>
     </ul>
 </div>
 <div class="main">
@@ -50,19 +49,16 @@
         if(id==1)
         {
             document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/slider/sliderMgr.cfg';
-            document.getElementById("TopTittle").innerHTML="首页展示管理";
             return;
         }
         if(id==2)
         {
             document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/function/funcMgr.cfg ';
-            document.getElementById("TopTittle").innerHTML="功能介绍管理";
             return;
         }
         if(id==3)
         {
-            document.getElementById("ifream_URL").src='http://www.baidu.com/';
-            document.getElementById("TopTittle").innerHTML="=   =+还没有做";
+            document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/successfulCase/successfulCaseMgr.cfg';
             return;
         }
     }

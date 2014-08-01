@@ -19,7 +19,7 @@ public class CTFuncintroductionService {
     }
     //Query One FunctionIntroduction Example
     public TFuncIntroductionModel getFunc(String funId){
-        TFuncIntroductionModel func = tFuncintroductionDao.queryOneFunc(funId);
+        TFuncIntroductionModel func = tFuncintroductionDao.queryOneFunc(funId.trim());
         return func;
     }
     //Save Func
