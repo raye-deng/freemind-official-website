@@ -27,14 +27,4 @@ public class SmartWiFiController {
     public void index(HttpSession session,Model model){
         System.out.println("智能wifi界面");
     }
-
-    @RequestMapping("/imageUpload")
-    public void imageUpload(HttpSession session,Model model){
-        System.out.println("图片上传页面");
-    }
-
-    @RequestMapping("/UploadImageHandler")
-    public void UploadImageHandler(HttpContext context){
-        System.out.println("图片上传开始");
-    }
 }
