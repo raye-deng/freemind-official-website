@@ -25,6 +25,7 @@
         <li><a href="#" onClick="changeRightContent('1')">首页展示管理</a></li>
         <li><a href="#" onClick="changeRightContent('2')">功能介绍管理</a></li>
         <li><a href="#" onClick="changeRightContent('3')">成功案例管理</a></li>
+        <li><a href="#" onClick="changeRightContent('4')">公司介绍管理</a></li>
     </ul>
 </div>
 <div class="main">
@@ -59,6 +60,11 @@
         if(id==3)
         {
             document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/successfulCase/successfulCaseMgr.cfg';
+            return;
+        }
+        if(id==4)
+        {
+            document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/aboutUs/aboutUsMgr.cfg';
             return;
         }
     }

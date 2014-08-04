@@ -11,11 +11,6 @@
     <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/jQuery.js"></script>
     <style>
-        .mainBody
-        {
-            font: 100% '微软雅黑';
-            margin: 20px auto;
-        }
         .textComment
         {
             width:340px;

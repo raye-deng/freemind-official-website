@@ -57,6 +57,9 @@
                 <value>model/TFuncIntroductionDto.hbm.xml</value>
                 <value>model/TFuncIntroductionModel.hbm.xml</value>
                 <value>model/TSuccessfulCaseModel.hbm.xml</value>
+                <value>model/TMerchantsFuncModel.hbm.xml</value>
+                <value>model/TAboutUsModel.hbm.xml</value>
+                <value>model/TRequestCooperationModel.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -79,6 +82,9 @@
                 <value>model.TFuncIntroductionModel</value>
                 <value>model.TFuncIntroductionDto</value>
                 <value>model.TSuccessfulCaseModel</value>
+                <value>model.TMerchantsFuncModel</value>
+                <value>model.TAboutUsModel</value>
+                <value>model.TRequestCooperationModel</value>
             </list>
         </property>
 

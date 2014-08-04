@@ -1,10 +1,13 @@
 package configuration.controller;
+import configuration.dao.CTAboutUsDao;
 import configuration.service.CTFuncintroductionService;
 import configuration.service.CTSliderImgService;
 import configuration.service.CTSuccessfulCaseService;
+import configuration.service.CTAboutUsService;
 import model.TFuncIntroductionModel;
 import model.TSliderImgModel;
 import model.TSuccessfulCaseModel;
+import model.TAboutUsModel;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +27,8 @@ public class ConfigController {
     CTSliderImgService tsliderImgService;
     @Resource(name="configSuccessfulCaseService")
     CTSuccessfulCaseService tsuccessfulCaseService;
+    @Resource(name="congfigAboutUsService")
+    CTAboutUsService tAboutUsService;
 
     @RequestMapping(value = "/index")
     public void home(HttpSession session,Model model){
@@ -328,4 +333,41 @@ public class ConfigController {
 
     @RequestMapping(value="/successfulCase/caseFailure")
     public void caseFailurePage(){}
+
+    //----------------------------------aboutUs-----------------------------------------
+    @RequestMapping(value="/aboutUs/aboutUsMgr")
+    public void aboutUsMgr( HttpSession session,Model model){
+        List<TAboutUsModel> aboutUsList = null;
+        try{
+            aboutUsList = tAboutUsService.queryAboutUsDaoList();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        model.addAttribute("tAboutUsList",aboutUsList);
+    }
+
+    @RequestMapping(value="/aboutUs/newAboutUs")
+    public void newAboutUs( HttpSession session,Model model){
+        System.out.println("Save AboutUs page");
+    }
+
+    @RequestMapping(value="/aboutUs/newAboutUsDo")
+    public void newAboutUsDo(   String title,
+                                String imgUrl,
+                                String desc,
+                                HttpSession session,
+                                Model model
+    ){
+        TAboutUsModel aboutus = new TAboutUsModel();
+        aboutus.setTitle(title);
+        aboutus.setImgUrl(imgUrl);
+        aboutus.setDesc(desc);
+        System.out.println("newAboutUsDo Controller"+title);
+        try{
+            tAboutUsService.saveAboutUs(aboutus);
+        }catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
+    }
 }
