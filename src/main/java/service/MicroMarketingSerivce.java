@@ -3,8 +3,8 @@ package service;/**
  */
 import model.TMerchantsFuncModel;
 import dao.TMerchantsFuncDao;
-import model.TRequestCooperationModel;
 import dao.TRequestCooperationDao;
+import model.TRequestCooperationModel;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;

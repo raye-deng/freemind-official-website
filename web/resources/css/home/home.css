@@ -86,6 +86,7 @@
     background: #292F36;
     position: relative;
     padding-top: 10px;
+    overflow: hidden;
 }
 .sildPic-Article-QQ{
     width: 1024px;
@@ -144,6 +145,7 @@
 }
 .sildPic-Article-QQ .bd {
     width: 1024px;
+    overflow: hidden;
 }
 .sildPic-Article-QQ .cnt-wrap {
     overflow: hidden;
