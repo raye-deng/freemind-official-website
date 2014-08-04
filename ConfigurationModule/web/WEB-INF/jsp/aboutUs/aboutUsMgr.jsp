@@ -60,8 +60,8 @@
 <p><label class="titlelabel">企业介绍管理</label></p>
 <div style="position: fixed; text-align:right;margin-top: 10px;">
     <button class="btn" onclick="newAboutUsOnMouseDown()">新增介绍</button>&nbsp;&nbsp;
-    <button class="btn" onclick="updateFuncOnMouseDown()">修改介绍</button>&nbsp;&nbsp;
-    <button class="btn" onclick="delSliderOnMouseDown()">删除介绍</button>
+    <button class="btn" onclick="updateAboutUsOnMouseDown()">修改介绍</button>&nbsp;&nbsp;
+    <button class="btn" onclick="delAboutUsOnMouseDown()">删除介绍</button>
 </div>
 <div style="height:400px;">
     <table style=" margin-top: 60px;" >
@@ -75,7 +75,7 @@
                         <tr class="trStyle" bgcolor="#ffffff"  onclick="trOnMouseDown(this)">
                             <td style="text-align:center;width:50px;">${tAboutUs.id}</td>
                             <td style="text-align:center;width:200px">${tAboutUs.title}</td>
-                            <td style="width:210px">${tAboutUs.desc}</td>
+                            <td style="width:210px">${tAboutUs.aboutDesc}</td>
                         </tr>
                     </c:forEach>
                 </table>
@@ -98,6 +98,25 @@
 
     function newAboutUsOnMouseDown(){
         window.location.href="${pageContext.request.contextPath}/aboutUs/newAboutUs.cfg";
+    }
+
+    function updateAboutUsOnMouseDown(){
+        if(lastTr==null)
+        {
+            alert("请选择要修改的介绍内容");
+            return;
+        }
+        window.location.href="${pageContext.request.contextPath}/aboutUs/updateAboutUs.cfg?id="+lastTr.cells[0].innerText;
+    }
+
+    function delAboutUsOnMouseDown(){
+        if(lastTr==null)
+        {
+            alert("请选择要删除的内容");
+            return;
+        }
+        window.location.href="${pageContext.request.contextPath}/aboutUs/delAboutUsDo.cfg?id="+lastTr.cells[0].innerText;
+
     }
 </script>
 </html>

@@ -20,7 +20,7 @@ public class CTAboutUsDao extends BaseDao {
     }
 
     public void saveAboutUs( TAboutUsModel aboutUs){
-        System.out.println("AboutUs Dao");
+
         super.save(aboutUs);
         System.out.println("AboutUs Save in Dao Success;");
     }
