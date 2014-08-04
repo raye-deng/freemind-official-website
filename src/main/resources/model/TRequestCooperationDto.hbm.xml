@@ -23,8 +23,5 @@
         <property name="phone">
             <column name="phone" sql-type="varchar" length="30"/>
         </property>
-        <property name="time">
-            <column name="time" sql-type="timestamp"/>
-        </property>
     </class>
 </hibernate-mapping>

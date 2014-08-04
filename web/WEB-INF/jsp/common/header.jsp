@@ -10,7 +10,7 @@
 <body>
 <div id="top_bg">
 	<div class="top">
-		<a class="logo_l" href=" ${pageContext.request.contextPath}/imageUpload.do" title="返回首页"></a>
+		<a class="logo_l" href=" ${pageContext.request.contextPath}/home.do" title="返回首页"></a>
 		<!--导航开始-->
 		<div class="nav_z">
         	<center>
