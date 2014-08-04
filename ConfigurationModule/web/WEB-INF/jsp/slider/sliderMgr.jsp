@@ -72,7 +72,7 @@
                 <div class="scrollTable">
                     <table border="1px" style="border-color:#dcdcdc;">
                         <c:forEach  items="${tSliderList}" var="tSlider">
-                            <tr class="trStyle"  onclick="trOnMouseDown(this)">
+                            <tr class="trStyle"  bgcolor="#ffffff" onclick="trOnMouseDown(this)">
                                 <td style="text-align: center;">${tSlider.id}</td>
                                     <div style="width:310px; word-wrap:break-word;">
                                         <td style="text-align: center;">
