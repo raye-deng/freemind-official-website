@@ -1,10 +1,9 @@
 package model;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 /**
- * Created by Administrator on 2014/8/1.
+ * Created by Administrator on 2014/8/4.
  */
 @Entity
 @Table(name = "t_request_cooperation", schema = "", catalog = "vdomain")
@@ -15,7 +14,6 @@ public class TRequestCooperationDto {
     private String contacter;
     private String email;
     private String phone;
-    private Timestamp time;
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
@@ -77,16 +75,6 @@ public class TRequestCooperationDto {
         this.phone = phone;
     }
 
-    @Basic
-    @Column(name = "time", nullable = true, insertable = true, updatable = true)
-    public Timestamp getTime() {
-        return time;
-    }
-
-    public void setTime(Timestamp time) {
-        this.time = time;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -100,7 +88,6 @@ public class TRequestCooperationDto {
         if (contacter != null ? !contacter.equals(that.contacter) : that.contacter != null) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
         if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
-        if (time != null ? !time.equals(that.time) : that.time != null) return false;
 
         return true;
     }
@@ -113,7 +100,6 @@ public class TRequestCooperationDto {
         result = 31 * result + (contacter != null ? contacter.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
-        result = 31 * result + (time != null ? time.hashCode() : 0);
         return result;
     }
 }

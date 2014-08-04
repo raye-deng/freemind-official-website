@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Administrator on 2014/8/1.
+ * Created by Administrator on 2014/8/4.
  */
 @Entity
 @Table(name = "t_request_cooperation", schema = "", catalog = "vdomain")
@@ -15,6 +15,8 @@ public class TRequestCooperationModel {
     private String contacter;
     private String email;
     private String phone;
+    private String check;
+    private Timestamp time;
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
@@ -76,6 +78,25 @@ public class TRequestCooperationModel {
         this.phone = phone;
     }
 
+    @Basic
+    @Column(name = "check", nullable = true, insertable = true, updatable = true, length = 45)
+    public String getCheck() {
+        return check;
+    }
+
+    public void setCheck(String check) {
+        this.check = check;
+    }
+
+    @Basic
+    @Column(name = "time", nullable = true, insertable = true, updatable = true)
+    public Timestamp getTime() {
+        return time;
+    }
+
+    public void setTime(Timestamp time) {
+        this.time = time;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -86,10 +107,12 @@ public class TRequestCooperationModel {
 
         if (id != that.id) return false;
         if (address != null ? !address.equals(that.address) : that.address != null) return false;
+        if (check != null ? !check.equals(that.check) : that.check != null) return false;
         if (companyName != null ? !companyName.equals(that.companyName) : that.companyName != null) return false;
         if (contacter != null ? !contacter.equals(that.contacter) : that.contacter != null) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
         if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
+        if (time != null ? !time.equals(that.time) : that.time != null) return false;
 
         return true;
     }
@@ -102,6 +125,8 @@ public class TRequestCooperationModel {
         result = 31 * result + (contacter != null ? contacter.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
+        result = 31 * result + (check != null ? check.hashCode() : 0);
+        result = 31 * result + (time != null ? time.hashCode() : 0);
         return result;
     }
 }
