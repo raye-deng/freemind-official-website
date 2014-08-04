@@ -8,13 +8,14 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "t_request_cooperation", schema = "", catalog = "vdomain")
-public class TRequestCooperationModel {
+public class TRequestCooperationDto {
     private int id;
     private String companyName;
     private String address;
     private String contacter;
     private String email;
     private String phone;
+    private Timestamp time;
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
@@ -76,13 +77,22 @@ public class TRequestCooperationModel {
         this.phone = phone;
     }
 
+    @Basic
+    @Column(name = "time", nullable = true, insertable = true, updatable = true)
+    public Timestamp getTime() {
+        return time;
+    }
+
+    public void setTime(Timestamp time) {
+        this.time = time;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TRequestCooperationModel that = (TRequestCooperationModel) o;
+        TRequestCooperationDto that = (TRequestCooperationDto) o;
 
         if (id != that.id) return false;
         if (address != null ? !address.equals(that.address) : that.address != null) return false;
@@ -90,6 +100,7 @@ public class TRequestCooperationModel {
         if (contacter != null ? !contacter.equals(that.contacter) : that.contacter != null) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
         if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
+        if (time != null ? !time.equals(that.time) : that.time != null) return false;
 
         return true;
     }
@@ -102,6 +113,7 @@ public class TRequestCooperationModel {
         result = 31 * result + (contacter != null ? contacter.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
+        result = 31 * result + (time != null ? time.hashCode() : 0);
         return result;
     }
 }

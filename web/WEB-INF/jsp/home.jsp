@@ -97,11 +97,13 @@ To change this template use File | Settings | File Templates.
                     <c:if test="${tFunc.funcParentId>0}">
                         <li>
                             <div >
+                                <a href="javascript:toFuncPage(${tFunc.id})">
                                 <img src="${pageContext.request.contextPath}${tFunc.funcIconUrl}">
                                 <div>
-                                    <a href="javascript:toFuncPage(${tFunc.id})"><p>${tFunc.funcName}</p></a>
+                                    <p>${tFunc.funcName}</p>
                                     <span>${tFunc.funcTitle}</span>
                                 </div>
+                                </a>
                             </div>
                         </li>
                     </c:if>
@@ -122,7 +124,7 @@ To change this template use File | Settings | File Templates.
                 <div class="ScrCont">
                     <div id="List1_1">
                         <c:forEach varStatus="status" begin="0" items="${tCaseSliderImgList}" var="tCaseSlide" step="1">
-                            <a class="pl" href="${tCaseSlide.targetUrl}" ><img src="${pageContext.request.contextPath}${tCaseSlide.imgUrl}" alt="${tCaseSlide.imgDesc}"/></a>
+                            <a class="pl" href="${pageContext.request.contextPath}${tCaseSlide.targetUrl}" ><img src="${pageContext.request.contextPath}${tCaseSlide.imgUrl}" alt="${tCaseSlide.imgDesc}"/></a>
                         </c:forEach>
                     </div>
                     <div id="List2_1"></div>
@@ -183,7 +185,7 @@ To change this template use File | Settings | File Templates.
     <jsp:include page="/common/header.do"/>
 </div>
 <%--页脚--%>
-<div style="min-width: 1024px;width: 100%; background: #292F36;min-height:300px;padding-top:30px;">
+<div style="min-width: 1024;width: 100%; background: #292F36;min-height:300px;padding-top:30px;overflow:hidden ">
     <center>
         <jsp:include page="/common/footer.do"/>
     </center>
