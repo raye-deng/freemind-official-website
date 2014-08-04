@@ -26,6 +26,8 @@
         <li><a href="#" onClick="changeRightContent('2')">功能介绍管理</a></li>
         <li><a href="#" onClick="changeRightContent('3')">成功案例管理</a></li>
         <li><a href="#" onClick="changeRightContent('4')">公司介绍管理</a></li>
+        <li><a href="#" onClick="changeRightContent('5')">招商加盟管理</a></li>
+        <li><a href="#" onClick="changeRightContent('5')">使用申请管理</a></li>
     </ul>
 </div>
 <div class="main">
@@ -65,6 +67,11 @@
         if(id==4)
         {
             document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/aboutUs/aboutUsMgr.cfg';
+            return;
+        }
+        if(id==5)
+        {
+            document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/cooperation/cooperationMgr.cfg';
             return;
         }
     }

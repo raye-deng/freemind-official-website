@@ -55,7 +55,7 @@
         </p>
         <p>
             <label>简要描述</label>
-            <textarea id="desc" name="desc" class="textComment"></textarea>
+            <textarea id="aboutDesc" name="aboutDesc" class="textComment"></textarea>
         </p>
         <p style="margin-left:65px;">
             <button onclick="doSave()" class="btn">提交</button>

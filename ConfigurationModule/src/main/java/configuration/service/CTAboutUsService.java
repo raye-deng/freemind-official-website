@@ -23,7 +23,7 @@ public class CTAboutUsService {
     }
 
     public void saveAboutUs(TAboutUsModel aboutUs) {
-        System.out.println("AboutUs Service");
+
         tAboutDao.saveAboutUs(aboutUs);
     }
 
