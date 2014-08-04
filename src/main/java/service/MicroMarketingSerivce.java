@@ -4,7 +4,7 @@ package service;/**
 import model.TMerchantsFuncModel;
 import dao.TMerchantsFuncDao;
 import dao.TRequestCooperationDao;
-import model.TRequestCooperationModel;
+import model.TRequestCooperationDto;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
@@ -24,5 +24,5 @@ public class MicroMarketingSerivce {
         return tMerchantsFuncDao.queryMerchantList();
     }
 
-    public void saveRequest(TRequestCooperationModel Request){tRequestCooperationDao.save(Request);}
+    public void saveRequest(TRequestCooperationDto Request){tRequestCooperationDao.save(Request);}
 }

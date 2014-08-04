@@ -1,6 +1,6 @@
 package dao;
 
-import model.TRequestCooperationModel;
+import model.TRequestCooperationDto;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  */
 @Component("tRequestCooperationDao")
 public class TRequestCooperationDao extends BaseDao{
-    public void saveRequest(TRequestCooperationModel Request)
+    public void saveRequest(TRequestCooperationDto Request)
     {
         super.save(Request);
     }
