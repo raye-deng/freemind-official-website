@@ -2,12 +2,12 @@ package controller;/**
  * Created by 邓风森 on 2014/7/22.
  */
 
+import model.TAboutUsModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import service.AboutService;
 import java.util.List;
-import model.TAboutUsModel;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 

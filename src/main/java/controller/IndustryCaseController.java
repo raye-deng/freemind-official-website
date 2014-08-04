@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import service.IndustryCaseService;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import model.TSuccessfulCaseModel;
 import java.util.List;
@@ -24,13 +25,16 @@ public class IndustryCaseController {
     IndustryCaseService industryCaseService;
 
     @RequestMapping(value = "/industryCase")
-    public void index(HttpSession session,Model model){
+    public void index(HttpSession session,Model model,HttpServletRequest request,HttpServletRequest response){
         List<TSuccessfulCaseModel> caseList = industryCaseService.getCaseList();
         String firstId;
-        if(caseList.size() > 0)
-            firstId = caseList.get(0).getId() + "";
-        else
-            firstId = "0";
+        firstId = request.getParameter("firstId");
+        if(firstId == null || firstId =="") {
+            if (caseList.size() > 0)
+                firstId = caseList.get(0).getId() + "";
+            else
+                firstId = "0";
+        }
         model.addAttribute("firstId",firstId);
         model.addAttribute("caseList",caseList);
         System.out.println("行业案例界面");

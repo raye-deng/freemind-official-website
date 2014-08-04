@@ -2,6 +2,7 @@ package controller;/**
  * Created by 邓风森 on 2014/7/22.
  */
 
+import model.TRequestCooperationModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import model.TMerchantsFuncModel;
-import model.TRequestCooperationModel;
 
 /**
  * @ClassName: MicroMarketingController

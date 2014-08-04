@@ -14,8 +14,8 @@
         <property name="imgUrl">
             <column name="imgUrl" sql-type="varchar" length="500"/>
         </property>
-        <property name="desc">
-            <column name="desc" sql-type="varchar" length="1000"/>
+        <property name="aboutDesc">
+            <column name="aboutDesc" sql-type="varchar" length="1000"/>
         </property>
     </class>
 </hibernate-mapping>

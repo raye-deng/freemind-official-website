@@ -46,7 +46,7 @@
                             <div class="product-wrap posone">
                                 <div>
                                     <div>
-                                        <p>${aboutUs.desc}</p>
+                                        <p>${aboutUs.aboutDesc}</p>
                                         <c:if test="${aboutUs.imgUrl != null && aboutUs.imgUrl!=''}">
                                             <img  class="productimg"  src="${pageContext.request.contextPath}${aboutUs.imgUrl}">
                                         </c:if>
