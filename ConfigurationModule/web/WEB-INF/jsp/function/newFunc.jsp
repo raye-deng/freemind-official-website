@@ -10,6 +10,7 @@
 <head>
     <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/jQuery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/ajaxfileupload.js"></script>
     <style>
         .textComment
         {
@@ -47,19 +48,21 @@
 
 <p><label class="titlelabel">新增功能介绍</label></p>
 <div style="margin-left:30px;">
-        <form id="funcForm" action="${pageContext.request.contextPath}/function/newFuncDo.cfg" method="post" >
+        <form id="funcForm" action="${pageContext.request.contextPath}/function/newFuncDo.cfg" method="post"  >
             <p><label>功能名称</label><input  id="funcName" name="funcName" type="text" style="width:250px;"/></p>
             <p><label>介绍标题</label><input  id="funcTitle" name="funcTitle" type="text" style="width:250px;"/></p>
             <p><label>父级ID</label><input  id="funcPanterId" name="funcParentId" type="text" style="width:250px;"/></p>
             <p>
                 <label>介绍图片</label>
                 <input type="hidden" id="funcPicUrl" name="funcPicUrl"  >
-                <img   style="width:350px;height:200px;"  />
+                <img   style="width:350px;height:200px;"/>
             </p>
             <p>
                 <label>图标图片</label>
                 <input type="hidden" id="funcIconUrl" name="funcIconUrl"  >
-                <img   style="width:150px;height:150px;"  />
+                <img id="imgBox" style="width:150px;height:150px;"/>
+                <input id="chooseFile" type="file" onchange="document.getElementById('imgBox').src=this.value;"/>
+                <input type="button" onclick="alert($('#imgBox').attr('src'));"/>
             </p>
             <p>
                 <label>介绍描述</label>
@@ -81,6 +84,18 @@
         alert("功能名称不能为空");
         form.submit();
     }
+
+    function upLoadImg(){
+        $.ajax({
+            url : "${pageContext.request.contextPath}/common/upLoadImg.do",
+            fileElementId: 'chooseFile',
+            dataTpye : "json",
+            success : function(data) {
+                alert(data.);
+            }
+        });
+    }
+
     function back()
     {
         window.location.href="${pageContext.request.contextPath}/function/funcMgr.cfg";

@@ -3,8 +3,21 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" >
+        <property name="messageConverters">
+            <util:list >
+                <ref bean="uploadFileBean"/>
+            </util:list>
+        </property>
+    </bean>
+    <bean id="uploadFileBean" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+
+    <bean id="json_demo" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
     <!-- 配置事务拦截器-->
     <bean id ="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
         <!-- 事务拦截器bean需要依赖注入一个事务管理器 -->
@@ -71,7 +84,7 @@
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
                 <prop key="connection.characterEncoding">UTF-8</prop>
                 <prop key="connection.useUnicode">true</prop>
-                <prop key="hibernate.connection.url">jdbc:mysql://192.168.0.104:3306/vdomain</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://192.168.0.177:3306/vdomain</prop>
                 <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
                 <prop key="hibernate.connection.username">vdomain</prop>
                 <prop key="hibernate.connection.password">vdomain</prop>

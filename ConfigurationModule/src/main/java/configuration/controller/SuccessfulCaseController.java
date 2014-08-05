@@ -13,7 +13,7 @@ import java.util.List;
  * Created by Administrator on 2014/8/4 0004.
  */
 @Controller
-public class SuccessfulCase {
+public class SuccessfulCaseController {
     @Resource(name="configSuccessfulCaseService")
     CTSuccessfulCaseService tsuccessfulCaseService;
 
