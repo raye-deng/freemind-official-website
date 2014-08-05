@@ -1,5 +1,4 @@
 package configuration.controller;
-
 import configuration.service.CTSuccessfulCaseService;
 import model.TSuccessfulCaseModel;
 import org.springframework.stereotype.Controller;
