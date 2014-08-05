@@ -3,7 +3,7 @@ package model;
 import javax.persistence.*;
 
 /**
- * Created by Administrator on 2014/7/29.
+ * Created by Administrator on 2014/8/5.
  */
 @Entity
 @Table(name = "t_func_introduction", schema = "", catalog = "vdomain")
@@ -11,9 +11,9 @@ public class TFuncIntroductionDto {
     private int id;
     private String funcName;
     private String funcTitle;
-    private String funcGuideUrl;
     private String funcIconUrl;
     private Integer funcParentId;
+    private Integer funcOrderNo;
 
     @Id
     @Column(name = "ID", nullable = false, insertable = true, updatable = true)
@@ -46,16 +46,6 @@ public class TFuncIntroductionDto {
     }
 
     @Basic
-    @Column(name = "FUNC_GUIDE_URL", nullable = true, insertable = true, updatable = true, length = 500)
-    public String getFuncGuideUrl() {
-        return funcGuideUrl;
-    }
-
-    public void setFuncGuideUrl(String funcGuideUrl) {
-        this.funcGuideUrl = funcGuideUrl;
-    }
-
-    @Basic
     @Column(name = "FUNC_ICON_URL", nullable = true, insertable = true, updatable = true, length = 500)
     public String getFuncIconUrl() {
         return funcIconUrl;
@@ -75,6 +65,16 @@ public class TFuncIntroductionDto {
         this.funcParentId = funcParentId;
     }
 
+    @Basic
+    @Column(name = "FUNC_ORDER_NO", nullable = true, insertable = true, updatable = true)
+    public Integer getFuncOrderNo() {
+        return funcOrderNo;
+    }
+
+    public void setFuncOrderNo(Integer funcOrderNo) {
+        this.funcOrderNo = funcOrderNo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -83,9 +83,9 @@ public class TFuncIntroductionDto {
         TFuncIntroductionDto that = (TFuncIntroductionDto) o;
 
         if (id != that.id) return false;
-        if (funcGuideUrl != null ? !funcGuideUrl.equals(that.funcGuideUrl) : that.funcGuideUrl != null) return false;
         if (funcIconUrl != null ? !funcIconUrl.equals(that.funcIconUrl) : that.funcIconUrl != null) return false;
         if (funcName != null ? !funcName.equals(that.funcName) : that.funcName != null) return false;
+        if (funcOrderNo != null ? !funcOrderNo.equals(that.funcOrderNo) : that.funcOrderNo != null) return false;
         if (funcParentId != null ? !funcParentId.equals(that.funcParentId) : that.funcParentId != null) return false;
         if (funcTitle != null ? !funcTitle.equals(that.funcTitle) : that.funcTitle != null) return false;
 
@@ -97,9 +97,9 @@ public class TFuncIntroductionDto {
         int result = id;
         result = 31 * result + (funcName != null ? funcName.hashCode() : 0);
         result = 31 * result + (funcTitle != null ? funcTitle.hashCode() : 0);
-        result = 31 * result + (funcGuideUrl != null ? funcGuideUrl.hashCode() : 0);
         result = 31 * result + (funcIconUrl != null ? funcIconUrl.hashCode() : 0);
         result = 31 * result + (funcParentId != null ? funcParentId.hashCode() : 0);
+        result = 31 * result + (funcOrderNo != null ? funcOrderNo.hashCode() : 0);
         return result;
     }
 }

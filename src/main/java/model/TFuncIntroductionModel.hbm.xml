@@ -44,5 +44,8 @@
         <property name="funcParentId">
             <column name="FUNC_PARENT_ID" sql-type="int"/>
         </property>
+        <property name="funcOrderNo">
+            <column name="FUNC_ORDER_NO" sql-type="int"/>
+        </property>
     </class>
 </hibernate-mapping>
