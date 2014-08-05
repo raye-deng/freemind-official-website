@@ -35,22 +35,69 @@ public class AboutUsController {
     }
 
     @RequestMapping(value="/aboutUs/newAboutUsDo")
-    public void newAboutUsDo(   String title,
+    public String newAboutUsDo(   String title,
                                 String imgUrl,
-                                String desc,
+                                String aboutDesc,
                                 HttpSession session,
                                 Model model
     ){
-        TAboutUsModel aboutus = new TAboutUsModel();
-        aboutus.setTitle(title);
-        aboutus.setImgUrl(imgUrl);
-        aboutus.setDesc(desc);
+        TAboutUsModel aboutUs = new TAboutUsModel();
+        aboutUs.setTitle(title);
+        aboutUs.setImgUrl(imgUrl);
+        aboutUs.setAboutDesc(aboutDesc);
         System.out.println("newAboutUsDo Controller"+title);
         try{
-            tAboutUsService.saveAboutUs(aboutus);
+            tAboutUsService.saveAboutUs(aboutUs);
         }catch(Exception ex)
         {
             ex.printStackTrace();
+            return "/aboutUs/aboutUsFailure";
         }
+        return "/aboutUs/aboutUsSuccess";
+    }
+
+     @RequestMapping(value="/aboutUs/updateAboutUs")
+    public void updateAboutUs( String id, HttpSession session, Model model){
+         TAboutUsModel aboutUs = null;
+         try{
+             aboutUs = tAboutUsService.queryOneAboutUs(id);
+         }catch(Exception ex){
+             ex.printStackTrace();
+         }
+         model.addAttribute("aboutUs",aboutUs);
+
+     }
+
+    @RequestMapping(value="/aboutUs/updateAboutUsDo")
+    public String updateAboutUsDo(   String id,
+                                     String title,
+                                     String imgUrl,
+                                     String aboutDesc,
+                                     HttpSession session,
+                                     Model model){
+        TAboutUsModel aboutUs = new TAboutUsModel();
+        aboutUs.setId(Integer.parseInt(id));
+        aboutUs.setTitle(title);
+        aboutUs.setImgUrl(imgUrl);
+        aboutUs.setAboutDesc(aboutDesc);
+        try{
+            tAboutUsService.update(aboutUs);
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return "/aboutUs/aboutUsFailure";
+        }
+        return"/aboutUs/aboutUsSuccess";
+    }
+
+    @RequestMapping(value="/aboutUs/delAboutUsDo")
+    public String delAboutUsDo(String id,HttpSession session,Model model){
+        TAboutUsModel aboutUs = tAboutUsService.queryOneAboutUs(id);
+        try{
+            tAboutUsService.delAboutUs(aboutUs);
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return "/aboutUs/aboutUsFailure";
+        }
+        return"/aboutUs/aboutUsSuccess";
     }
 }

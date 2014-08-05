@@ -47,13 +47,14 @@
         }
 
     </style>
-    <title>企业介绍页面管理</title>
+    <title>加盟申请管理</title>
 </head>
 <body class="body">
-<p><label class="titlelabel">企业介绍管理</label></p>
+<p><label class="titlelabel">加盟申请管理</label></p>
 <div style="position: fixed; text-align:right;margin-top: 10px;">
-    <button class="btn" onclick="newAboutUsOnMouseDown()">导出Excel</button>&nbsp;&nbsp;
-    <button class="btn" >确认审核</button>&nbsp;&nbsp;
+    <button class="btn" >导出Excel</button>&nbsp;&nbsp;
+    <button class="btn" onclick="CheckOnMouseDown()">确认审核</button>&nbsp;&nbsp;
+    <button class="btn" onclick="delOnMouseDown()">清除记录</button>&nbsp;&nbsp;
 </div>
 <div style="height:400px;">
     <table  style=" margin-top: 60px;min-width:860px; "  >
@@ -90,11 +91,16 @@
                         <td width="150px">2014-8-4 14:37:52</td>
                         <th width="151px"><span style="color:red;">未审核</span></th>
                     </tr>
-                    <c:forEach  items="${tAboutUsList}" var="tAboutUs">
+                    <c:forEach  items="${cooperationList}" var="cooperation">
                         <tr class="trStyle" bgcolor="#ffffff"  onclick="trOnMouseDown(this)">
-                            <td style="text-align:center;width:50px;">${tAboutUs.id}</td>
-                            <td style="text-align:center;width:200px">${tAboutUs.title}</td>
-                            <td style="width:210px">${tAboutUs.desc}</td>
+                            <td width="30px">${cooperation.id}</td>
+                            <td style="text-align:center;" width="150px">${cooperation.companyName}</td>
+                            <td style="text-align:center;" width="100px">${cooperation.address}</td>
+                            <td style="text-align:center;" width="100px">${cooperation.contacter}</td>
+                            <td style="text-align:center;" width="170px">${cooperation.email}</td>
+                            <td width="200px">${cooperation.phone}</td>
+                            <td width="150px">${cooperation.time}</td>
+                            <th width="151px"><span style="color:red;">${cooperation.check}</span></th>
                         </tr>
                     </c:forEach>
                 </table>
@@ -115,8 +121,22 @@
         lastTr = obj;
     }
 
-    function newAboutUsOnMouseDown(){
-        //window.location.href="${pageContext.request.contextPath}/aboutUs/newAboutUs.cfg";
+    function CheckOnMouseDown(){
+        if(lastTr==null)
+        {
+            alert("请选择要修改的介绍内容");
+            return;
+        }
+        window.location.href="${pageContext.request.contextPath}/cooperation/updateCooperationDo.cfg?id="+lastTr.cells[0].innerText;
+    }
+    function delOnMouseDown(){
+        if(lastTr==null)
+        {
+            alert("请选择要删除的内容");
+            return;
+        }
+        window.location.href="${pageContext.request.contextPath}/cooperation/delCooperationDo.cfg?id="+lastTr.cells[0].innerText;
+
     }
 </script>
 </html>

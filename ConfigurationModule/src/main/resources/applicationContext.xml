@@ -53,13 +53,15 @@
         <property name="mappingResources">
             <list>
                 <value>model/TNavbarModel.hbm.xml</value>
-                <value>model/TSliderImgModel.hbm.xml</value>
-                <value>model/TFuncIntroductionDto.hbm.xml</value>
-                <value>model/TFuncIntroductionModel.hbm.xml</value>
-                <value>model/TSuccessfulCaseModel.hbm.xml</value>
                 <value>model/TMerchantsFuncModel.hbm.xml</value>
                 <value>model/TAboutUsModel.hbm.xml</value>
                 <value>model/TRequestCooperationModel.hbm.xml</value>
+                <value>model/TSuccessfulCaseModel.hbm.xml</value>
+                <value>model/TRequestCooperationDto.hbm.xml</value>
+                <value>model/TFuncIntroductionDto.hbm.xml</value>
+                <value>model/TFuncIntroductionModel.hbm.xml</value>
+                <value>model/TSliderImgModel.hbm.xml</value>
+                <value>model/TTrialRequestModel.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -78,13 +80,15 @@
         <property name="annotatedClasses">
             <list>
                 <value>model.TNavbarModel</value>
-                <value>model.TSliderImgModel</value>
-                <value>model.TFuncIntroductionModel</value>
-                <value>model.TFuncIntroductionDto</value>
-                <value>model.TSuccessfulCaseModel</value>
                 <value>model.TMerchantsFuncModel</value>
                 <value>model.TAboutUsModel</value>
+                <value>model.TRequestCooperationDto</value>
+                <value>model.TSuccessfulCaseModel</value>
                 <value>model.TRequestCooperationModel</value>
+                <value>model.TFuncIntroductionDto</value>
+                <value>model.TFuncIntroductionModel</value>
+                <value>model.TSliderImgModel</value>
+                <value>model.TTrialRequestModel</value>
             </list>
         </property>
 
