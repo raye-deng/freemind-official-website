@@ -1,21 +1,27 @@
-package model;/**
- * Created by 邓风森 on 2014/7/29.
- */
+package model;
 
 import javax.persistence.*;
 
 /**
- * @ClassName: TFuncIntroductionModel
- * @Description:
- * @author:邓风森
- * @date: 2014/7/29 16:04
+ * Created by Administrator on 2014/8/4.
  */
-
 @Entity
 @Table(name = "t_func_introduction", schema = "", catalog = "vdomain")
 public class TFuncIntroductionModel {
-
     private int id;
+    private String funcName;
+    private String funcTitle;
+    private String funcPicUrl;
+    private String funcDesc;
+    private Integer funcGuideEnable;
+    private String funcGuideUrl;
+    private Integer funcGuideId;
+    private Integer funcTopicEnable;
+    private String funcTopicUrl;
+    private Integer funcTopicId;
+    private String funcIconUrl;
+    private Integer funcParentId;
+    private Integer funcOrderNo;
 
     @Id
     @Column(name = "ID", nullable = false, insertable = true, updatable = true)
@@ -27,8 +33,6 @@ public class TFuncIntroductionModel {
         this.id = id;
     }
 
-    private String funcName;
-
     @Basic
     @Column(name = "FUNC_NAME", nullable = true, insertable = true, updatable = true, length = 70)
     public String getFuncName() {
@@ -39,8 +43,6 @@ public class TFuncIntroductionModel {
         this.funcName = funcName;
     }
 
-    private String funcTitle;
-
     @Basic
     @Column(name = "FUNC_TITLE", nullable = true, insertable = true, updatable = true, length = 70)
     public String getFuncTitle() {
@@ -50,25 +52,6 @@ public class TFuncIntroductionModel {
     public void setFuncTitle(String funcTitle) {
         this.funcTitle = funcTitle;
     }
-
-    private String funcPicUrl;
-
-
-
-
-    private String funcDesc;
-
-
-
-
-
-    private Integer funcGuideEnable;
-
-
-
-
-
-    private String funcGuideUrl;
 
     @Basic
     @Column(name = "FUNC_PIC_URL", nullable = true, insertable = true, updatable = true, length = 500)
@@ -84,7 +67,7 @@ public class TFuncIntroductionModel {
     @Column(name = "FUNC_DESC", nullable = true, insertable = true, updatable = true, length = 1000)
     public String getFuncDesc() {
         return funcDesc;
-    }    private Integer funcGuideId;
+    }
 
     public void setFuncDesc(String funcDesc) {
         this.funcDesc = funcDesc;
@@ -98,7 +81,7 @@ public class TFuncIntroductionModel {
 
     public void setFuncGuideEnable(Integer funcGuideEnable) {
         this.funcGuideEnable = funcGuideEnable;
-    }    private Integer funcTopicEnable;
+    }
 
     @Basic
     @Column(name = "FUNC_GUIDE_URL", nullable = true, insertable = true, updatable = true, length = 500)
@@ -114,7 +97,7 @@ public class TFuncIntroductionModel {
     @Column(name = "FUNC_GUIDE_ID", nullable = true, insertable = true, updatable = true)
     public Integer getFuncGuideId() {
         return funcGuideId;
-    }    private String funcTopicUrl;
+    }
 
     public void setFuncGuideId(Integer funcGuideId) {
         this.funcGuideId = funcGuideId;
@@ -128,7 +111,7 @@ public class TFuncIntroductionModel {
 
     public void setFuncTopicEnable(Integer funcTopicEnable) {
         this.funcTopicEnable = funcTopicEnable;
-    }    private Integer funcTopicId;
+    }
 
     @Basic
     @Column(name = "FUNC_TOPIC_URL", nullable = true, insertable = true, updatable = true, length = 500)
@@ -144,7 +127,7 @@ public class TFuncIntroductionModel {
     @Column(name = "FUNC_TOPIC_ID", nullable = true, insertable = true, updatable = true)
     public Integer getFuncTopicId() {
         return funcTopicId;
-    }    private String funcIconUrl;
+    }
 
     public void setFuncTopicId(Integer funcTopicId) {
         this.funcTopicId = funcTopicId;
@@ -158,7 +141,7 @@ public class TFuncIntroductionModel {
 
     public void setFuncIconUrl(String funcIconUrl) {
         this.funcIconUrl = funcIconUrl;
-    }    private Integer funcParentId;
+    }
 
     @Basic
     @Column(name = "FUNC_PARENT_ID", nullable = true, insertable = true, updatable = true)
@@ -168,6 +151,16 @@ public class TFuncIntroductionModel {
 
     public void setFuncParentId(Integer funcParentId) {
         this.funcParentId = funcParentId;
+    }
+
+    @Basic
+    @Column(name = "FUNC_ORDER_NO", nullable = true, insertable = true, updatable = true)
+    public Integer getFuncOrderNo() {
+        return funcOrderNo;
+    }
+
+    public void setFuncOrderNo(Integer funcOrderNo) {
+        this.funcOrderNo = funcOrderNo;
     }
 
     @Override
@@ -185,6 +178,7 @@ public class TFuncIntroductionModel {
         if (funcGuideUrl != null ? !funcGuideUrl.equals(that.funcGuideUrl) : that.funcGuideUrl != null) return false;
         if (funcIconUrl != null ? !funcIconUrl.equals(that.funcIconUrl) : that.funcIconUrl != null) return false;
         if (funcName != null ? !funcName.equals(that.funcName) : that.funcName != null) return false;
+        if (funcOrderNo != null ? !funcOrderNo.equals(that.funcOrderNo) : that.funcOrderNo != null) return false;
         if (funcParentId != null ? !funcParentId.equals(that.funcParentId) : that.funcParentId != null) return false;
         if (funcPicUrl != null ? !funcPicUrl.equals(that.funcPicUrl) : that.funcPicUrl != null) return false;
         if (funcTitle != null ? !funcTitle.equals(that.funcTitle) : that.funcTitle != null) return false;
@@ -211,6 +205,7 @@ public class TFuncIntroductionModel {
         result = 31 * result + (funcTopicId != null ? funcTopicId.hashCode() : 0);
         result = 31 * result + (funcIconUrl != null ? funcIconUrl.hashCode() : 0);
         result = 31 * result + (funcParentId != null ? funcParentId.hashCode() : 0);
+        result = 31 * result + (funcOrderNo != null ? funcOrderNo.hashCode() : 0);
         return result;
     }
 }

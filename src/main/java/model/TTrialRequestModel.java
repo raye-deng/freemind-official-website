@@ -1,9 +1,10 @@
 package model;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 /**
- * Created by Administrator on 2014/8/4.
+ * Created by Administrator on 2014/8/5.
  */
 @Entity
 @Table(name = "t_trial_request", schema = "", catalog = "vdomain")
@@ -14,6 +15,7 @@ public class TTrialRequestModel {
     private String companyName;
     private String eMail;
     private String tCheck;
+    private Timestamp tTime;
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
@@ -75,6 +77,16 @@ public class TTrialRequestModel {
         this.tCheck = tCheck;
     }
 
+    @Basic
+    @Column(name = "tTime", nullable = true, insertable = true, updatable = true)
+    public Timestamp gettTime() {
+        return tTime;
+    }
+
+    public void settTime(Timestamp tTime) {
+        this.tTime = tTime;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -87,6 +99,7 @@ public class TTrialRequestModel {
         if (eMail != null ? !eMail.equals(that.eMail) : that.eMail != null) return false;
         if (phoneNum != null ? !phoneNum.equals(that.phoneNum) : that.phoneNum != null) return false;
         if (tCheck != null ? !tCheck.equals(that.tCheck) : that.tCheck != null) return false;
+        if (tTime != null ? !tTime.equals(that.tTime) : that.tTime != null) return false;
         if (userName != null ? !userName.equals(that.userName) : that.userName != null) return false;
 
         return true;
@@ -100,6 +113,7 @@ public class TTrialRequestModel {
         result = 31 * result + (companyName != null ? companyName.hashCode() : 0);
         result = 31 * result + (eMail != null ? eMail.hashCode() : 0);
         result = 31 * result + (tCheck != null ? tCheck.hashCode() : 0);
+        result = 31 * result + (tTime != null ? tTime.hashCode() : 0);
         return result;
     }
 }
