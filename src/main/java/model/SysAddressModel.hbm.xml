@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.SysAddressModel" table="sys_address" schema="" catalog="vdomain">
+        <id name="areaId">
+            <column name="AREA_ID" sql-type="varchar" length="20" not-null="true"/>
+        </id>
+        <property name="areaName">
+            <column name="AREA_NAME" sql-type="varchar" length="100" not-null="true"/>
+        </property>
+        <property name="areaLevel">
+            <column name="AREA_LEVEL" sql-type="int" not-null="true"/>
+        </property>
+        <property name="parentAreaId">
+            <column name="PARENT_AREA_ID" sql-type="varchar" length="20"/>
+        </property>
+        <property name="areaCode">
+            <column name="AREA_CODE" sql-type="varchar" length="50"/>
+        </property>
+        <property name="areaShort">
+            <column name="AREA_SHORT" sql-type="varchar" length="50"/>
+        </property>
+        <property name="aeraZip">
+            <column name="AERA_ZIP" sql-type="varchar" length="50"/>
+        </property>
+        <property name="orderSort">
+            <column name="ORDER_SORT" sql-type="int"/>
+        </property>
+    </class>
+</hibernate-mapping>

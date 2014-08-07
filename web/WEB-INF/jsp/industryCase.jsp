@@ -25,7 +25,7 @@
     <center>
         <div style="min-width: 1024px;">
             <div class="goods">
-                <div class="all-goods">
+                <div class="all-goods" id="listbox">
                     <div class="itemhead">
                         <div class="product">
                             <h3>
@@ -53,7 +53,7 @@
                     </c:forEach>
                 </div>
                 <div class="child-page">
-                    <p class="child-page-title">当前位置：网站首页&gt;<strong>产品与功能</strong></p>
+                    <p class="child-page-title">当前位置：网站首页&gt;<strong>成功案例</strong></p>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
 <div style="width: 1024px">&nbsp;</div>
 
 <%--页脚--%>
-<div style="min-width: 1024px;width: 100%; background: #292F36;min-height:300px;padding-top:30px;float: left;">
+<div style="min-width: 1024;width: 100%;overflow:hidden ">
     <center>
         <jsp:include page="/common/footer.do"/>
     </center>

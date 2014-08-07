@@ -7,7 +7,7 @@ html,body,p,h1,h2,h3,h4,h5,h6,form,input,textarea,select,button,fieldset,legend,
 .goods a{text-decoration:none}
 
 .goods{width: 1024px;}
-.all-goods{box-shadow:-15px 1px 15px -2px #CCC;position: relative ;left: 0;width: 210px;min-height: 1000px;background: #EFEFEF;overflow: visible;margin-top:20px;float: left;}
+.all-goods{box-shadow:-15px 1px 15px -2px #CCC;position: relative ;left: 0;width: 210px;min-height: 1000px;background: #EFEFEF;overflow: visible;margin-top:20px;float: left;margin-bottom: 20px;}
 .all-goods .itemhead{width: 210px;height: 45px;background: #74BAFA;margin-bottom: 5px;}
 .all-goods .itemhead .product{ position: absolute;z-index: 999; width: 210px;text-align:center;}
 .all-goods .itemhead .product h3{width: 210px;height: 45px;border-width: 1px 0;font-weight: normal;line-height: 45px;}
@@ -41,7 +41,6 @@ html,body,p,h1,h2,h3,h4,h5,h6,form,input,textarea,select,button,fieldset,legend,
 .productimg
 {
     margin-left: 40px;
-    max-height: 900px;
     max-width: 750px;
     float: left;
 }

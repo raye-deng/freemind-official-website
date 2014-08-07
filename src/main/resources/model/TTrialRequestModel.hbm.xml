@@ -24,7 +24,7 @@
             <column name="tCheck" sql-type="varchar" length="45"/>
         </property>
         <property name="tTime">
-            <column name="tTime" sql-type="timestamp"/>
-        </property>
+        <column name="tTime" sql-type="timestamp"/>
+    </property>
     </class>
 </hibernate-mapping>

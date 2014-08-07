@@ -22,7 +22,7 @@
     <jsp:include page="/common/header.do"/>
 </div>
 <%--页脚--%>
-<div style="min-width: 1024px;width: 100%; background: #292F36;min-height:300px;padding-top:30px;">
+<div style="min-width: 1024;width: 100%;overflow:hidden ">
     <center>
         <jsp:include page="/common/footer.do"/>
     </center>

@@ -6,6 +6,9 @@ import dao.TFuncIntroductionDao;
 import dao.TNavDao;
 import  dao.TSlideDao;
 import model.*;
+import dao.TTrialRequestDao;
+import dao.SysAddressDao;
+import dao.TNewsDao;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -26,6 +29,12 @@ public class HomeService {
     TFuncIntroductionDao tFuncIntroductionDao;
     @Resource(name="tSlideDao")
     TSlideDao tSlideDao;
+    @Resource(name="tTrialRequestDao")
+    TTrialRequestDao tTriall;
+    @Resource(name="sysAddressDao")
+    SysAddressDao sysAddr;
+    @Resource(name="tNewsDao")
+    TNewsDao tNewsDao;
 
 
     public  List<TNavbarModel> getNavList(){
@@ -40,4 +49,18 @@ public class HomeService {
     public List<TSliderImgModel> getSliderImgList(String Flag){
         return tSlideDao.querySliderImage(Flag);
     }
+
+    public void saveTrialRequest(TTrialRequestDto trialRequest)
+    {
+        tTriall.saveTrialRequest(trialRequest);
+    }
+
+    public List<SysAddressModel> getProvinceLsit(){
+        return sysAddr.queryProvince();
+    }
+
+    public List<TNewsDto> getAllNews(){
+        return tNewsDao.queryNewsList();
+    }
+
 }

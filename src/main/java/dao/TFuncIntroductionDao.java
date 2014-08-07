@@ -19,8 +19,10 @@ public class TFuncIntroductionDao extends BaseDao {
     }
 
     public List<TFuncIntroductionDto> queryFuncDtoList(){
-        List<TFuncIntroductionDto> funcList=(List<TFuncIntroductionDto>)super.getAll(TFuncIntroductionDto.class);
+        String hql = "from TFuncIntroductionDto as funcList order by funcList.funcOrderNo";
+        List<TFuncIntroductionDto> funcList=(List<TFuncIntroductionDto>)super.pageQuery(hql);
         return funcList;
     }
+
 
 }

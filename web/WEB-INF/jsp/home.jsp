@@ -15,7 +15,7 @@ To change this template use File | Settings | File Templates.
     <link rel='stylesheet' id='camera-css'  href='${pageContext.request.contextPath}/resources/css/common/slider/camera.css' type='text/css' media='all'>
     <link rel='stylesheet' id='home-css'  href='${pageContext.request.contextPath}/resources/css/home/home.css' type='text/css' media='all'>
     <link rel='stylesheet' href='${pageContext.request.contextPath}/resources/css/common/slider/caseSlide.css' type='text/css' media='all'>
-
+    <link rel='stylesheet' href='${pageContext.request.contextPath}/resources/css/common/css/font-awesome.css' type='text/css' media='all'>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/jquery.min.js'></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/jquery.mobile.customized.min.js'></script>
@@ -23,6 +23,7 @@ To change this template use File | Settings | File Templates.
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/camera.js'></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/company_mates.js'></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/useCase.js'></script>
+    <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/announcement.js'></script>
 
     <style>
         html,body {
@@ -73,7 +74,7 @@ To change this template use File | Settings | File Templates.
     </script>
 </head>
 <body style="background: #fff;position: relative;font-family: 'huaKanYuanTi'">
-<div>
+<div style="height: 540px;">
     <div class="fluid_container">
         <div class="camera_wrap camera_emboss pattern_1" id="camera_wrap_4">
             <c:forEach  items="${tCameraSliderImgList}" var="cameraSlide">
@@ -84,6 +85,22 @@ To change this template use File | Settings | File Templates.
 
     </div>
 </div>
+<!-- 公告轮播 -->
+<center>
+
+<div>
+    <div id="breakingnews" class="BreakingNewsController easing" id="breakingnews1">
+        <div class="bn-title icon-bullhorn" style="font-size: 30px;color:#4fade2;"></div>
+        <ul style="left: 50px;">
+            <c:forEach  items="${newsList}" var="news">
+                <li style="display: none;"><a class="annView">${news.newsContent}</a></li>
+            </c:forEach>
+        </ul>
+        <div class="bn-arrows"><span class="bn-arrows-left"></span><span class="bn-arrows-right"></span></div>
+    </div>
+    </div>
+</div>
+</center>
 <%--产品列表--%>
 <div id="contentdiv" name="congentdiv" class="home_content">
     <div id="productListdiv" name="productListdiv" class="product_list_div">
@@ -93,7 +110,7 @@ To change this template use File | Settings | File Templates.
             </div>
             <ul id="productList" name="productList" class="product_list">
 
-                <c:forEach  items="${tFuncDtoList}" var="tFunc">
+                <c:forEach  items="${tFuncDtoList}" var="tFunc" begin="0" end="24">
                     <c:if test="${tFunc.funcParentId>0}">
                         <li>
                             <div >
@@ -185,7 +202,7 @@ To change this template use File | Settings | File Templates.
     <jsp:include page="/common/header.do"/>
 </div>
 <%--页脚--%>
-<div style="min-width: 1024;width: 100%; background: #292F36;min-height:300px;padding-top:30px;overflow:hidden ">
+<div style="min-width: 1024;width: 100%;overflow:hidden ">
     <center>
         <jsp:include page="/common/footer.do"/>
     </center>
@@ -198,3 +215,19 @@ To change this template use File | Settings | File Templates.
     }
 </script>
 </html>
+<script type="text/javascript">
+    $("#breakingnews").BreakingNews({
+        background      :"#FFF",
+        titlecolor      :"#4fade2",
+        titlebgcolor        :"#FFF",
+        linkcolor       :"#333",
+        linkhovercolor      :"#4fade2",
+        fonttextsize        :16,
+        isbold          :false,
+        border          :"solid 0px #099",
+        width           :"50%",
+        timer           :3000,
+        autoplay        :true,
+        effect          :"slide"
+    });
+</script>
