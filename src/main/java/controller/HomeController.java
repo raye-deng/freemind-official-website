@@ -28,9 +28,9 @@ public class HomeController {
     public void home(HttpSession session,Model model){
         System.out.println("home page!");
         List<TFuncIntroductionDto> tFuncDtoList=homeService.getTFuncDtoList();
-        List<TSliderImgModel> tSliderImgModelList = homeService.getSliderImgList("camera_slide");
-        List<TSliderImgModel> tCaseSliderImgList = homeService.getSliderImgList("case_slide");
-        List<TSliderImgModel> tPartnerSliderImgList = homeService.getSliderImgList("partner_slide");
+        List<TSliderImgModel> tSliderImgModelList = homeService.getSliderImgList("头部轮播图");
+        List<TSliderImgModel> tCaseSliderImgList = homeService.getSliderImgList("案例轮播图");
+        List<TSliderImgModel> tPartnerSliderImgList = homeService.getSliderImgList("合作伙伴轮播图");
         List<TNewsDto> newsList = homeService.getAllNews();
         model.addAttribute("newsList",newsList);
         model.addAttribute("tPartnerSliderImgList",tPartnerSliderImgList);
