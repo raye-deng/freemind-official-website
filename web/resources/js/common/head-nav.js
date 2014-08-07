@@ -2,7 +2,6 @@
  *author:Null
  *DATE:2013.5.24
  */
-
 $(function(){
     //头页登录
     $("#navul > li").not(".navhome").hover(function(){
@@ -55,3 +54,24 @@ $(function(){
         top:0
     };
 })(jQuery);
+
+$(function ($) {
+    //弹出登录
+    $("#example").hover(function () {
+        $(this).stop().animate({
+            opacity: '1'
+        }, 600);
+    }, function () {
+
+    }).on('click', function () {
+        $("#dialog").fadeIn("slow");
+    });
+    //
+    //关闭
+    $(".close_btn").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
+        $("#dialog").fadeOut("fast");
+        $("#mask").css({ display: 'none' });
+    });
+});
+
+

@@ -26,7 +26,7 @@
     <center>
         <div style="min-width: 1024px;">
             <div class="goods">
-                <div class="all-goods" id="box">
+                <div class="all-goods" id="listbox">
                     <div class="itemhead">
                         <div class="product">
                             <h3>
@@ -62,7 +62,6 @@
                                 </c:if>
                             </c:forEach>
                         </c:if>
-
                     </c:forEach>
                     <div class="itemhead">
                         <div class="product">
@@ -90,7 +89,7 @@
                                             <div>
                                                 <div>
                                                     <p>${childfunchard.funcDesc}</p>
-                                                    <c:if test="${childfunc.funcPicUrl != null && childfunc.funcPicUrl!=''}">
+                                                    <c:if test="${childfunchard.funcPicUrl != null && childfunchard.funcPicUrl!=''}">
                                                         <img class="productimg" src="${pageContext.request.contextPath}${childfunchard.funcPicUrl}">
                                                     </c:if>
                                                 </div>
@@ -109,7 +108,7 @@
                                     <div>
                                         <div>
                                             <p>${funchard.funcDesc}</p>
-                                            <c:if test="${childfunc.funcPicUrl != null && childfunc.funcPicUrl!=''}">
+                                            <c:if test="${funchard.funcPicUrl != null && funchard.funcPicUrl!=''}">
                                                 <img class="productimg" src="${pageContext.request.contextPath}${funchard.funcPicUrl}">
                                             </c:if>
                                         </div>
@@ -156,11 +155,10 @@
 </div>
 <div style="width: 1024px">&nbsp;</div>
 <%--页脚--%>
-<div style="min-width: 1024px;width: 100%; background: #292F36;min-height:300px;padding-top:30px;float: left;">
+<div style="min-width: 1024;width: 100%;overflow:hidden ">
     <center>
         <jsp:include page="/common/footer.do"/>
     </center>
 </div>
-
 </body>
 </html>

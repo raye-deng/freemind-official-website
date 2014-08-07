@@ -38,14 +38,19 @@ public class MicroMarketingController {
                              String contacter,
                              String email,
                              String phone){
-        TRequestCooperationDto newModel = new TRequestCooperationDto();
-        newModel.setAddress(companyAddress);
-        newModel.setCompanyName(companyName);
-        newModel.setContacter(contacter);
-        newModel.setEmail(email);
-        newModel.setPhone(phone);
-        microMarketingSerivce.saveRequest(newModel);
-        model.addAttribute("msg","提交成功，感谢您的支持，请耐心等候回复");
-        System.out.println("申请代理");
+        try {
+            TRequestCooperationDto newModel = new TRequestCooperationDto();
+            newModel.setAddress(companyAddress);
+            newModel.setCompanyName(companyName);
+            newModel.setContacter(contacter);
+            newModel.setEmail(email);
+            newModel.setPhone(phone);
+            microMarketingSerivce.saveRequest(newModel);
+            model.addAttribute("msg", "提交成功，感谢您的支持，请耐心等候回复");
+        }
+        catch (Exception ex)
+        {
+            model.addAttribute("msg", "提交失败,请稍后重试");
+        }
     }
 }
