@@ -137,7 +137,7 @@
                 </c:forEach>
 
                 <a href="#" id="example" class="button medium blue" style="font-family: 'huaKanYuanTi'">申请试用</a>
-                <a href="#" class="button medium blue" style="font-family: 'huaKanYuanTi'">登录</a>
+                <a href="http://vzone.freemindsoft.com" class="button medium blue" style="font-family: 'huaKanYuanTi'">登录</a>
 
                 <!--可在此处直接添加导航-->
 			</ul>
