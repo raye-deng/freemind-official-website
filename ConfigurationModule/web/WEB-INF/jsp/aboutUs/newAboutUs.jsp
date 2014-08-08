@@ -10,6 +10,8 @@
 <head>
     <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/jQuery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/ImgPreview.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/ajaxfileupload.js"></script>
     <style>
         .textComment
         {
@@ -50,8 +52,13 @@
         <p><label>侧边栏名称</label><input  id="title" name="title" type="text" style="width:250px;"/></p>
         <p>
             <label>版面图片</label>
-            <input type="hidden" id="imgUrl" name="imgUrl"  value="">
-            <img   style="width:350px;height:200px;"  />
+            <input style="display: none;" id="imgUrl"  name="imgUrl" >
+            <input id="chooseImgFile" name="chooseImgFile" type="file"style="display: none;" onchange='PreviewImage("ImgPreview",this,"350","200")' />
+            <input type="button" class="btn" onclick="chooseImgFile.click()" value="选择图片">
+        <div id="ImgPreview" style='max-width:350px; max-height:200px;margin-bottom:20px;'>
+            <img src="${pageContext.request.contextPath}/resources/images/PreviewBig.jpg"  style='width:350px; height:200px;'/>
+        </div>
+        <input type="button" class="btn" onclick="upLoadImg('ImgPreview','chooseImgFile','imgUrl','350','200')" value="上传图片"/>
         </p>
         <p>
             <label>简要描述</label>
@@ -75,6 +82,31 @@
     function back()
     {
         window.location.href="${pageContext.request.contextPath}/aboutUs/aboutUsMgr.cfg";
+    }
+    function upLoadImg(divId,upId,imgId,widthT,heightT){
+
+        if(document.getElementById(upId).value.toString()=="")
+        {
+            alert("请先选择要上传的图片");
+            return;
+        }
+
+        $.ajaxFileUpload({
+            url : "${pageContext.request.contextPath}/common/upLoadImg.json",
+            type:"post",
+            secureuri: false,
+            dataType:"text",
+            fileElementId: upId,
+            success : function(data) {
+                alert("图片已上传");
+                document.getElementById(imgId).value=data;
+                document.getElementById(divId).innerHTML = "<img style='width:"+widthT+"px;height:"+heightT+"px;'"+ "src='${pageContext.request.contextPath}"+data+"'/>";
+            },
+            error: function (data, status, e){
+                alert("error:"+e);
+            }
+        });
+
     }
 </script>
 </html>

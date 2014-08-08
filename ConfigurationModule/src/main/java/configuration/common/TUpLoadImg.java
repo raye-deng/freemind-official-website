@@ -1,55 +1,55 @@
 package configuration.common;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.io.File;
-import javax.annotation.Resource;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Iterator;
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.springframework.web.bind.annotation.ResponseBody;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
- * Created by Administrator on 2014/8/5 0005.
+ * Created by Administrator on 2014/8/6 0006.
  */
 @Controller
-public class upLoadImg   {
+public class TUpLoadImg {
 
     private static final int MAX_UPLOAD_SIZE = 10 * 1024 * 1024;
-    private static final String SAVE_PATH = "upLoadfiles";
-    String uploadPath;
+    private static final String SAVE_PATH = "Image";
+    private static final String uploadPath="/vdomainConfig";
 
-    @RequestMapping(value="/common/upLoadImg.do")
-    @ResponseBody
-    public String  fileUpload(HttpServletRequest request, HttpServletResponse response, Model modelMap){
+    @RequestMapping(value="/common/upLoadImg")
+    public Model fileUpload(HttpServletRequest request, HttpServletResponse response, Model model){
         response.setContentType("text/html;charset=UTF-8");
         Map params = new HashMap();
         FileItem fileItem = null;
         String fileUrl = null;
+        String returnPath = null;
         DiskFileItemFactory factory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(factory);
         try {
-                upload.setFileSizeMax(MAX_UPLOAD_SIZE);
-                List<FileItem> items = upload.parseRequest(request);
-                for(FileItem item : items){
-                    if(item.isFormField()){
-                        params.put(item.getFieldName(), item.getString());
-                    }else{
-                        fileItem = item;
-                    }
+            upload.setFileSizeMax(MAX_UPLOAD_SIZE);
+            List<FileItem> items = upload.parseRequest(request);
+            System.out.println("items.size:"+items.size());
+            for(FileItem item : items){
+                if(item.isFormField()){
+
+                    params.put(item.getFieldName(), item.getString());
+                }else{
+
+                    fileItem = item;
                 }
+            }
 
             if(fileItem==null){
                 System.out.println("上传文件有误.");
@@ -59,17 +59,24 @@ public class upLoadImg   {
             String fileName = getSaveFileName(originalName);
             String savePath = SAVE_PATH + "/";
             String realPath = getFolder(request, savePath);
-            fileUrl = request.getContextPath() + "/" + SAVE_PATH + "/" + fileName;
-            fileItem.write(new File(realPath + "/" + fileName));
-            modelMap.addAllAttributes(params);
-            modelMap.addAttribute("fileUrl", fileUrl);
-        }catch (FileUploadException e) {
-            e.printStackTrace();
+             returnPath = uploadPath + "/" + SAVE_PATH +"/" + fileName;
+            fileUrl =  realPath +"\\" + fileName;
+            System.out.println("Return Url:"+returnPath);
+            fileItem.write(new File(fileUrl));
+
+
         } catch (Exception ex){
             ex.printStackTrace();
         }
-        return fileUrl;
-    }
+        System.out.println("request.setAttribute:"+fileUrl);
+        try {
+            response.getWriter().write(returnPath);
+            response.getWriter().flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+   }
 
 
 
@@ -98,6 +105,7 @@ public class upLoadImg   {
                 e.printStackTrace();
             }
         }
+
         return dir.getAbsolutePath();
     }
 
@@ -111,8 +119,10 @@ public class upLoadImg   {
         String realPath = this.uploadPath;
         if(this.uploadPath==null || this.uploadPath.startsWith("/"))
             realPath = request.getSession().getServletContext().getRealPath(this.uploadPath);
+        System.out.println("GetPhysicalPath:/"+realPath + "/" + path);
         return realPath + "/" + path;
     }
+
 
     /**
      * 获取文件扩展名

@@ -79,11 +79,11 @@
                                             ${tSlider.sliderFlag}
                                         </td>
                                     </div>
-                                <td width="320px"><img src="${tSlider.imgUrl}" style=" min-width:320px;height:180px;"/></td>
-                                <td width="250px" valign="middle"><label style="min-width:220px;padding-left:10px;">${tSlider.imgDesc}</label> </td>
+                                <td width="320px"><img src="${pageContext.request.contextPath}${tSlider.imgUrl}" style=" min-width:320px;"/></td>
+                                <td width="250px" valign="middle"><label style="margin:5px auto;min-width:220px;padding-left:10px;">${tSlider.imgDesc}</label> </td>
                                 <td style="text-align:center;width: 100px;" >
                                     <div style="width:120px;">
-                                        <a class="aCSS"  href="${tSlider.targetUrl}">链接地址:${tSlider.targetUrl}</a>
+                                        <a class="aCSS">链接地址:${tSlider.targetUrl}</a>
                                     </div>
                                 </td>
                             </tr>
