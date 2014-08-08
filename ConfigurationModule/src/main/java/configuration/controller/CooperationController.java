@@ -35,7 +35,7 @@ public class CooperationController {
         TRequestCooperationModel Cooperation = null;
         try{
             Cooperation = tCooperationService.getCooperation(id);
-            Cooperation.setCheck("YES");
+            Cooperation.setTcheck("YES");
             tCooperationService.updateCooperation(Cooperation);
         }catch(Exception ex){
             ex.printStackTrace();

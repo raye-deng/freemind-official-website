@@ -41,7 +41,7 @@
             max-height: 550px;;
             overflow-x: hidden;
             overflow-y: auto;
-            max-width: 860px;
+            position: fixed;
             word-wrap:break-word;
 
         }
@@ -56,51 +56,34 @@
     <button class="btn" onclick="CheckOnMouseDown()">确认审核</button>&nbsp;&nbsp;
     <button class="btn" onclick="delOnMouseDown()">清除记录</button>&nbsp;&nbsp;
 </div>
-<div style="height:400px;">
-    <table  style=" margin-top: 60px;min-width:860px; "  >
-        <tr bgcolor="#34495e" style="color:#FFFFFF; margin-left:4px;">
-            <th width="33px">ID</th>
+<div style="max-height:400px;">
+    <table  style="position:fixed; margin-top: 60px;  min-width:860px; "  >
+        <tr bgcolor="#34495e" style= "color:#FFFFFF; margin-left:4px;">
+            <th width="31px">ID</th>
             <th width="151px">公司名称</th>
             <th width="101px">联系人</th>
-            <th width="101px">联系电话</th>
+            <th width="201px">联系电话</th>
             <th width="171px">E-Mail</th>
             <th width="201px">联系地址</th>
             <th width="151px">申请时间</th>
             <th width="151px">审核</th>
         </tr>
-        <td colspan="6">
+        <td colspan="8">
             <div class="scrollTable">
-                <table border="1"  style="border-color:#dcdcdc; position: fixed;min-width:860px; ">
-                    <tr class="trStyle"  bgcolor="#ffffff"  onclick="trOnMouseDown(this)">
-                    <td width="30px">1</td>
-                    <td style="text-align:center;" width="150px">福州飞迈软件有限公司</td>
-                    <td style="text-align:center;" width="100px">陈炳树</td>
-                    <td style="text-align:center;" width="100px">18564599521</td>
-                    <td style="text-align:center;" width="170px">964896101@qq.com</td>
-                    <td width="200px">福建师范大学旗山校区生活南区兰苑9-1#502</td>
-                    <td width="150px">2014-8-4 14:37:52</td>
-                    <th width="151px"><span style="color:green;">已审核</span></th>
-                    </tr>
-                    <tr class="trStyle"  bgcolor="#ffffff"  onclick="trOnMouseDown(this)">
-                        <td width="30px">1</td>
-                        <td style="text-align:center;" width="150px">福州飞迈软件有限公司</td>
-                        <td style="text-align:center;" width="100px">郑宏伟</td>
-                        <td style="text-align:center;" width="100px">18564599521</td>
-                        <td style="text-align:center;" width="170px">964896101@qq.com</td>
-                        <td width="200px">福建师范大学旗山校区生活南区兰苑9-1#502</td>
-                        <td width="150px">2014-8-4 14:37:52</td>
-                        <th width="151px"><span style="color:red;">未审核</span></th>
-                    </tr>
+                <table border="1"  style=" border-color:#dcdcdc; min-width:860px; ">
+
                     <c:forEach  items="${cooperationList}" var="cooperation">
                         <tr class="trStyle" bgcolor="#ffffff"  onclick="trOnMouseDown(this)">
                             <td width="30px">${cooperation.id}</td>
                             <td style="text-align:center;" width="150px">${cooperation.companyName}</td>
-                            <td style="text-align:center;" width="100px">${cooperation.address}</td>
                             <td style="text-align:center;" width="100px">${cooperation.contacter}</td>
-                            <td style="text-align:center;" width="170px">${cooperation.email}</td>
                             <td width="200px">${cooperation.phone}</td>
+                            <td style="text-align:center;" width="170px">${cooperation.email}</td>
+                            <td style="text-align:center;" width="200px">${cooperation.address}</td>
                             <td width="150px">${cooperation.time}</td>
-                            <th width="151px"><span style="color:red;">${cooperation.check}</span></th>
+                            <th width="150px">
+                                <span <c:if test="${cooperation.tcheck =='YES'}">style="color:green;"</c:if>
+                                      <c:if test="${cooperation.tcheck =='NOT'}">style="color:red;"</c:if> >${cooperation.tcheck}</span></th>
                         </tr>
                     </c:forEach>
                 </table>
@@ -124,7 +107,12 @@
     function CheckOnMouseDown(){
         if(lastTr==null)
         {
-            alert("请选择要修改的介绍内容");
+            alert("请选择要审核的条目");
+            return;
+        }
+        if(lastTr.cells[7].innerText =="YES")
+        {
+            alert("已审核");
             return;
         }
         window.location.href="${pageContext.request.contextPath}/cooperation/updateCooperationDo.cfg?id="+lastTr.cells[0].innerText;

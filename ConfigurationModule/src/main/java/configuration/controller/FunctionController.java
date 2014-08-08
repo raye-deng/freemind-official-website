@@ -49,7 +49,9 @@ public class FunctionController {
         System.out.println("newFuncDo"+funcName);
         TFuncIntroductionModel func = new TFuncIntroductionModel();
         func.setFuncName(funcName);
-        func.setFuncParentId(Integer.parseInt(funcParentId));
+        System.out.println("parentId:"+funcParentId);
+        if(funcParentId!=""||funcParentId!=null)
+            func.setFuncParentId(Integer.parseInt(funcParentId.trim()));
         func.setFuncTitle(funcTitle);
         func.setFuncDesc(funcDesc);
         func.setFuncPicUrl(funcPicUrl);
@@ -92,12 +94,12 @@ public class FunctionController {
         func.setId(Integer.parseInt(id.trim()));
         func.setFuncName(funcName);
         func.setFuncTitle(funcTitle);
-        func.setFuncParentId(Integer.parseInt(funcParentId));
+        if(funcParentId!=""||funcParentId!=null)
+            func.setFuncParentId(Integer.parseInt(funcParentId));
         func.setFuncDesc(funcDesc);
         func.setFuncPicUrl(funcPicUrl);
         func.setFuncIconUrl(funcIconUrl);
         try {
-            System.out.println("updateFuncDoController:");
             tfuncintroductionService.updateFunc(func);
         }catch (Exception ex)
         {

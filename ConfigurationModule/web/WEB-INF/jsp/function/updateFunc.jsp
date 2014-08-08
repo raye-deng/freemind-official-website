@@ -6,10 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/jQuery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/ajaxfileupload.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/ImgPreview.js"></script>
     <style>
         .textComment
         {
@@ -50,17 +53,39 @@
         <p><label id="id" name="id" value="${param.func_Id}">ID:${param.func_Id}</label></p>
         <p><label>功能名称</label><input id="funcName" name="funcName" type="text" style="width:250px;" value="${tFunc.funcName}"></p>
         <p><label>介绍标题</label><input id="funcTitle" name="funcTitle" type="text" style="width:250px;" value="${tFunc.funcTitle}"></p>
-        <p><label>父级ID</label><input  id="funcParentId" name="funcParentId" type="text" style="width:250px;" value="${tFunc.funcParentId}"/></p>
+        <p><label>父级ID</label>
+           <input id="funcPanterId" name="funcParentId" type="text" style="width:250px;" value="${tFunc.funcParentId}" onkeyup="value=value.replace(/[^\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
         <p>
             <label>介绍图片</label>
-            <input type="hidden" id="funcPicUrl" name="funcPicUrl" value="${tFunc.funcPicUrl}" >
-            <img   style="width:350px;height:200px;" src="${tFunc.funcPicUrl}" />
+            <input style="display: none;"id="funcPicUrl"  name="funcPicUrl" value="${tFunc.funcPicUrl}" >
+            <input id="chooseIntroductionFile" name="chooseIntroductionFile" type="file"style="display: none;" onchange='PreviewImage("introductionImgPreview",this,"350","200")' />
+            <input type="button" class="btn" onclick="chooseIntroductionFile.click()" value="选择图片">
+            <div id="introductionImgPreview" style='max-width:350px; max-height:200px;margin-bottom:20px;'>
+            <img
+                    <c:choose>
+                        <c:when test="${tFunc.funcPicUrl==null}">src="${pageContext.request.contextPath}/resources/images/PreviewBig.jpg"</c:when>
+                        <c:otherwise>src="${pageContext.request.contextPath}${tFunc.funcPicUrl}"</c:otherwise>
+                    </c:choose>
+                    style='width:350px; height:200px;'/>
+            </div>
+        <input type="button" class="btn" onclick="upLoadImg('introductionImgPreview','chooseIntroductionFile','funcPicUrl','350','200')" value="上传图片"/>
         </p>
+
         <p>
             <label>图标图片</label>
-            <input type="hidden" id="funcIconUrl" name="funcIconUrl" value="${tFunc.funcIconUrl}" >
-            <img   style="width:150px;height:150px;" src="${tFunc.funcIconUrl}" />
+            <input style="display: none;"id="funcIconUrl"  name="funcIconUrl"  value="${tFunc.funcIconUrl}">
+            <input id="chooseIconFile" name="chooseIconFile"  type="file" style="display: none;"  onchange='PreviewImage("imgPreview",this,"180","180")' />
+            <input type="button" class="btn" onclick="chooseIconFile.click()" value="选择图片">
+            <div id="imgPreview"  style='max-width:180px; max-height:180px;margin-bottom:20px;'>
+                <img <c:choose>
+                        <c:when test="${tFunc.funcIconUrl==null}">src="${pageContext.request.contextPath}/resources/images/PreviewImg.jpg"</c:when>
+                        <c:otherwise>src="${pageContext.request.contextPath}${tFunc.funcIconUrl}"</c:otherwise>
+                    </c:choose>
+                    style='width:180px; height:180px;'/>
+            </div>
+            <input type="button" onclick="upLoadImg('imgPreview','chooseIconFile','funcIconUrl','180','180')" value="上传图片" class="btn">
         </p>
+
         <p><label>介绍描述</label><textarea id="funcDesc" name="funcDesc" class="textComment">${tFunc.funcDesc}</textarea></p>
         <p style="margin-left:65px;">
             <input class="btn" type="button" onclick="doUpdate()" value="提交"/>
@@ -84,6 +109,31 @@
     {
         window.location.href="${pageContext.request.contextPath}/function/funcMgr.cfg";
         return;
+    }
+    function upLoadImg(divId,upId,imgId,widthT,heightT){
+
+        if(document.getElementById(upId).value.toString()=="")
+        {
+            alert("请先选择要上传的图片");
+            return;
+        }
+
+        $.ajaxFileUpload({
+            url : "${pageContext.request.contextPath}/common/upLoadImg.json",
+            type:"post",
+            secureuri: false,
+            dataType:"text",
+            fileElementId: upId,
+            success : function(data) {
+                alert("图片已上传");
+                document.getElementById(imgId).value=data;
+                document.getElementById(divId).innerHTML = "<img style='width:"+widthT+"px;height:"+heightT+"px;'src='${pageContext.request.contextPath}"+data+"'/>";
+            },
+            error: function (data, status, e){
+                alert("error:"+e);
+            }
+        });
+
     }
 </SCRIPT>
 </html>

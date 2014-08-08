@@ -10,6 +10,8 @@
 <head>
     <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/jQuery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/ajaxfileupload.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/resources/js/ImgPreview.js"></script>
     <style>
         .textComment
         {
@@ -47,20 +49,36 @@
 
 <p><label class="titlelabel">新增功能介绍</label></p>
 <div style="margin-left:30px;">
-        <form id="funcForm" action="${pageContext.request.contextPath}/function/newFuncDo.cfg" method="post" >
+        <form id="funcForm" action="${pageContext.request.contextPath}/function/newFuncDo.cfg" method="post"  >
             <p><label>功能名称</label><input  id="funcName" name="funcName" type="text" style="width:250px;"/></p>
             <p><label>介绍标题</label><input  id="funcTitle" name="funcTitle" type="text" style="width:250px;"/></p>
-            <p><label>父级ID</label><input  id="funcPanterId" name="funcParentId" type="text" style="width:250px;"/></p>
+            <p><label>父级ID</label>
+               <input id="funcPanterId" name="funcParentId" type="text" style="width:250px;" onkeyup="value=value.replace(/[^\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+            </p>
+
+
             <p>
                 <label>介绍图片</label>
-                <input type="hidden" id="funcPicUrl" name="funcPicUrl"  >
-                <img   style="width:350px;height:200px;"  />
+                <input style="display: none;"id="funcPicUrl"  name="funcPicUrl" >
+                <input id="chooseIntroductionFile" name="chooseIntroductionFile" type="file"style="display: none;" onchange='PreviewImage("introductionImgPreview",this,"350","200")' />
+                <input type="button" class="btn" onclick="chooseIntroductionFile.click()" value="选择图片">
+                <div id="introductionImgPreview" style='max-width:350px; max-height:200px;margin-bottom:20px;'>
+                    <img src="${pageContext.request.contextPath}/resources/images/PreviewBig.jpg"  style='width:350px; height:200px;'/>
+                </div>
+                <input type="button" class="btn" onclick="upLoadImg('introductionImgPreview','chooseIntroductionFile','funcPicUrl','350','200')" value="上传图片"/>
             </p>
-            <p>
+           <p>
                 <label>图标图片</label>
-                <input type="hidden" id="funcIconUrl" name="funcIconUrl"  >
-                <img   style="width:150px;height:150px;"  />
-            </p>
+                <input style="display: none;"id="funcIconUrl"  name="funcIconUrl" >
+                <input id="chooseIconFile" name="chooseIconFile"  type="file" style="display: none;"  onchange='PreviewImage("imgPreview",this,"180","180")' />
+                <input type="button" class="btn" onclick="chooseIconFile.click()" value="选择图片">
+                <div id="imgPreview"  style='max-width:180px; max-height:180px;margin-bottom:20px;'>
+                    <img src="${pageContext.request.contextPath}/resources/images/PreviewImg.jpg"  style='width:180px; height:180px;'/>
+                </div>
+                <input type="button" onclick="upLoadImg('imgPreview','chooseIconFile','funcIconUrl','180','180')" value="上传图片" class="btn">
+           </p>
+
+
             <p>
                 <label>介绍描述</label>
                 <textarea id="funcDesc" name="funcDesc" class="textComment"></textarea>
@@ -77,14 +95,45 @@
     function doSave()
     {
         var form=$("#funcForm");
-        if($("#funcName").val()==""||$("#funcName").val()==null)
-        alert("功能名称不能为空");
+        if(document.getElementById("funcName").value.toString()=="")
+        {
+            alert("请输入功能名称");
+            return;
+        }
         form.submit();
+    }
+
+    function upLoadImg(divId,upId,imgId,widthT,heightT){
+
+        if(document.getElementById(upId).value.toString()=="")
+        {
+            alert("请先选择要上传的图片");
+            return;
+        }
+
+        $.ajaxFileUpload({
+            url : "${pageContext.request.contextPath}/common/upLoadImg.json",
+            type:"post",
+            secureuri: false,
+            dataType:"text",
+            fileElementId: upId,
+            success : function(data) {
+                alert("图片已上传");
+                document.getElementById(imgId).value=data;
+                document.getElementById(divId).innerHTML = "<img style='width:"+widthT+"px;height:"+heightT+"px;'"+ "src='${pageContext.request.contextPath}"+data+"'/>";
+            },
+            error: function (data, status, e){
+                alert("error:"+e);
+            }
+        });
+
     }
     function back()
     {
         window.location.href="${pageContext.request.contextPath}/function/funcMgr.cfg";
     }
+
+
 </script>
 </body>
 </html>
