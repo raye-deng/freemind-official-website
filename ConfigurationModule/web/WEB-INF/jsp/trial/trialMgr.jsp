@@ -41,9 +41,8 @@
             max-height: 550px;;
             overflow-x: hidden;
             overflow-y: auto;
-            max-width: 860px;
             word-wrap:break-word;
-
+            position: fixed;
         }
 
     </style>
@@ -57,9 +56,9 @@
     <button class="btn" onclick="delOnMouseDown()">清除记录</button>&nbsp;&nbsp;
 </div>
 <div style="height:400px;">
-    <table  style=" margin-top: 60px;min-width:860px; "  >
+    <table  style="position:fixed; margin-top: 60px;min-width:860px; "  >
         <tr bgcolor="#34495e" style="color:#FFFFFF; margin-left:4px;">
-            <th width="33px">ID</th>
+            <th width="32px">ID</th>
             <th width="151px">公司名称</th>
             <th width="101px">申请者</th>
             <th width="101px">联系电话</th>
@@ -67,36 +66,20 @@
             <th width="151px">申请时间</th>
             <th width="151px">审核</th>
         </tr>
-        <td colspan="6">
+        <td colspan="7">
             <div class="scrollTable">
-                <table border="1"  style="border-color:#dcdcdc; position: fixed;min-width:860px; ">
-                    <tr class="trStyle"  bgcolor="#ffffff"  onclick="trOnMouseDown(this)">
-                        <td width="30px">1</td>
-                        <td style="text-align:center;" width="150px">福州飞迈软件有限公司</td>
-                        <td style="text-align:center;" width="100px">陈炳树</td>
-                        <td style="text-align:center;" width="100px">18564599521</td>
-                        <td style="text-align:center;" width="170px">964896101@qq.com</td>
-                        <td width="150px">2014-8-4 14:37:52</td>
-                        <th width="151px"><span style="color:green;">已审核</span></th>
-                    </tr>
-                    <tr class="trStyle"  bgcolor="#ffffff"  onclick="trOnMouseDown(this)">
-                        <td width="30px">1</td>
-                        <td style="text-align:center;" width="150px">福州飞迈软件有限公司</td>
-                        <td style="text-align:center;" width="100px">郑宏伟</td>
-                        <td style="text-align:center;" width="100px">18564599521</td>
-                        <td style="text-align:center;" width="170px">964896101@qq.com</td>
-                        <td width="150px">2014-8-4 14:37:52</td>
-                        <th width="151px"><span style="color:red;">未审核</span></th>
-                    </tr>
+                <table border="1"  style="border-color:#dcdcdc; min-width:860px; ">
+
                     <c:forEach  items="${trialList}" var="trial">
                         <tr class="trStyle" bgcolor="#ffffff"  onclick="trOnMouseDown(this)">
-                            <td width="30px">${trial.id}</td>
+                            <td style="text-align:center;" width="30px">${trial.id}</td>
                             <td style="text-align:center;" width="150px">${trial.companyName}</td>
                             <td style="text-align:center;" width="100px">${trial.userName}</td>
-                            <td width="200px">${trial.phoneNum}</td>
+                            <td width="100">${trial.phoneNum}</td>
                             <td style="text-align:center;" width="170px">${trial.eMail}</td>
                             <td width="150px">${trial.tTime}</td>
-                            <th width="151px"><span style="color:red;">${trial.tCheck}</span></th>
+                            <th width="150px"><span <c:if test="${cooperation.tcheck =='YES'}">style="color:green;"</c:if>
+                                                    <c:if test="${cooperation.tcheck =='NOT'}">style="color:red;"</c:if>>${trial.tCheck}</span></th>
                         </tr>
                     </c:forEach>
                 </table>
@@ -120,7 +103,7 @@
     function CheckOnMouseDown(){
         if(lastTr==null)
         {
-            alert("请选择要修改的介绍内容");
+            alert("请选择条目");
             return;
         }
         window.location.href="${pageContext.request.contextPath}/trial/updateTrialDo.cfg?id="+lastTr.cells[0].innerText;

@@ -15,7 +15,7 @@
 		http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
     <!-- 默认扫描的包路径 -->
-    <context:component-scan base-package="configuration.controller,configuration.service,configuration.dao" />
+    <context:component-scan base-package="configuration.controller,configuration.service,configuration.dao,configuration.common" />
     <!-- 添加注解驱动 -->
     <mvc:annotation-driven />
     <!-- 定义跳转的文件的前后缀 -->

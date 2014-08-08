@@ -21,13 +21,13 @@
 <body>
 <div role="navigation" id="nav" style="margin-top:40px;">
     <ul>
-        <li><a style="text-decoration: none;">飞迈官网管理页面</a></li>
+        <li><a style="text-decoration: none;">微领域</a></li>
         <li><a href="#" onClick="changeRightContent('1')">首页展示管理</a></li>
         <li><a href="#" onClick="changeRightContent('2')">功能介绍管理</a></li>
         <li><a href="#" onClick="changeRightContent('3')">成功案例管理</a></li>
         <li><a href="#" onClick="changeRightContent('4')">公司介绍管理</a></li>
         <li><a href="#" onClick="changeRightContent('5')">招商加盟管理</a></li>
-        <li><a href="#" onClick="changeRightContent('5')">使用申请管理</a></li>
+        <li><a href="#" onClick="changeRightContent('6')">试用申请管理</a></li>
     </ul>
 </div>
 <div class="main">
@@ -72,6 +72,11 @@
         if(id==5)
         {
             document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/cooperation/cooperationMgr.cfg';
+            return;
+        }
+        if(id==6)
+        {
+            document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/trial/trialMgr.cfg';
             return;
         }
     }

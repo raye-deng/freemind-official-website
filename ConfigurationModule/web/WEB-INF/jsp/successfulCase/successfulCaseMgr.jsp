@@ -82,7 +82,7 @@
                                 </div>
                             </td>
                             <td style="text-align: center;width:200px;">
-                                <img style="width:180px;height:180px;text-align: center; " src="${tSuccessfulCase.caseImgUrl}">
+                                <img style="width:180px;height:180px;text-align: center; " src="${pageContext.request.contextPath}${tSuccessfulCase.caseImgUrl}">
                             </td>
                             <td>
                                 <div style="width:160px; word-wrap:break-word;">
