@@ -110,7 +110,7 @@
         }
     </script>
 </head>
-<body onload="setup();preselect('北京市');promptinfo();">
+<body onload="setup();preselect('北京市');">
 <div id="top_bg">
 	<div class="top">
 		<a class="logo_l" href=" ${pageContext.request.contextPath}/home.do" title="返回首页"></a>
