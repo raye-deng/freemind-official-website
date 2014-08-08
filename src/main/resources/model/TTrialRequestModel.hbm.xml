@@ -24,7 +24,13 @@
             <column name="tCheck" sql-type="varchar" length="45"/>
         </property>
         <property name="tTime">
-        <column name="tTime" sql-type="timestamp"/>
-    </property>
+            <column name="tTime" sql-type="timestamp"/>
+        </property>
+        <property name="tNote">
+            <column name="tNote" sql-type="varchar" length="1000"/>
+        </property>
+        <property name="companyAddr">
+            <column name="companyAddr" sql-type="varchar" length="1000"/>
+        </property>
     </class>
 </hibernate-mapping>

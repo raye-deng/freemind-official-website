@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Administrator on 2014/8/5.
+ * Created by Administrator on 2014/8/8.
  */
 @Entity
 @Table(name = "t_trial_request", schema = "", catalog = "vdomain")
@@ -16,6 +16,8 @@ public class TTrialRequestModel {
     private String eMail;
     private String tCheck;
     private Timestamp tTime;
+    private String tNote;
+    private String companyAddr;
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
@@ -87,6 +89,26 @@ public class TTrialRequestModel {
         this.tTime = tTime;
     }
 
+    @Basic
+    @Column(name = "tNote", nullable = true, insertable = true, updatable = true, length = 1000)
+    public String gettNote() {
+        return tNote;
+    }
+
+    public void settNote(String tNote) {
+        this.tNote = tNote;
+    }
+
+    @Basic
+    @Column(name = "companyAddr", nullable = true, insertable = true, updatable = true, length = 1000)
+    public String getCompanyAddr() {
+        return companyAddr;
+    }
+
+    public void setCompanyAddr(String companyAddr) {
+        this.companyAddr = companyAddr;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -95,10 +117,12 @@ public class TTrialRequestModel {
         TTrialRequestModel that = (TTrialRequestModel) o;
 
         if (id != that.id) return false;
+        if (companyAddr != null ? !companyAddr.equals(that.companyAddr) : that.companyAddr != null) return false;
         if (companyName != null ? !companyName.equals(that.companyName) : that.companyName != null) return false;
         if (eMail != null ? !eMail.equals(that.eMail) : that.eMail != null) return false;
         if (phoneNum != null ? !phoneNum.equals(that.phoneNum) : that.phoneNum != null) return false;
         if (tCheck != null ? !tCheck.equals(that.tCheck) : that.tCheck != null) return false;
+        if (tNote != null ? !tNote.equals(that.tNote) : that.tNote != null) return false;
         if (tTime != null ? !tTime.equals(that.tTime) : that.tTime != null) return false;
         if (userName != null ? !userName.equals(that.userName) : that.userName != null) return false;
 
@@ -114,6 +138,8 @@ public class TTrialRequestModel {
         result = 31 * result + (eMail != null ? eMail.hashCode() : 0);
         result = 31 * result + (tCheck != null ? tCheck.hashCode() : 0);
         result = 31 * result + (tTime != null ? tTime.hashCode() : 0);
+        result = 31 * result + (tNote != null ? tNote.hashCode() : 0);
+        result = 31 * result + (companyAddr != null ? companyAddr.hashCode() : 0);
         return result;
     }
 }

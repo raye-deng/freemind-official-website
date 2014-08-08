@@ -14,7 +14,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/zzsc.js"></script>
 </head>
-<body onload="setActive(${funcId})">
+<body onload="setActive(${funcId});setup();preselect('北京市');">
 <!--顶部导航-->
 <div id="header" style="z-index: 9999;position: fixed;top: 0;left: 0;">
     <jsp:include page="/common/header.do"/>

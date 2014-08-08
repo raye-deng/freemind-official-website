@@ -96,6 +96,7 @@
                 <value>model.TTrialRequestDto</value>
                 <value>model.SysAddressModel</value>
                 <value>model.TNewsDto</value>
+                <value>model.TUsersModel</value>
             </list>
         </property>
 
