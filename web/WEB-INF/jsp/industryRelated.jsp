@@ -14,6 +14,7 @@
 </head>
 <body>
 <div class="pageContent">
+    <img src="/vdomainBackStage/resources/images/debut_dark.png">
 </div>
 <!--顶部导航-->
 <div id="header" style="z-index: 9999;position: fixed;top: 0;left: 0;">
