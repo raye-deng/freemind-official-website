@@ -3,7 +3,7 @@ package model;
 import javax.persistence.*;
 
 /**
- * Created by Administrator on 2014/8/8.
+ * Created by Administrator on 2014/8/11.
  */
 @Entity
 @Table(name = "t_users", schema = "", catalog = "vdomain")
