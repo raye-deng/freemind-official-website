@@ -41,7 +41,7 @@
                     <i style="margin-right: 5px;font-size: 20px;color: #3faeeb;" class="icon-key"></i>
                     <input style=" margin-top:15px;background-color:#ffffff ;border: 1px solid; height: 25px;width:160px;color:#213f71;" id="passWord" name="passWord" type="passWord"  maxlength=20/>
                 </p>
-
+                <span style="color:#f1982f;">【提示】账号或密码错误</span>
                 <p>
                     <input style=" margin-top:24px;width:128px;height: 40px;border-radius: 20;background-color: #149bdf;font-family: '幼圆';font-size: 18px;font-weight: bolder; color:#f4f4f4;"   type="submit"  value="Login" />
                 </p>

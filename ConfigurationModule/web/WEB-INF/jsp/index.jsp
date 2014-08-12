@@ -32,7 +32,7 @@
     <a href="${pageContext.request.contextPath}/login/login.cfg">
         <span  class="span-font-set">退出</span>
     </a>&nbsp;&nbsp;&nbsp;
-    <a herf="javascript:void(0);" onclick="LogOff()">
+    <a herf="javascript:void(0);" onclick="setAdmin()">
         <i class="icon-cog" style="color:#f8f8f8;"></i>
         <span style="cursor: pointer; " class="span-font-set"> 设置</span>
     </a>
@@ -50,10 +50,11 @@
         <li><a href="#" onClick="changeRightContent('4')">公司介绍管理</a></li>
         <li><a href="#" onClick="changeRightContent('5')">招商加盟管理</a></li>
         <li><a href="#" onClick="changeRightContent('6')">试用申请管理</a></li>
+        <li><a href="#" onClick="changeRightContent('7')">公告消息管理</a></li>
     </ul>
 </div>
 <div class="main">
-    <iframe  id="ifream_URL" src=" " style=" margin-left:40px;"  frameborder=no width="95%" height="680"  ></iframe>
+    <iframe  id="ifream_URL" src=" " style=" margin-left:40px;border: 1px steelblue;"  frameborder=no width="95%" height="680"  ></iframe>
 </div>
 <script>
     var navigation = responsiveNav("#nav", {customToggle: "#toggle"});
@@ -68,8 +69,9 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-    function LogOff(){
-        window.location.href = "${pageContext.request.contextPath}/login/login.cfg";
+    function setAdmin(){
+        document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/login/userMgr.cfg';
+        return;
     }
     function adminSettingPassword(){
         document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/slider/sliderMgr.cfg';
@@ -99,6 +101,10 @@
         }
         if(id==6){
             document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/trial/trialMgr.cfg';
+            return;
+        }
+        if(id==7){
+            document.getElementById("ifream_URL").src='${pageContext.request.contextPath}/news/newsMgr.cfg';
             return;
         }
     }
