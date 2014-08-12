@@ -10,8 +10,13 @@
 <html>
 <head>
     <title>微领域-关于我们</title>
+    <meta content="IE=7" http-equiv="X-UA-Compatible" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/about.css">
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jQuery1.11.1.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/zzsc.js"></script>
 </head>
 <body onload="setActive(${firstId});setup();preselect('北京市');">
@@ -43,14 +48,15 @@
                             <div class="product">
                                 <h3> <a>${aboutUs.title}</a> </h3>
                             </div>
-                            <div class="product-wrap posone">
+
+                        </div>
+                        <div class="product-wrap posone" id="warp${aboutUs.id}">
+                            <div>
                                 <div>
-                                    <div>
-                                        <p>${aboutUs.aboutDesc}</p>
-                                        <c:if test="${aboutUs.imgUrl != null && aboutUs.imgUrl!=''}">
-                                            <img  class="productimg"  src="${pageContext.request.contextPath}${aboutUs.imgUrl}">
-                                        </c:if>
-                                    </div>
+                                    <p>${aboutUs.aboutDesc}</p>
+                                    <c:if test="${aboutUs.imgUrl != null && aboutUs.imgUrl!=''}">
+                                        <img  class="productimg"  src="${pageContext.request.contextPath}${aboutUs.imgUrl}">
+                                    </c:if>
                                 </div>
                             </div>
                         </div>

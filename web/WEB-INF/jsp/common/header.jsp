@@ -3,6 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
 <title>微领域</title>
+    <meta content="IE=7" http-equiv="X-UA-Compatible" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/dialog.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/head-style.css">
 
@@ -102,47 +107,48 @@
 
             }
         }
-        function initCityCombo(pid){
-
-        }
-        function initAreaCombo(pid){
-
-        }
     </script>
 </head>
 <body onload="setup();preselect('北京市');">
 <div id="top_bg">
-	<div class="top">
-		<a class="logo_l" href=" ${pageContext.request.contextPath}/home.do" title="返回首页"></a>
-		<!--导航开始-->
-		<div class="nav_z">
-        	<center>
-			<ul id="navul" class="cl" style="min-width:700px;width:700px;">
-                <c:forEach  items="${navList}" var="item">
-                    <c:if test="${item.parentId==0}">
-                        <li>
-                            <c:if test="${item.navUrl=='#'}">
-                                <a id="nav${item.id}" style="color: #fff;">${item.navName}</a>
-                            </c:if>
-                            <c:if test="${item.navUrl!='#'}">
-                                <a href="${pageContext.request.contextPath}/${item.navUrl}"  id="nav${item.id}" >${item.navName}</a>
-                            </c:if>
-                            <ul>
-                                <c:forEach  items="${navList}" var="childItem">
-                                    <c:if test="${childItem.parentId==item.id}"><li><a href="${childItem.navUrl}" id="nav${childItem.id}" >${childItem.navName}</a></li></c:if>
-                                </c:forEach>
-                            </ul>
-                        </li>
-                    </c:if>
-                </c:forEach>
+    <div class="top">
+        <%--<div class="logo_l" href=" ${pageContext.request.contextPath}/home.do" title="返回首页"></div>--%>
+        <a href="${pageContext.request.contextPath}/home.do" style="float: left;"><img  class="logo_l" src="${pageContext.request.contextPath}/resources/images/logo_op.png" ></a>
+        <!--导航开始-->
+        <div class="nav_z">
+            <center>
+                <ul id="navul" class="cl" style="min-width:520px;width:520px;">
+                    <c:forEach  items="${navList}" var="item">
+                        <c:if test="${item.parentId==0}">
+                            <li>
+                                <c:if test="${item.navUrl=='#'}">
+                                    <a id="nav${item.id}" style="color: #fff;">${item.navName}</a>
+                                </c:if>
+                                <c:if test="${item.navUrl!='#'}">
+                                    <a href="${pageContext.request.contextPath}/${item.navUrl}"  id="nav${item.id}" >${item.navName}</a>
+                                </c:if>
+                                <ul>
+                                    <c:forEach  items="${navList}" var="childItem">
+                                        <c:if test="${childItem.parentId==item.id}"><li><a href="${childItem.navUrl}" id="nav${childItem.id}" >${childItem.navName}</a></li></c:if>
+                                    </c:forEach>
+                                </ul>
+                            </li>
+                        </c:if>
+                    </c:forEach>
 
-                <a href="#" id="example" class="button medium blue" style="font-family: 'huaKanYuanTi'">申请试用</a>
-                <a href="http://vzone.freemindsoft.com" class="button medium blue" style="font-family: 'huaKanYuanTi'">登录</a>
 
-                <!--可在此处直接添加导航-->
-			</ul>
+                    <%--<li><a href="http://vzone.freemindsoft.com" class="button medium blue" style="font-family: 'huaKanYuanTi';margin-top: 15px;">登录</a></li>--%>
+
+                    <!--可在此处直接添加导航-->
+                </ul>
             </center>
-		</div><!--导航结束-->
+        </div><!--导航结束-->
+        <div style="width:auto!important;height:70px;float:left;position:relative;">
+            <a href="#" id="example" class="button medium blue" style="font-family: 'huaKanYuanTi';margin-top: 15px;float: left;">申请试用</a>
+        </div>
+        <div style="width:auto!important;height:70px;float:left;position:relative;margin-left: 10px;">
+            <a href="http://vzone.freemindsoft.com" class="button medium blue" style="font-family: 'huaKanYuanTi';margin-top: 15px;">登录</a>
+        </div>
 		<script  type="text/javascript"> 
 		$(".navbg").capacityFixed();
 		</script>
@@ -152,7 +158,7 @@
         <div id="dialog">
 
             <div class="row1">
-                申请试用<a href="javascript:void(0)" title="关闭窗口" class="close_btn" id="closeBtn">×</a>
+                <a href="javascript:void(0)" title="关闭窗口" class="close_btn" id="closeBtn">×</a>
             </div>
             <form action="TTrialRequest.do" method="post" onsubmit="return submitForm(this);">
                 <div class="row">

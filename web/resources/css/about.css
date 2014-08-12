@@ -8,24 +8,38 @@ html,body,p,h1,h2,h3,h4,h5,h6,form,input,textarea,select,button,fieldset,legend,
 
 .goods{width: 1024px;}
 .all-goods{box-shadow:-15px 1px 15px -2px #CCC;position: relative ;left: 0;width: 210px;min-height: 1000px;background: #EFEFEF;overflow: visible;margin-top:20px;float: left;margin-bottom: 20px;}
-.all-goods .itemhead{width: 210px;height: 45px;background: #74BAFA;margin-bottom: 5px;}
-.all-goods .itemhead .product{ position: absolute;z-index: 999; width: 210px;text-align:center;}
-.all-goods .itemhead .product h3{width: 210px;height: 45px;border-width: 1px 0;font-weight: normal;line-height: 45px;}
-.all-goods .itemhead .product h3 a{ color: #ffffff; font-size:18px; font-family:"微软雅黑"; line-height:45px; width:210px;}
+.all-goods .itemhead{width: 210px;height: 45px;background: #74BAFA;margin-bottom: 5px;position: relative ;}
+.all-goods .itemhead .product{ position: absolute;z-index: 999; width: 210px;text-align:center;position: relative ;}
+.all-goods .itemhead .product h3{width: 210px;height: 45px;border-width: 1px 0;font-weight: normal;line-height: 45px;position: absolute ;left: 0px;}
+.all-goods .itemhead .product h3 a{ color: #ffffff; font-size:18px; font-family:"微软雅黑"; line-height:44px; width:210px;}
 
-.all-goods .itemheadchild{width: 210px;height: 40px;background: #EFEFEF;}
-.all-goods .itemheadchild .product{ position: absolute;z-index: 999; width: 210px;text-align:center;}
-.all-goods .itemheadchild .product h3{width: 210px;height: 40px;border-width: 1px 0;font-weight: normal;line-height: 40px;}
+.all-goods .itemheadchild{width: 210px;height: 40px;background: #EFEFEF;position: relative ;}
+.all-goods .itemheadchild .product{ position: absolute;z-index: 999; width: 210px;text-align:center;position: relative ;}
+.all-goods .itemheadchild .product h3{width: 210px;height: 40px;border-width: 1px 0;font-weight: normal;line-height: 40px;position: absolute ;left:0px;}
 .all-goods .itemheadchild .product h3 a{ color: #74BAFA; font-size:16px; font-family:"微软雅黑"; line-height:40px; display:block; width:210px;}
 
-.all-goods .item{width: 210px;height: 30px;background: #EFEFEF;}
+
+.all-goods .item{width: 210px;height: 30px;background: #EFEFEF;left: 0px;position: relative ;}
 .all-goods .btnone{ border-top:none;}
-.all-goods .item .product{ position: absolute;z-index: 999; width: 210px;text-align:center;}
-.all-goods .item .product h3{width: 210px;height: 30px;border-width: 1px 0;font-weight: normal;line-height: 30px;}
+.all-goods .item .product{ position: absolute;z-index: 999; width: 210px;text-align:center;position: relative ;}
+.all-goods .item .product h3{width: 210px;height: 30px;border-width: 1px 0;font-weight: normal;line-height: 30px;position: absolute ;left: 0px;}
 .all-goods .item .product h3 a{ color: #999; font-size:13px; font-family:"微软雅黑"; border-bottom: 1px #CCCCCC solid; line-height:30px; display:block; width:180px; margin-left:15px;}
-.all-goods .item .product h3 a:hover{ text-decoration:none;}
-.all-goods .active .product h3{line-height:30px;background-position:-12px -185px;background-color:#FFF;width: 199px; border-bottom: 1px #74BAFA solid; border-left: 1px #74BAFA solid;border-top: 1px #74BAFA solid;margin-left: 10px; height:30px; margin-top: -1px;}
-.all-goods .active .product h3 a{ color: #000; margin-left: 4px;border-bottom: 1px #74BAFA solid;}
+.all-goods .item .product h3 a:hover{ text-decoration:none;border-bottom: 0px solid;}
+.all-goods .active .product h3
+{
+    line-height:30px;
+    background-position:-12px -185px;
+    background-color:#FFF;
+    width: 199px;
+    border-bottom: 1px #74BAFA solid;
+    border-left: 1px #74BAFA solid;
+    border-top: 1px #74BAFA solid;
+    margin-left: 10px;
+    height:30px;
+    * height :  29px;
+    margin-top: -1px;
+}
+.all-goods .active .product h3 a{ color: #000; margin-left: 4px;border-bottom: 0px #74BAFA solid;}
 .all-goods .product-wrap{box-shadow:-4px 1px 4px -2px #CCC; position: absolute; width: 760px; min-height: 955px;background: #FFF; display: none;}
 .all-goods .product-wrap p{ color:#999999;text-align: left;margin-left: 40px;word-break: break-all;}
 .all-goods .posone{left: 210px; top: 45px;}
