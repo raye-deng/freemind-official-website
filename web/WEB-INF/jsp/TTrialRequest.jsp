@@ -9,7 +9,12 @@
 <html>
 <head>
     <title>${msg}</title>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
+    <meta content="IE=7" http-equiv="X-UA-Compatible" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jQuery1.11.1.js"></script>
 </head>
 <body>
 

@@ -7,23 +7,28 @@ To change this template use File | Settings | File Templates.
 -->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>微领域</title>
-
+    <meta content="IE=7" http-equiv="X-UA-Compatible" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
     <link href="${pageContext.request.contextPath}/resources/css/common/slider/caseSlide.css" rel="stylesheet" type="text/css" />
     <link rel='stylesheet' id='camera-css'  href='${pageContext.request.contextPath}/resources/css/common/slider/camera.css' type='text/css' media='all'>
     <link rel='stylesheet' id='home-css'  href='${pageContext.request.contextPath}/resources/css/home/home.css' type='text/css' media='all'>
     <link rel='stylesheet' href='${pageContext.request.contextPath}/resources/css/common/slider/caseSlide.css' type='text/css' media='all'>
     <link rel='stylesheet' href='${pageContext.request.contextPath}/resources/css/common/css/font-awesome.css' type='text/css' media='all'>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jQuery1.11.1.js"></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/jquery.min.js'></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/jquery.mobile.customized.min.js'></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/jquery.easing.1.3.js'></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/camera.js'></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/company_mates.js'></script>
     <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/common/slider/useCase.js'></script>
-    <script type='text/javascript' src='${pageContext.request.contextPath}/resources/js/announcement.js'></script>
 
     <style>
         html,body {
@@ -57,7 +62,39 @@ To change this template use File | Settings | File Templates.
             right: 0;
             top: 70px;
         }
+        .entry
+        {
+            display: block;
+            font-size: 15px;
+            line-height: 20px;
+            text-decoration: none;
+            color: #333;
+            font-family: Arial;
+            text-align: left;
+        }
+        .newsContainer
+        {
+            background:no-repeat 4px 5px;
+            border: 0px;
+            width: 500px;
+            min-width: 400px;;
+            max-width:1024px;
+            padding: 3px 2px 2px 2px;
 
+            position: relative;
+            left:50px;
+            display: inline-block;
+        }
+        #news
+        {
+            height: 18px;
+            overflow: hidden;
+            display: inline-block;
+            position: absolute;
+            top: 10px;;
+            width: 400px;;
+            left: 80px;
+        }
     </style>
     <script>
         jQuery(function(){
@@ -72,6 +109,7 @@ To change this template use File | Settings | File Templates.
             });
         });
     </script>
+
 </head>
 <body style="background: #fff;position: relative;font-family: 'huaKanYuanTi'">
 <div style="height: 540px;">
@@ -86,21 +124,20 @@ To change this template use File | Settings | File Templates.
     </div>
 </div>
 <!-- 公告轮播 -->
+<!-- 消息滚动 -->
 <center>
-
-<div>
-    <div id="breakingnews" class="BreakingNewsController easing" id="breakingnews1">
-        <div class="bn-title icon-bullhorn" style="font-size: 30px;color:#4fade2;"></div>
-        <ul style="left: 50px;">
+<div style="width: 100%;">
+    <div class="newsContainer">
+        <img src="${pageContext.request.contextPath}/resources/images/home/laba.png" style="float: left;"/>
+        <div id="news">
             <c:forEach  items="${newsList}" var="news">
-                <li style="display: none;"><a class="annView">${news.newsContent}</a></li>
+                <a class="entry">${news.newsContent}</a>
             </c:forEach>
-        </ul>
-        <div class="bn-arrows"><span class="bn-arrows-left"></span><span class="bn-arrows-right"></span></div>
-    </div>
+        </div>
     </div>
 </div>
 </center>
+<!--  -->
 <%--产品列表--%>
 <div id="contentdiv" name="congentdiv" class="home_content">
     <div id="productListdiv" name="productListdiv" class="product_list_div">
@@ -132,22 +169,24 @@ To change this template use File | Settings | File Templates.
 <%--产品列表结束--%>
 
 <%--用例展示--%>
+<center>
 <div class="product_slider_div">
-    <center>
         <h2>他们正在使用微领域</h2>
         <div class="blk_18">
-            <a class="LeftBotton" onmousedown="ISL_GoUp_1()" onmouseup="ISL_StopUp_1()" onmouseout="ISL_StopUp_1()" href="javascript:void(0);" target="_self"></a>
+            <%--<a class="LeftBotton" onmousedown="ISL_GoUp_1()" onmouseup="ISL_StopUp_1()" onmouseout="ISL_StopUp_1()" href="javascript:void(0);" target="_self"></a>--%>
             <div class="pcont" id="ISL_Cont_1" style="margin-left: 8px;">
                 <div class="ScrCont">
                     <div id="List1_1">
                         <c:forEach varStatus="status" begin="0" items="${tCaseSliderImgList}" var="tCaseSlide" step="1">
-                            <a class="pl" href="${pageContext.request.contextPath}${tCaseSlide.targetUrl}" ><img src="${pageContext.request.contextPath}${tCaseSlide.imgUrl}" alt="${tCaseSlide.imgDesc}"/></a>
+                            <a class="pl" href="${pageContext.request.contextPath}${tCaseSlide.targetUrl}" >
+                                <img src="${pageContext.request.contextPath}${tCaseSlide.imgUrl}" alt="${tCaseSlide.imgDesc}"/>
+                            </a>
                         </c:forEach>
                     </div>
                     <div id="List2_1"></div>
                 </div>
             </div>
-            <a class="RightBotton" onmousedown="ISL_GoDown_1()" onmouseup="ISL_StopDown_1()" onmouseout="ISL_StopDown_1()" href="javascript:void(0);" target="_self"></a> </div>
+        </div>
         <div class="sildPicBarCase">
             <a onmousedown="ISL_GoUp_1()" onmouseup="ISL_StopUp_1()" onmouseout="ISL_StopUp_1()" href="javascript:void(0);" target="_self"><span class="pre">&nbsp;</span></a>
             <a onmousedown="ISL_GoDown_1()" onmouseup="ISL_StopDown_1()" onmouseout="ISL_StopDown_1()" href="javascript:void(0);" target="_self"><span class="next">&nbsp;</span></a>
@@ -158,8 +197,8 @@ To change this template use File | Settings | File Templates.
             picrun_ini()
             //-->
         </script>
-    </center>
 </div>
+</center>
 <%--用例展示结束--%>
 <%--合作伙伴--%>
 
@@ -207,27 +246,18 @@ To change this template use File | Settings | File Templates.
         <jsp:include page="/common/footer.do"/>
     </center>
 </div>
+
 </body>
 
 <script type="text/javascript">
     function toFuncPage(funcId){
         location.href="${pageContext.request.contextPath}/products.do?funcId="+funcId;
     }
+
 </script>
 </html>
-<script type="text/javascript">
-    $("#breakingnews").BreakingNews({
-        background      :"#FFF",
-        titlecolor      :"#4fade2",
-        titlebgcolor        :"#FFF",
-        linkcolor       :"#333",
-        linkhovercolor      :"#4fade2",
-        fonttextsize        :16,
-        isbold          :false,
-        border          :"solid 0px #099",
-        width           :"50%",
-        timer           :3000,
-        autoplay        :true,
-        effect          :"slide"
-    });
+<script>
+    var c, _ = Function;
+    with (o = document.getElementById("news")) { innerHTML += innerHTML; onmouseover = _("c=1"); onmouseout = _("c=0"); }
+    (F = _("if(#%20||!c)#++,#%=o.scrollHeight>>1;setTimeout(F,#%20?10:3000);".replace(/#/g, "o.scrollTop")))();
 </script>

@@ -7,7 +7,7 @@
 
 .item
 {
-    width:400px;float: left;height: 100px;display: block;margin-bottom: 50px;overflow: hidden;
+    width:450px;float: left;height: 100px;display: block;margin-bottom: 50px;overflow: hidden;
 }
 .item-img
 {
@@ -15,7 +15,7 @@
 }
 .item-title
 {
-    width: 300px;height: 25px;text-align: left;float: left;overflow: hidden;
+    width: 350px;height: 25px;text-align: left;float: left;overflow: hidden;
 }
 .item-title-p
 {
@@ -23,7 +23,7 @@
 }
 .item-text
 {
-    width: 300px;height: 70px;word-wrap: break-word;text-align: left;float: left;
+    width: 350px;height: 70px;word-wrap: break-word;text-align: left;float: left;
 }
 .item-text-p
 {
@@ -32,9 +32,18 @@
 .bottom
 {
     width: 100%;height:300px;float: left;min-width: 1024px;
-    background-image: url(../../resources/images/microMarketing/bottom.png);
-    background-size:100% 100%;
+    background: url('../../resources/images/microMarketing/bottom.png') no-repeat center;
+
     margin-bottom: 30px;
+    background-size: 100% 100%;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../resources/images/microMarketing/bottom.png',sizingMethod='scale');
+    background-repeat: no-repeat;
+    background-positon: 100%, 100%;
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    overflow: hidden;
+
 }
 .bottom-left
 {
@@ -49,7 +58,7 @@
 }
 .input-text
 {
-    width: 300px;height: 24px;
+    width: 300px;height: 24px;line-height: 22px;
 }
 .bottom-button
 {

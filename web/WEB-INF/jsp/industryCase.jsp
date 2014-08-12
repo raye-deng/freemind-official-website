@@ -10,8 +10,13 @@
 <html>
 <head>
     <title>微领域-成功案例</title>
+    <meta content="IE=7" http-equiv="X-UA-Compatible" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/industryCase.css">
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jQuery1.11.1.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/zzsc.js"></script>
 </head>
 <body onload="setActive(${firstId});setup();preselect('北京市');">
@@ -39,14 +44,15 @@
                             <div class="product">
                                 <h3> <a>${industryCase.caseName}</a> </h3>
                             </div>
-                            <div class="product-wrap posone">
+
+                        </div>
+                        <div class="product-wrap posone" id="warp${industryCase.id}">
+                            <div>
                                 <div>
-                                    <div>
-                                        <p>${industryCase.caseTitle}</p>
-                                        <c:if test="${industryCase.caseImgUrl != null && industryCase.caseImgUrl!=''}">
-                                            <img class="productimg" src="${pageContext.request.contextPath}${industryCase.caseImgUrl}">
-                                        </c:if>
-                                    </div>
+                                    <p>${industryCase.caseTitle}</p>
+                                    <c:if test="${industryCase.caseImgUrl != null && industryCase.caseImgUrl!=''}">
+                                        <img class="productimg" src="${pageContext.request.contextPath}${industryCase.caseImgUrl}">
+                                    </c:if>
                                 </div>
                             </div>
                         </div>

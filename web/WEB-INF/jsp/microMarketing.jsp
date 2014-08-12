@@ -10,8 +10,13 @@
 <html>
 <head>
     <title>微领域-招商加盟</title>
+    <meta content="IE=7" http-equiv="X-UA-Compatible" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/microMarketiong.css">
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/bootstrap/js/jQuery1.11.1.js"></script>
     <script type="text/javascript">
         function validatemobile(mobile)
         {
@@ -125,7 +130,7 @@
     <div style="width: 100%;">&nbsp;</div>
     <div style="width: 100%;">&nbsp;</div>
     <center>
-        <div style="width: 820px;">
+        <div style="width: 920px;">
             <ul>
                 <c:forEach items="${merchantList}" var="merchant">
                 <li class="item">
@@ -157,7 +162,7 @@
                         <label class="bottom-label">公司名称：<input type="text" name="companyName" class="input-text"></label>
                     </div>
                     <div style="margin-top: 5px;">
-                        <label class="bottom-label">公司地址：<input type="text" name="companyAddr" class="input-text"></label>
+                        <label class="bottom-label">公司地址：<input type="text" name="companyAddress" class="input-text"></label>
                     </div>
                     <div style="margin-top: 5px;">
                         <label class="bottom-label" style="margin-left: 14px;">联系人：<input type="text" name="contacter" class="input-text"></label>
@@ -187,9 +192,11 @@
         </dl>
     </div>
 </div>
-
+<div style="width: 100%;height: 20px;line-height: 20px;min-height: 20px;">
+    <p>&nbsp;</p>
+</div>
 <%--页脚--%>
-<div style="min-width: 1024;width: 100%;overflow:hidden ">
+<div style="min-width: 1024;width: 100%;overflow:hidden;">
     <center>
         <jsp:include page="/common/footer.do"/>
     </center>
