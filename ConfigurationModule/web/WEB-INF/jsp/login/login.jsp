@@ -35,7 +35,7 @@
             <div style=" left:600px;top:200px;">
                 <p>
                     <i style="margin-right: 5px;font-size: 20px;color: #3faeeb;" class="icon-user"></i>
-                    <input style=" margin-top:60px;background-color:#ffffff ;border: 1px solid; height: 25px;width:160px;color:#213f71;" id="id" name="id" type="text"  maxlength=20/>
+                    <input style=" margin-top:60px;background-color:#ffffff ;border: 1px solid; height: 25px;width:160px;color:#213f71;" id="userName" name="userName" type="text"  maxlength=20/>
                 </p>
                 <p>
                     <i style="margin-right: 5px;font-size: 20px;color: #3faeeb;" class="icon-key"></i>

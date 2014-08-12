@@ -9,7 +9,7 @@
 <html>
 <head>
     <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
-    <title>修改账户</title>
+    <title>新增账户</title>
     <style>
         .btn
         {
@@ -32,11 +32,9 @@
 </head>
 <body>
 <div>
-    <form id="form" action="${pageContext.request.contextPath}/login/updateUserDo.cfg" method="post">
-        <p><label>ID</label><input type="text" readonly="readonly"  id="id" name="id" value="${user.id}"/></p>
-        <p><label>账户</label><input type="text" id="userName" name="userName" readonly="readonly"  value="${user.userName}" /></p>
-        <p><label>旧密码</label><input name="oldPassword" type="password"/></p>
-        <p><label>新密码</label><input name="newPassword" type="password"/></p>
+    <form id="form" action="${pageContext.request.contextPath}/login/newUserDo.cfg" method="post">
+        <p><label>用户姓名</label><input id="userName" name="userName" type="text"/></p>
+        <p><label>新密码</label><input id="newPassword" name="newPassword" type="password"/></p>
         <p><input class="btn" type="submit" value="提交">&nbsp;&nbsp;<input class="btn" type="button" onclick="back()" value="返回"></p>
     </form>
 </div>
